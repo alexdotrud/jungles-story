@@ -15,22 +15,38 @@
 }
 body {
     height: 100vb;
-    background-image: linear-gradient(to bottom , rgba(59, 124, 39, 0.945), rgb(19, 59, 25));
+    background-image: linear-gradient(to bottom , rgba(74, 122, 59, 0.904), rgb(13, 46, 17));
     background-repeat: no-repeat;
-    background-size: cover;
     color: var(--primary-color);
     font-family: var(--primary-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+#main-container {
+   
+}
+#back-image {
+    background-image: url('../images/papirus1.png');
+    
+}
+
 .logo {
     width: 150px;
     height: auto;
     margin-left: 20px;
+    position: fixed;
+    top: 10px;
+    left: 20px;
 }
-.btn-restart {
-    position: absolute;
-    top: 30px;
-    right: 80px;
+.btn {
     border: 4px solid var(--highlight-color-light);
     background-color: var(--secondary-color);
     font-family: var(--secondary-font);
+}
+.btn-restart {
+    position: absolute;
+    top: 35px;
+    right: 80px;
 }
