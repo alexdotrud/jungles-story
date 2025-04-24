@@ -1,5 +1,7 @@
 /*Google Fonts Link*/
+
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Leckerli+One&display=swap');
+
 /*Css Variable*/
 :root {
     --primary-font: "Leckerli One", serif;
@@ -13,6 +15,8 @@
     --highlight-color-light: #f3f596;
     /* light grey */
 }
+
+/*Global Styles*/
 body {
     height: 100vb;
     background-image: linear-gradient(to bottom , rgba(74, 122, 59, 0.904), rgb(13, 46, 17));
@@ -23,13 +27,37 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+    padding: 0;
 }
-#main-container {
-   
+ 
+p {
+    padding: 1rem;
 }
-#back-image {
-    background-image: url('../images/papirus1.png');
-    
+
+h1, h2 {
+    padding: 1rem;
+}
+#main-container {  
+ width: 1400px;
+ height: 700px;
+ text-align: center;
+ background-image: url('../images/papirus1.png');
+ position: relative;
+ background-size: cover;
+ background-position: center; 
+ background-repeat: no-repeat; 
+
+}
+
+#story-container {
+    width: 1000px;
+    position: absolute;
+    top: 25%;
+    left: 12%;
+
+
+
 }
 
 .logo {
