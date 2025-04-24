@@ -1,17 +1,36 @@
-body {
-margin: 1rem 1.5rem;
-width: 100%;
-display: flex;
-flex-direction: column;
+/*Google Fonts Link*/
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Leckerli+One&display=swap');
+/*Css Variable*/
+:root {
+    --primary-font: "Leckerli One", serif;
+    --secondary-font: "Berkshire Swash";
+    --primary-color: #1C350B;
+    /* green */
+    --secondary-color: #a1c08c;
+    /* brown */
+    --highlight-color: #F9F9E5;
+    /* purple */
+    --highlight-color-light: #f3f596;
+    /* light grey */
 }
-p {
-
- }
+body {
+    height: 100vb;
+    background-image: linear-gradient(to bottom , rgba(59, 124, 39, 0.945), rgb(19, 59, 25));
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+}
 .logo {
-    width: 110px;
-    height: 70px;
+    width: 150px;
+    height: auto;
+    margin-left: 20px;
 }
 .btn-restart {
-position: absolute;
-right: 5px;
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    border: 4px solid var(--highlight-color-light);
+    background-color: var(--secondary-color);
+    font-family: var(--secondary-font);
 }
