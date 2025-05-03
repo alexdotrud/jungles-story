@@ -4,3 +4,4 @@ https://coolors.co/29339b-74a4bc-b6d6cc-f1fec6-ff3a20 -for creating color pallet
 https://pixabay.com/ - picture of papirus.
 https://imageresizer.com/
 https://www.youtube.com/watch?v=MiTJnYHX3iA -tutorial for typewritter effect
+https://www.youtube.com/watch?v=r_PL0K2fGkY - pop up tutorial

@@ -123,6 +123,22 @@ h1, h2 {
     gap: 1rem;
 }
 
+/*Modal styling*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; 
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+
 /* Styles for big screen*/
 
 @media screen and (min-width:778px) {
