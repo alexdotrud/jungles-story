@@ -43,6 +43,7 @@ p {
 h1, h2 {
     padding: 1rem;
 }
+
 #main-container {  
     width: 100%;
     min-height: 100vh;
@@ -129,16 +130,7 @@ h1, h2 {
     margin: 0 5rem;
 }
 #main-container {
-    margin-top: 3rem;
-}
-#story-container {
-    padding: 3rem;
-}
-}
-
-@media screen and (min-width:992px) {
-
-#main-container {  
+    margin-top: 3rem;#main-container {  
     width: 80%;
     height: auto;
     min-height: 80vh;
@@ -154,6 +146,29 @@ h1, h2 {
     padding:3rem 3rem;
     margin: 2rem auto;
 }
+#story-container {
+    padding: 3rem;
+}
+}
+
+@media screen and (min-width:992px) {
+    #main-container {  
+        width: 80%;
+        height: auto;
+        min-height: 80vh;
+        background-image: url("../images/papirus.png");
+        background-size: 100% 130%;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding:3rem 3rem;
+        margin: 2rem auto;
+    }
+}
 
 #story-container {
     max-width: 800px;
@@ -162,8 +177,7 @@ h1, h2 {
 
 #pictures-container {
     gap: 5rem;
-}
-}
+} to inp
 
 @media screen and (min-width:1200px) {
 
