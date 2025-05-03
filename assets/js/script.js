@@ -46,7 +46,7 @@ $(document).ready(function() {
 
       $("#choices-container").html(`<button class="btn btn-start-story">Start The Story</button>`);
 // Pop-Up's on images
-      $(".characters-img").click(function () {
+      $(".characters-img").click(function popUp() {
           var imgAlt = $(this).attr("alt");
           var infoText = "";
 
