@@ -37,6 +37,7 @@ gameSteps();
 // Game Steps
 function gameSteps()  {
 $(".meet-characters").click(showCharacters);
+$(".btn-start-story").click(showChapter1);
 };
 
 //  Meeting Characters Chapter
@@ -82,5 +83,26 @@ $("#popupModal").click(function() {
     $("#popupModal").fadeOut();
 });
 };
+
+// Choices Generator 
+function generateChoices {
+    let data = storyData;
+    let html = `<p>${data[choices-question]}</p>`;
+    for (let i = 0; i < choice.length; i++) {
+    html += "<button class="btn-choice"> +choices.choice </button>";
+}  
+
+}
 // Chapter 1
+function showChapter1() {
+    const data = storyData.chapter1;
+    $(".story-heading").hide();
+    $("#pictures-container").hide();
+    $(".intro").text(data.story);
+    $(".btn-intro").text("Continue...");
+    $("#choices-container").html(`<p>data.choices-question</p>
+        data.buttons`)
+
+
+}
 

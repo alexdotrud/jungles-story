@@ -11,12 +11,18 @@
 
     "chapter" : {
         "story" : "The air is thick with the scent of wet leaves and wild flowers. Aurora pushes aside a curtain of vines, revealing the start of a narrow, hidden path. Rick steps up beside her, holding a small map, while Dog sniffs the ground with excitement. The jungle hums all around them — birds singing, insects buzzing, and the wind whispering through the trees.",
-        "choices-heading" : "What should the team do first?",
+        "choices-question" : "What should the team do first?",
         "choices" : [
         {"choice": "Follow the path deeper into the jungle"},
         {"choice": "Climb a nearby rock to look around"},
         {"choice": "Let Dog lead the way"}
+        ]
+},
+
+    "buttons" : [
+        "<button class='choice-button'></button>",
+        "<button class='choice-button'></button>",
+        "<button class='choice-button'></button>"
 ]
-}
 
 }
