@@ -110,7 +110,7 @@ function showChapter1() {
     const data = storyData.chapter1;
     $(".story-heading").text(data.heading);
     $("#pictures-container").hide();
-    $(".intro").text(data.story);
+    $(".intro").html(data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
 }
@@ -120,7 +120,7 @@ function showChapter2(index) {
     const data = storyData.chapter2;
     $(".story-heading").text(data.heading);
     $("#pictures-container").hide();
-    $(".intro").text(data.story[index].story);
+    $(".intro").html(data.story[index].story);
     $(".start-story").hide();
     $("#choices-container").html(`<button class="btn cnt-btn">Continue...</button>`);
 }
