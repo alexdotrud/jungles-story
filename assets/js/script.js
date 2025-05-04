@@ -8,6 +8,7 @@ const text = document.querySelector("#story-container");
 
 // Dog Bark
 const dogBark = new audio(assets/audio/bark-MediaSourceHandle.mp3)
+
 // Typing Effect
 function typeWriter(element, text, speed = 50, callback) {
     let i = 0;
@@ -47,37 +48,16 @@ function showCharacters() {
 
     $("#choices-container").html(`<button class="btn btn-start-story">Start The Story</button>`);
 // Pop-Up's on images
-    $(".characters-img").click(function popUp() {
-        var imgAlt = $(this).attr("alt");
-        var infoText = "";
-
-        if (imgAlt === "Aurora") {
-            infoText = "Aurora is a fearless young explorer driven by curiosity and a desire to uncover the world's hidden mysteries.";
-        } else if (imgAlt === "Rick") {
-            infoText = "Rick is Aurora’s loyal and adventurous best friend, always ready with his survival skills and a good sense of humor.";
-        } else if (imgAlt === "Dog") {
-            infoText = "Dog is Aurora’s faithful companion, whose sharp instincts and unwavering loyalty help guide and protect her on every adventure.";
-        }
-
-        $("#modalContent").text(infoText);
-        $("#popupModal").fadeIn();
-    });
-
-    $(document).on("click", ".close", function () {
-        $("#popupModal").fadeOut();
-    });
-
-    $(window).click(function (event) {
-        if ($(event.target).is("#popupModal")) {
-            $("#popupModal").fadeOut();
-        }
-    });
-}
-
-$(".meet-characters").click(showCharacters);
-
+$('.characters-img').click(function() {
+    const description = $(this).data('description');
+    const alt = $(this).attr('alt');
+    if (alt === 'Dog') {
+        dogBark.play();
+    }
+    $('#modalContent').text(description);
+    $('#popupModal').fadeIn();
+});
 // Chapter 1
-
 
 
 });
