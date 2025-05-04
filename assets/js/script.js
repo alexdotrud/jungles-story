@@ -25,6 +25,14 @@ function typeWriter(element, text, speed = 50, callback) {
     type();
 }
 
+// Fetch Story Data
+let data = null;
+fetch("assets/js/story.json")
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.log("Error fetching JSON:" error));
+
+
 $(document).ready(function() {
 //  Meeting Characters Chapter
 function showCharacters() {
