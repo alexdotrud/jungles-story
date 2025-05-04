@@ -45,13 +45,12 @@ function showCharacters() {
 
     $(".story-heading").text(data.heading);
 
-    $(".intro").hide();
+    $(".intro").text(data.intro);
     $(".btn-intro").hide();
 
     $("#pictures-container").html(`
         <div id="popupModal" class="modal">
             <div class="modal-content">
-                <span class="close"></span>
                 <p id="modalContent"></p>
             </div>
         </div>
@@ -61,21 +60,27 @@ function showCharacters() {
         `);
 
     $("#choices-container").html(`<button class="btn btn-start-story">Start The Story</button>`);
-};
 
 // Pop-Up's on images
-$('.characters-img').click(function() {
-    const description = $(this).data('description');
-    const alt = $(this).attr('alt');
-    if (alt === 'Dog') {
+$(".characters-img").click(function() {
+    let description;
+    const alt = $(this).attr("alt");
+    if (alt === "Aurora") {
+        description = storyData.characters.images[0].description;
+    } else if (alt === "Rick") {
+        description = storyData.characters.images[1].description;
+    } else if (alt === "Dog") {
+        description = storyData.characters.images[2].description;
         dogBark.play();
     }
     $('#modalContent').text(description);
     $('#popupModal').fadeIn();
 });
+
 // Pop-Up's closing
-$('.close').click(function() {
-    $('#popupModal').fadeOut();
+$("#popupModal").click(function() {
+    $("#popupModal").fadeOut();
 });
+};
 // Chapter 1
 

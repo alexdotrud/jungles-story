@@ -1,10 +1,22 @@
 {
     "characters" : {
         "heading" : "Meet the Explorers!",
+        "intro" : "(Click a character to learn more about them)",
         "images" : [
         { "description": "Aurora: A brave and curious young explorer. She leads the adventure with heart and courage." },
         { "description": "Rick: Aurora's best friend. He's clever and a little sarcastic, but always reliable." },
         { "description": "Dog: Loyal, smart, and always sniffing out secrets. He may be just a dog, but he's part of the team."}
         ]
-    }
+    },
+
+    "chapter" : {
+        "story" : "The air is thick with the scent of wet leaves and wild flowers. Aurora pushes aside a curtain of vines, revealing the start of a narrow, hidden path. Rick steps up beside her, holding a small map, while Dog sniffs the ground with excitement. The jungle hums all around them — birds singing, insects buzzing, and the wind whispering through the trees.",
+        "choices-heading" : "What should the team do first?",
+        "choices" : [
+        {"choice": "Follow the path deeper into the jungle"},
+        {"choice": "Climb a nearby rock to look around"},
+        {"choice": "Let Dog lead the way"}
+]
+}
+
 }
