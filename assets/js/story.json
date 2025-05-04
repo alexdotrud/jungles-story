@@ -1,11 +1,10 @@
 {
     "characters" : {
         "heading" : "Meet the Explorers!",
-        "img" :
+        "images" : [
         { "description": "Aurora: A brave and curious young explorer. She leads the adventure with heart and courage." },
-        { "description": "Rick: Aurora’s best friend. He’s clever and a little sarcastic, but always reliable." },
-        { "description": "Dog: Loyal, smart, and always sniffing out secrets. He may be just a dog, but he's part of the team."},
-
+        { "description": "Rick: Aurora's best friend. He's clever and a little sarcastic, but always reliable." },
+        { "description": "Dog: Loyal, smart, and always sniffing out secrets. He may be just a dog, but he's part of the team."}
+        ]
     }
-
 }

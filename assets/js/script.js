@@ -35,16 +35,13 @@ gameSteps();
 }); 
 
 // Game Steps
-function gameSteps() {
-if ($(".story-heading").text() === "Welcome to Jungle of Whispers!") {
+function gameSteps()  {
 $(".meet-characters").click(showCharacters);
-};
 };
 
 //  Meeting Characters Chapter
-$(document).ready(function() {
 function showCharacters() {
-    const data = storyDate.characters;
+    const data = storyData.characters;
 
     $(".story-heading").text(data.heading);
 
@@ -52,19 +49,19 @@ function showCharacters() {
     $(".btn-intro").hide();
 
     $("#pictures-container").html(`
-        <img src="assets/images/aurora.png" class="characters-img" alt="Aurora" id="auroraImage">
-        <img src="assets/images/rick.png" class="characters-img" alt="Rick" id="rickImage">
-        <img src="assets/images/dog.png" class="characters-img" alt="Dog" id="dogImage">
-
-    $("#choices-container").html(`<button class="btn btn-start-story">Start The Story</button>`);
-
         <div id="popupModal" class="modal">
             <div class="modal-content">
                 <span class="close"></span>
                 <p id="modalContent"></p>
             </div>
         </div>
-    `);
+        <img src="assets/images/aurora.png" class="characters-img" alt="Aurora">
+        <img src="assets/images/rick.png" class="characters-img" alt="Rick">
+        <img src="assets/images/dog.png" class="characters-img" alt="Dog">
+        `);
+
+    $("#choices-container").html(`<button class="btn btn-start-story">Start The Story</button>`);
+};
 
 // Pop-Up's on images
 $('.characters-img').click(function() {
@@ -76,5 +73,9 @@ $('.characters-img').click(function() {
     $('#modalContent').text(description);
     $('#popupModal').fadeIn();
 });
+// Pop-Up's closing
+$('.close').click(function() {
+    $('#popupModal').fadeOut();
+});
 // Chapter 1
-}});
+
