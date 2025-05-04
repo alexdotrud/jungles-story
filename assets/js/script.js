@@ -7,7 +7,7 @@ const choicesContainer = document.querySelector("#choices-container");
 const text = document.querySelector("#story-container");
 
 // Dog Bark
-const dogBark = new audio(assets/audio/bark-MediaSourceHandle.mp3)
+const dogBark = new Audio("assets/audio/bark-sound.mp3");
 
 // Typing Effect
 function typeWriter(element, text, speed = 50, callback) {
@@ -26,17 +26,20 @@ function typeWriter(element, text, speed = 50, callback) {
 }
 
 // Fetch Story Data
-let data = null;
+let storyData = null;
 fetch("assets/js/story.json")
 .then(response => response.json())
-.then(data => console.log(data))
-.catch(error => console.log("Error fetching JSON:" error));
+.then(data => {
+storyData = data;
+showCharacters();
+}); 
 
 
 $(document).ready(function() {
 //  Meeting Characters Chapter
 function showCharacters() {
-    $(".story-heading").text("Meet the Explorers");
+    const data = storyDate.characters;
+    $(".story-heading").text(data.heading);
 
     $(".intro").hide();
     $(".btn-intro").hide();
