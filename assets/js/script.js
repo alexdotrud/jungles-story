@@ -36,8 +36,19 @@ gameSteps();
 
 // Game Steps
 function gameSteps() {
-$(document).on("click", ".meet-characters", showCharacters);
-$(document).on("click", ".start-story", showChapter1);
+    $(document).on("click", ".meet-characters", showCharacters);
+    $(document).on("click", ".start-story", showChapter1);
+    $(document).on("click", ".btn-choice", showChapter2 {
+    let index;
+    if($(this).hasClass("1")) {
+        index = 0;
+    } else if($(this).hasClass("2")) {
+        index = 1;
+    } else if($(this).hasClass("3")) {
+        index = 2;
+}
+    showChapter2(index);
+});
 };
 
 //  Meeting Characters Chapter
@@ -88,22 +99,16 @@ $("#popupModal").click(function() {
 function generateChoices(data) {
     let html = `<p>${data["choices-question"]}</p>`;
     for (let i = 0; i < data.choices.length; i++) {
-    html += `<button class="btn btn-choice" title="Every choice can change the story..."> ${data.choices[i].choice} </button> `;
+    html += `<button class="btn btn-choice ${i + 1}" title="Every choice can change the story..."> ${data.choices[i].choice} </button> `;
     }
     return html;
-}  
+};
 
-// Continuation Generator
-function generateContinuation(data) {
-    for (let i = 0, i < data.story.length, i++) {
-        text += `${data.stories[i].story}`;
-    }
-}
 
 // Chapter 1
 function showChapter1() {
     const data = storyData.chapter1;
-    $(".story-heading").text(data.story-heading);
+    $(".story-heading").text(data.heading);
     $("#pictures-container").hide();
     $(".intro").text(data.story);
     $(".start-story").hide();
@@ -111,11 +116,11 @@ function showChapter1() {
 }
 
 // Chapter 2
-function showChapter1() {
+function showChapter2(index) {
     const data = storyData.chapter2;
-    $(".story-heading").text(data.story-heading);
+    $(".story-heading").text(data.heading);
     $("#pictures-container").hide();
-    $(".intro").text(data.story);
+    $(".intro").text(data.story[index].story);
     $(".start-story").hide();
-    $("#choices-container").html(<button class="btn cnt-btn">Continue...</button>);
+    $("#choices-container").html(`<button class="btn cnt-btn">Continue...</button>`);
 }

@@ -9,9 +9,14 @@
         ]
     },
 
+    "buttons" : [
+        "<button class='choice-button'></button>",
+        "<button class='choice-button'></button>",
+        "<button class='choice-button'></button>"
+],
 
     "chapter1" : {
-        "story-heading" : "Chapter 1",
+        "heading" : "Chapter 1",
         "story" : "The jungle hums with life — birds call through the trees, insects buzz unseen, and a soft breeze carries something strange… like a whisper. Aurora pushes aside a curtain of thick vines. She’s brave, curious, and always ready for a new mystery. Today, the mystery is deeper than ever. Behind her is Rick, her best friend — quick-witted, a little sarcastic, but always dependable. He checks their map, eyes locked on the strange swirling symbol marked in faded ink. Dog trots ahead, tail wagging. He’s loyal, smart, and has a nose for hidden things. Right now, that nose is pulling him toward something just out of sight. Aurora: “Alright team… let’s find out what the jungle is trying to tell us.” They reach a small clearing. Three paths lie ahead, each calling to them in a different way.",
         "choices-question" : "What should the team do first?",
         "choices" : [
@@ -22,10 +27,11 @@
 },
 
     "chapter2" : {
-        "story-heading" :"Chapter 2",
-        "stories" : [
+        "heading" :"Chapter 2",
+        "story" : [
             {"story" : "The tunnel of vines tightens and Dog’s low growl fills the air. In a shaded clearing, Aurora spots a stone tablet carved with the glowing swirl. When she presses the symbol, it pulses with light, and Dog’s bark echoes as nearby vines part, unveiling a hidden trail. Aurora: “The jungle just answered us.” They step onto the newly revealed path and face an ancient stone arch etched with the same swirl. A distant whisper hums in their minds, as though the jungle itself speaks to them. Aurora: “We’re not alone.”"},
             {"story" : "From their lookout, they hack through thick undergrowth to reach a mossy grove. There, a flat stone bears the same luminescent swirl. As Aurora places her hand on the carving, a soft hum rises, and Dog’s excited bark signals vines sliding aside to reveal the way forward. Rick: “Something’s guiding us.”They step onto the newly revealed path and face an ancient stone arch etched with the same swirl. A distant whisper hums in their minds, as though the jungle itself speaks to them Aurora: “We’re not alone.”"},
             {"story" : "Dog leads them past dangling moss into a narrow cave mouth. Inside, a pedestal holds the glowing swirl on a weathered tablet. Dog’s curious paw press causes the symbol to flare, and with a triumphant bark, vines glide away to open a secret passage. Rick: “Dog’s got this figured out.” They step onto the newly revealed path and face an ancient stone arch etched with the same swirl. A distant whisper hums in their minds, as though the jungle itself speaks to them. Aurora: “We’re not alone.”"}
-        ],
+        ]
+    }
 }
