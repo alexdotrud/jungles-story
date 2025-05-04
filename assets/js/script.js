@@ -88,7 +88,7 @@ $("#popupModal").click(function() {
 function generateChoices(data) {
     let html = `<p>${data["choices-question"]}</p>`;
     for (let i = 0; i < data.choices.length; i++) {
-    html += `<button class="btn btn-choice"> ${data.choices[i].choice} </button>`;
+    html += `<button class="btn btn-choice" title="Every choice can change the story..."> ${data.choices[i].choice} </button> `;
     }
     return html;
 }  
@@ -96,12 +96,11 @@ function generateChoices(data) {
 // Chapter 1
 function showChapter1() {
     const data = storyData.chapter1;
-    $(".story-heading").hide();
+    $(".story-heading").text("Chapter 1");
     $("#pictures-container").hide();
     $(".intro").text(data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
-
-
 }
 
+// Pop-Up on Buttons
