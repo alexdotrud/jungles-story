@@ -38,8 +38,8 @@ gameSteps();
 function gameSteps() {
     $(document).on("click", ".meet-characters", showCharacters);
     $(document).on("click", ".start-story", showChapter1);
-    $(document).on("click", ".btn-choice", showChapter2 {
-    let index;
+    $(document).on("click", ".btn-choice", function() {
+    let index = 0;
     if($(this).hasClass("1")) {
         index = 0;
     } else if($(this).hasClass("2")) {

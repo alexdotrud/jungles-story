@@ -37,7 +37,8 @@ main {
 }
 
 p {
-    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 h1, h2 {
@@ -54,7 +55,6 @@ h1, h2 {
     margin-top: 1.5rem;
     display: block; 
     padding:8rem 3rem;
-
 }
 
 #story-container {
@@ -106,6 +106,7 @@ h1, h2 {
     background-color: var(--secondary-color);
     font-family: var(--secondary-font);
     padding: 0.5rem 1rem;
+    margin-top: 1rem;
 }
 
 .btn:hover {
