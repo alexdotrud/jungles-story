@@ -93,14 +93,29 @@ function generateChoices(data) {
     return html;
 }  
 
+// Continuation Generator
+function generateContinuation(data) {
+    for (let i = 0, i < data.story.length, i++) {
+        text += `${data.stories[i].story}`;
+    }
+}
+
 // Chapter 1
 function showChapter1() {
     const data = storyData.chapter1;
-    $(".story-heading").text("Chapter 1");
+    $(".story-heading").text(data.story-heading);
     $("#pictures-container").hide();
     $(".intro").text(data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
 }
 
-// Pop-Up on Buttons
+// Chapter 2
+function showChapter1() {
+    const data = storyData.chapter2;
+    $(".story-heading").text(data.story-heading);
+    $("#pictures-container").hide();
+    $(".intro").text(data.story);
+    $(".start-story").hide();
+    $("#choices-container").html(<button class="btn cnt-btn">Continue...</button>);
+}
