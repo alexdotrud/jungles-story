@@ -58,6 +58,4 @@ $('.characters-img').click(function() {
     $('#popupModal').fadeIn();
 });
 // Chapter 1
-
-
-});
+}});

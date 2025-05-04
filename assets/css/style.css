@@ -145,6 +145,7 @@ h1, h2 {
 .nav-container {
     margin: 0 5rem;
 }
+
 #main-container {
     width: 80%;
     height: auto;
@@ -161,6 +162,7 @@ h1, h2 {
     padding:3rem 3rem;
     margin: 2rem auto;
 }
+
 #story-container {
     padding: 3rem;
 }
@@ -183,7 +185,6 @@ h1, h2 {
         padding:3rem 3rem;
         margin: 2rem auto;
     }
-}
 
 #story-container {
     max-width: 800px;
@@ -192,7 +193,8 @@ h1, h2 {
 
 #pictures-container {
     gap: 5rem;
-} to inp
+}
+}
 
 @media screen and (min-width:1200px) {
 
