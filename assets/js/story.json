@@ -9,8 +9,8 @@
         ]
     },
 
-    "chapter" : {
-        "story" : "The air is thick with the scent of wet leaves and wild flowers. Aurora pushes aside a curtain of vines, revealing the start of a narrow, hidden path. Rick steps up beside her, holding a small map, while Dog sniffs the ground with excitement. The jungle hums all around them — birds singing, insects buzzing, and the wind whispering through the trees.",
+    "chapter1" : {
+        "story" : "The jungle hums with life — birds call through the trees, insects buzz unseen, and a soft breeze carries something strange… like a whisper. Aurora pushes aside a curtain of thick vines. She’s brave, curious, and always ready for a new mystery. Today, the mystery is deeper than ever. Behind her is Rick, her best friend — quick-witted, a little sarcastic, but always dependable. He checks their map, eyes locked on the strange swirling symbol marked in faded ink. Dog trots ahead, tail wagging. He’s loyal, smart, and has a nose for hidden things. Right now, that nose is pulling him toward something just out of sight. Aurora: “Alright team… let’s find out what the jungle is trying to tell us.” They reach a small clearing. Three paths lie ahead, each calling to them in a different way.",
         "choices-question" : "What should the team do first?",
         "choices" : [
         {"choice": "Follow the path deeper into the jungle"},

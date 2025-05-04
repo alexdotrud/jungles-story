@@ -35,9 +35,9 @@ gameSteps();
 }); 
 
 // Game Steps
-function gameSteps()  {
-$(".meet-characters").click(showCharacters);
-$(".btn-start-story").click(showChapter1);
+function gameSteps() {
+$(document).on("click", ".meet-characters", showCharacters);
+$(document).on("click", ".start-story", showChapter1);
 };
 
 //  Meeting Characters Chapter
@@ -60,7 +60,7 @@ function showCharacters() {
         <img src="assets/images/dog.png" class="characters-img" alt="Dog">
         `);
 
-    $("#choices-container").html(`<button class="btn btn-start-story">Start The Story</button>`);
+    $("#choices-container").html(`<button class="btn start-story">Start The Story</button>`);
 
 // Pop-Up's on images
 $(".characters-img").click(function() {
@@ -85,23 +85,22 @@ $("#popupModal").click(function() {
 };
 
 // Choices Generator 
-function generateChoices {
-    let data = storyData;
-    let html = `<p>${data[choices-question]}</p>`;
-    for (let i = 0; i < choice.length; i++) {
-    html += "<button class="btn-choice"> +choices.choice </button>";
+function generateChoices(data) {
+    let html = `<p>${data["choices-question"]}</p>`;
+    for (let i = 0; i < data.choices.length; i++) {
+    html += `<button class="btn btn-choice"> ${data.choices[i].choice} </button>`;
+    }
+    return html;
 }  
 
-}
 // Chapter 1
 function showChapter1() {
     const data = storyData.chapter1;
     $(".story-heading").hide();
     $("#pictures-container").hide();
     $(".intro").text(data.story);
-    $(".btn-intro").text("Continue...");
-    $("#choices-container").html(`<p>data.choices-question</p>
-        data.buttons`)
+    $(".start-story").hide();
+    $("#choices-container").html(generateChoices(data));
 
 
 }
