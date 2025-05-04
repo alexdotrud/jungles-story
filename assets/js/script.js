@@ -31,14 +31,21 @@ fetch("assets/js/story.json")
 .then(response => response.json())
 .then(data => {
 storyData = data;
-showCharacters();
+gameSteps();
 }); 
 
+// Game Steps
+function gameSteps() {
+if ($(".story-heading").text() === "Welcome to Jungle of Whispers!") {
+$(".meet-characters").click(showCharacters);
+};
+};
 
-$(document).ready(function() {
 //  Meeting Characters Chapter
+$(document).ready(function() {
 function showCharacters() {
     const data = storyDate.characters;
+
     $(".story-heading").text(data.heading);
 
     $(".intro").hide();
@@ -49,15 +56,16 @@ function showCharacters() {
         <img src="assets/images/rick.png" class="characters-img" alt="Rick" id="rickImage">
         <img src="assets/images/dog.png" class="characters-img" alt="Dog" id="dogImage">
 
+    $("#choices-container").html(`<button class="btn btn-start-story">Start The Story</button>`);
+
         <div id="popupModal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <p id="modalContent">Here is your message or content!</p>
+                <span class="close"></span>
+                <p id="modalContent"></p>
             </div>
         </div>
     `);
 
-    $("#choices-container").html(`<button class="btn btn-start-story">Start The Story</button>`);
 // Pop-Up's on images
 $('.characters-img').click(function() {
     const description = $(this).data('description');
