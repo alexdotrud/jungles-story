@@ -31,6 +31,7 @@ fetch("assets/js/story.json")
 .then(response => response.json())
 .then(data => {
 storyData = data;
+mainPage();
 gameSteps();
 }); 
 
@@ -76,9 +77,9 @@ function restartGame() {
     </dialog>`);
     const value = $(this).val();
     if (value === "yes") {
-        window.location.href = "index.html";
+        mainPage();
     } else if (value === "no") {
-
+    $(dialog).remove();
     }
     };
 
@@ -124,6 +125,14 @@ function gameSteps() {
     $(document).on("click", ".btn-restart", restartGame);
 };
 
+// Main Page
+function mainPage() {
+    const data = storyData.main;
+    $(".story-heading").text(data.heading);
+    $(".intro").html(data.intro);
+    $("#choices-container").html(` <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
+};
+
 //  Meeting Characters Chapter
 function showCharacters() {
     const data = storyData.characters;
@@ -131,7 +140,6 @@ function showCharacters() {
     $(".story-heading").text(data.heading);
 
     $(".intro").text(data.intro);
-    $(".btn-intro").hide();
 
     $("#pictures-container").html(`
         <div id="popupModal" class="modal">
