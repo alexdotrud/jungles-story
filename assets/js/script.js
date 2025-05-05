@@ -130,6 +130,7 @@ function gameSteps() {
 // Main Page
 function mainPage() {
     const data = storyData.main;
+
     $(".story-heading").text(data.heading);
     $(".intro").html(data.intro);
     $("#choices-container").html(` <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
@@ -141,9 +142,8 @@ function showCharacters() {
     const data = storyData.characters;
 
     $(".story-heading").text(data.heading);
-
     $(".intro").text(data.intro);
-
+    $("#pictures-container").show();
     $("#pictures-container").html(`
         <div id="popupModal" class="modal">
             <div class="modal-content">
