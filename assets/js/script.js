@@ -68,19 +68,21 @@ function generateChoices(data) {
 // Restart Button
 function restartGame() {
     $(".dialogue").html(`
-    <dialog open>
+    <dialog id="restart" open>
     <p>Are you sure you want to restart the Game?</p>
     <form method="dialog">
-    <button value="yes">OK</button>
-    <button value="no">NO</button>
+    <button class="ok-no" value="yes">OK</button>
+    <button class="ok-no" value="no">NO</button>
     </form>
     </dialog>`);
-    const value = $(this).val();
-    if (value === "yes") {
-        mainPage();
-    } else if (value === "no") {
-    $(dialog).remove();
-    }
+    $(".ok-no").click(function() {
+        const buttonValue = $(this).val();
+        if (buttonValue === "yes") {
+            mainPage();
+        } else  {
+        $(".dialogue").close();
+        };
+    })
     };
 
 // Game Steps
@@ -131,6 +133,7 @@ function mainPage() {
     $(".story-heading").text(data.heading);
     $(".intro").html(data.intro);
     $("#choices-container").html(` <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
+    $("#pictures-container").hide();
 };
 
 //  Meeting Characters Chapter
