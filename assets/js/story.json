@@ -52,7 +52,7 @@
             {"story" : "Aurora pats Dog and says,<em> “Go explore, boy!”</em> <br><br> Dog happily trots around the room, tail wagging. He sniffs every corner and looks behind a few broken stones. Then, near the wall, he finds a small stone tile with the swirl symbol on it and brings it back to Aurora.<br><br> Aurora:<em> “You found something!”</em> <br><br> Rick:<em> “Nice work, Dog. You might lead us to the treasure before we do.”</em> <br><br> She pets him, and he lets out a cheerful bark. The sound echoes gently through the temple. The glowing swirl on the platform shines a little brighter, as if the temple is happy too. The three of them meet again in the center of the room. They don’t know what’s coming next, but the temple doesn’t feel scary. It feels special. The Eye of Life must be close."}
         ]
     },
-    "chapter3" : {
+    "chapter4" : {
         "heading" :"Chapter 5",
         "story" : "The glowing swirl on the platform pulses softly. Then, with a gentle rumble, a round stone opens in the floor. A spiral staircase reveals itself, lit by a warm golden glow. A gentle breeze rises from below. It smells like earth, water, and something… magical. <br><br>Aurora:<em> “This is it. The path to the Eye.”</em> <br><br> Rick:<em> “One more step into the unknown.”</em> <br><br> But before they go down, something draws their attention to the room around them.But just as they prepare to descend, something catches their attention—a strange pull in the air around them. The room seems to shift slightly, as though it holds secrets waiting to be discovered. <br><br>Aurora looks around, her instincts telling her to be cautious.<em> “Wait, Rick, before we go… let’s make sure we haven’t missed anything.”</em>",
         "choices-question" : "What should they do before heading downstairs?",
@@ -61,6 +61,6 @@
         {"choice": "Search the corners of the room"},
         {"choice": "Look up at the ceiling for hidden clues"}
         ]
-    },
+    }
 
 }
