@@ -57,8 +57,8 @@ function gameSteps() {
     }
 });
     $(document).on("click", ".cnt-btn", showChapter3);
-    $(document).on("click", ".cnt-btn", showChapter5);
-    $(documents).on("click", ".cnt-btn", showChapter7);
+    $(document).on("click", ".cnt-btn2", showChapter5);
+    $(document).on("click", ".cnt-btn3", showChapter7);
     $(document).on("click", ".btn-choice", function() {
         const chapter = $(".story-heading").text();
         let index = 0;
@@ -137,7 +137,7 @@ function showChapter1() {
     $(".intro").html(data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
-}
+};
 
 // Chapter 2
 function showChapter2(index) {
@@ -147,7 +147,7 @@ function showChapter2(index) {
     $(".intro").html(data.story[index].story);
     $(".start-story").hide();
     $("#choices-container").html(`<button class="btn cnt-btn">Continue...</button>`);
-}
+};
 
 // Chapter 3
 function showChapter3() {
@@ -157,7 +157,7 @@ function showChapter3() {
     $(".intro").html(data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
-}
+};
 
 //Chapter 4 
 function showChapter4(index) {
@@ -167,7 +167,7 @@ function showChapter4(index) {
     $(".intro").html(data.story[index].story);
     $(".start-story").hide();
     $("#choices-container").html(`<button class="btn cnt-btn2">Continue...</button>`);
-}
+};
 
 // Chapter 5
 function showChapter5() {
@@ -177,7 +177,7 @@ function showChapter5() {
     $(".intro").html(data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
-}
+};
 
 // Chapter 6
 function showChapter6(index) {
@@ -186,8 +186,8 @@ function showChapter6(index) {
     $("#pictures-container").hide();
     $(".intro").html(data.story[index].story);
     $(".start-story").hide();
-    $("#choices-container").html(`<button class="btn cnt-btn2">Continue...</button>`);
-}
+    $("#choices-container").html(`<button class="btn cnt-btn3">Continue...</button>`);
+};
 
 //Chapter 7
 function showChapter7() {
@@ -197,4 +197,14 @@ function showChapter7() {
     $(".intro").html(data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
-}
+};
+
+// Chapter 8
+function showChapter8(index) {
+    const data = storyData.chapter8;
+    $(".story-heading").text(data.heading);
+    $("#pictures-container").hide();
+    $(".intro").html(data.story[index].story);
+    $(".start-story").hide();
+    $("#choices-container").html(`<button class="btn cnt-btn3">The End</button>`);
+};
