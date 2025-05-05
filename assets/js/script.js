@@ -58,6 +58,21 @@ function gameSteps() {
 });
     $(document).on("click", ".cnt-btn", showChapter3);
     $(document).on("click", ".cnt-btn", showChapter5);
+    $(documents).on("click", ".cnt-btn", showChapter7);
+    $(document).on("click", ".btn-choice", function() {
+        const chapter = $(".story-heading").text();
+        let index = 0;
+    if($(this).hasClass("1")) {
+        index = 0;
+    } else if($(this).hasClass("2")) {
+        index = 1;
+    } else if($(this).hasClass("3")) {
+        index = 0;
+    }
+    if (chapter === "Chapter 7") {
+    showChapter8(index);
+    };
+});
 };
 
 //  Meeting Characters Chapter
@@ -172,4 +187,14 @@ function showChapter6(index) {
     $(".intro").html(data.story[index].story);
     $(".start-story").hide();
     $("#choices-container").html(`<button class="btn cnt-btn2">Continue...</button>`);
+}
+
+//Chapter 7
+function showChapter7() {
+    const data = storyData.chapter7;
+    $(".story-heading").text(data.heading);
+    $("#pictures-container").hide();
+    $(".intro").html(data.story);
+    $(".start-story").hide();
+    $("#choices-container").html(generateChoices(data));
 }
