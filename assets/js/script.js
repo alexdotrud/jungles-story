@@ -52,6 +52,8 @@ function gameSteps() {
     showChapter2(index);
     } else if (chapter === "Chapter 3") { 
     showChapter4(index); 
+    } else if (chapter === "Chapter 5") {
+        showChapter6(index);
     }
 });
     $(document).on("click", ".cnt-btn", showChapter3);
@@ -160,4 +162,14 @@ function showChapter5() {
     $(".intro").html(data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
+}
+
+// Chapter 6
+function showChapter6(index) {
+    const data = storyData.chapter6;
+    $(".story-heading").text(data.heading);
+    $("#pictures-container").hide();
+    $(".intro").html(data.story[index].story);
+    $(".start-story").hide();
+    $("#choices-container").html(`<button class="btn cnt-btn2">Continue...</button>`);
 }
