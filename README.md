@@ -6,3 +6,7 @@ https://imageresizer.com/
 https://www.youtube.com/watch?v=MiTJnYHX3iA -tutorial for typewritter effect
 https://www.youtube.com/watch?v=r_PL0K2fGkY - pop up tutorial
 https://expertbeacon.com/how-to-read-a-json-file-in-javascript-reading-json-in-js/ - how to manage json files
+
+
+Bugs: 
+After adding restart button amd mainPage function - pictures from meetCharacters dissapeared.
