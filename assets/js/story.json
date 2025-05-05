@@ -33,5 +33,15 @@
             {"story" : "From a rocky outcrop, they scanned the dense green below. Rick pointed toward a grove veiled in mist. Hacking through ferns and thorns, they reached it—silent, glowing faintly. In the center, a flat stone bore the radiant swirl. Aurora knelt and touched it gently. A soft hum rose, steady and warm. Dog barked twice, leapt to the left, and vines slithered apart as though obeying a command. A passageway emerged. <br><br> Rick:<em> “Something’s guiding us.”</em> <br><br> With growing awe, they followed the opening through the trees until they halted at the foot of a towering stone arch. The swirl reappeared—bold and ancient. Then came the sound: a murmur, just on the edge of language, curling through their thoughts like a forgotten dream. <br> Aurora:<em> “We’re not alone.” </em>"},
             {"story" : "Dog’s ears twitched and he darted ahead, tail high. He led them past swaying moss curtains into a shadowed crevice—barely a cave. Inside, dust danced in beams of light slicing through cracks in the rock. In the center stood a small pedestal with a timeworn tablet etched with the swirl. Dog, curious as ever, pawed at it. The symbol burst with light, bathing the cave in gold Aurora gasped. At the far wall, vines untwined and slid apart as if moved by invisible hands. <br><br> Rick:<em> “Dog’s got this figured out.”</em> <br><br> As they emerged, they found a wide, ancient path that led to a stone arch carved with the now-familiar swirl. The jungle fell silent. Then, a breathless whisper stirred deep in their minds—chilling, wordless, aware. <br><br> Aurora:<em> “We’re not alone.”</em>"}
         ]
+    },
+    "chapter3" : {
+        "heading" :"Chapter 3",
+        "story" : "Aurora, Rick, and Dog pass through the glowing arch. The whisper fades, and they find themselves at the top of a quiet staircase. The air is cooler now. Something exciting is waiting below.The team walks carefully down the stone stairs. Each step echoes in the still air. At the bottom, they enter a big room lit by soft glowing lights on the walls. Old drawings and symbols cover the stone. In the middle of the room stands a small platform with three levers. Above it, a swirl symbol glows gently.",
+        "choices-question" : "What will the team explore first?",
+        "choices" : [
+        {"choice": "Symbools on the walls"},
+        {"choice": "Platform and the levers"},
+        {"choice": "Let Dog explore the room"}
+        ]
     }
 }
