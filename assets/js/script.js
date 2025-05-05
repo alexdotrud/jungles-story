@@ -34,6 +34,54 @@ storyData = data;
 gameSteps();
 }); 
 
+// Pop-Up's on images
+$(".characters-img").click(function() {
+    let description;
+    const alt = $(this).attr("alt");
+    if (alt === "Aurora") {
+        description = storyData.characters.images[0].description;
+    } else if (alt === "Rick") {
+        description = storyData.characters.images[1].description;
+    } else if (alt === "Dog") {
+        description = storyData.characters.images[2].description;
+        dogBark.play();
+    }
+    $('#modalContent').text(description);
+    $('#popupModal').fadeIn();
+});
+
+// Pop-Up's closing
+$("#popupModal").click(function() {
+    $("#popupModal").fadeOut();
+});
+
+// Choices Generator 
+function generateChoices(data) {
+    let html = `<p>${data["choices-question"]}</p>`;
+    for (let i = 0; i < data.choices.length; i++) {
+    html += `<button class="btn btn-choice  ${i + 1}" title="Every choice can change the story..."> ${data.choices[i].choice} </button> `;
+    }
+    return html;
+};
+
+// Restart Button
+function restartGame() {
+    $(".dialogue").html(`
+    <dialog open>
+    <p>Are you sure you want to restart the Game?</p>
+    <form method="dialog">
+    <button value="yes">OK</button>
+    <button value="no">NO</button>
+    </form>
+    </dialog>`);
+    const value = $(this).val();
+    if (value === "yes") {
+        window.location.href = "index.html";
+    } else if (value === "no") {
+
+    }
+    };
+
 // Game Steps
 function gameSteps() {
     $(document).on("click", ".meet-characters", showCharacters);
@@ -73,6 +121,7 @@ function gameSteps() {
     showChapter8(index);
     };
 });
+    $(document).on("click", ".btn-restart", restartGame);
 };
 
 //  Meeting Characters Chapter
@@ -96,38 +145,7 @@ function showCharacters() {
         `);
 
     $("#choices-container").html(`<button class="btn start-story">Start The Story</button>`);
-
-// Pop-Up's on images
-$(".characters-img").click(function() {
-    let description;
-    const alt = $(this).attr("alt");
-    if (alt === "Aurora") {
-        description = storyData.characters.images[0].description;
-    } else if (alt === "Rick") {
-        description = storyData.characters.images[1].description;
-    } else if (alt === "Dog") {
-        description = storyData.characters.images[2].description;
-        dogBark.play();
-    }
-    $('#modalContent').text(description);
-    $('#popupModal').fadeIn();
-});
-
-// Pop-Up's closing
-$("#popupModal").click(function() {
-    $("#popupModal").fadeOut();
-});
 };
-
-// Choices Generator 
-function generateChoices(data) {
-    let html = `<p>${data["choices-question"]}</p>`;
-    for (let i = 0; i < data.choices.length; i++) {
-    html += `<button class="btn btn-choice  ${i + 1}" title="Every choice can change the story..."> ${data.choices[i].choice} </button> `;
-    }
-    return html;
-};
-
 
 // Chapter 1
 function showChapter1() {
