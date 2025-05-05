@@ -39,17 +39,22 @@ function gameSteps() {
     $(document).on("click", ".meet-characters", showCharacters);
     $(document).on("click", ".start-story", showChapter1);
     $(document).on("click", ".btn-choice", function() {
-    let index = 0;
+        const chapter = $(".story-heading").text();
+        let index = 0;
     if($(this).hasClass("1")) {
         index = 0;
     } else if($(this).hasClass("2")) {
         index = 1;
     } else if($(this).hasClass("3")) {
         index = 2;
-}
+    }
+    if (chapter === "Chapter 1") {
     showChapter2(index);
+    } else if (chapter === "Chapter 3") { 
+    showChapter4(index); 
+    }
 });
-$(document).on("click", ".cnt-btn", showChapter3);
+    $(document).on("click", ".cnt-btn", showChapter3);
 };
 
 //  Meeting Characters Chapter
@@ -100,7 +105,7 @@ $("#popupModal").click(function() {
 function generateChoices(data) {
     let html = `<p>${data["choices-question"]}</p>`;
     for (let i = 0; i < data.choices.length; i++) {
-    html += `<button class="btn btn-choice ${i + 1}" title="Every choice can change the story..."> ${data.choices[i].choice} </button> `;
+    html += `<button class="btn btn-choice  ${i + 1}" title="Every choice can change the story..."> ${data.choices[i].choice} </button> `;
     }
     return html;
 };
@@ -134,4 +139,14 @@ function showChapter3() {
     $(".intro").html(data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
+}
+
+//Chapter 4 
+function showChapter4(index) {
+    const data = storyData.chapter4;
+    $(".story-heading").text(data.heading);
+    $("#pictures-container").hide();
+    $(".intro").html(data.story[index].story);
+    $(".start-story").hide();
+    $("#choices-container").html(`<button class="btn cnt-btn2">Continue...</button>`);
 }
