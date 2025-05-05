@@ -55,6 +55,7 @@ function gameSteps() {
     }
 });
     $(document).on("click", ".cnt-btn", showChapter3);
+    $(document).on("click", ".cnt-btn", showChapter5);
 };
 
 //  Meeting Characters Chapter
@@ -149,4 +150,14 @@ function showChapter4(index) {
     $(".intro").html(data.story[index].story);
     $(".start-story").hide();
     $("#choices-container").html(`<button class="btn cnt-btn2">Continue...</button>`);
+}
+
+// Chapter 5
+function showChapter5() {
+    const data = storyData.chapter5;
+    $(".story-heading").text(data.heading);
+    $("#pictures-container").hide();
+    $(".intro").html(data.story);
+    $(".start-story").hide();
+    $("#choices-container").html(generateChoices(data));
 }

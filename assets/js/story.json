@@ -52,15 +52,23 @@
             {"story" : "Aurora pats Dog and says,<em> “Go explore, boy!”</em> <br><br> Dog happily trots around the room, tail wagging. He sniffs every corner and looks behind a few broken stones. Then, near the wall, he finds a small stone tile with the swirl symbol on it and brings it back to Aurora.<br><br> Aurora:<em> “You found something!”</em> <br><br> Rick:<em> “Nice work, Dog. You might lead us to the treasure before we do.”</em> <br><br> She pets him, and he lets out a cheerful bark. The sound echoes gently through the temple. The glowing swirl on the platform shines a little brighter, as if the temple is happy too. The three of them meet again in the center of the room. They don’t know what’s coming next, but the temple doesn’t feel scary. It feels special. The Eye of Life must be close."}
         ]
     },
-    "chapter4" : {
+    "chapter5" : {
         "heading" :"Chapter 5",
-        "story" : "The glowing swirl on the platform pulses softly. Then, with a gentle rumble, a round stone opens in the floor. A spiral staircase reveals itself, lit by a warm golden glow. A gentle breeze rises from below. It smells like earth, water, and something… magical. <br><br>Aurora:<em> “This is it. The path to the Eye.”</em> <br><br> Rick:<em> “One more step into the unknown.”</em> <br><br> But before they go down, something draws their attention to the room around them.But just as they prepare to descend, something catches their attention—a strange pull in the air around them. The room seems to shift slightly, as though it holds secrets waiting to be discovered. <br><br>Aurora looks around, her instincts telling her to be cautious.<em> “Wait, Rick, before we go… let’s make sure we haven’t missed anything.”</em>",
+        "story" : "The glowing swirl on the platform pulses softly. Then, with a gentle rumble, a round stone opens in the floor. A spiral staircase reveals itself, lit by a warm golden glow. A gentle breeze rises from below. It smells like earth, water, and something… magical.<br><br> Rick:<em> “One more step into the unknown.”</em> <br><br> But before they go down, something draws their attention to the room around them.But just as they prepare to descend, something catches their attention—a strange pull in the air around them. The room seems to shift slightly, as though it holds secrets waiting to be discovered. <br><br>Aurora looks around, her instincts telling her to be cautious.<em> “Wait, Rick, before we go… let’s make sure we haven’t missed anything.”</em>",
         "choices-question" : "What should they do before heading downstairs?",
         "choices" : [
         {"choice": "Examine the glowing swirl one last time"},
         {"choice": "Search the corners of the room"},
         {"choice": "Look up at the ceiling for hidden clues"}
         ]
-    }
+    },
+    "chapter6" : {
+        "heading" :"Chapter 6",
+        "story" : [
+            {"story" : "Aurora touches the glowing symbol. It pulses gently under her fingers. A calm energy fills the room. The symbol seems to whisper without words—almost like it’s wishing them luck. <br><br>Rick:<em> “Whatever made this place… it’s watching.”</em> <br><br> They step back, feeling braver than before, and begin walking down the stairs.At the bottom, the light grows stronger. A wide chamber opens up, and in the middle floats the Eye of Life—a glowing gem full of mystery and power. They’ve almost reached the end of their journey."},
+            {"story" : "Rick checks behind a few old stones and finds something shiny—an old compass! It still works and points toward the staircase. <br><br>Rick:<em> “Looks like someone left this behind.”</em> <br><br> Aurora:<em> “Maybe we’re not the first explorers here.”</em> <br><br> They tuck it into the bag and head for the stairs, curiosity burning brighter than ever. At the bottom, the light grows stronger. A wide chamber opens up, and in the middle floats the Eye of Life—a glowing gem full of mystery and power. They’ve almost reached the end of their journey."},
+            {"story" : "Aurora shines her light upward. Beautiful carvings cover the ceiling—stars, rivers, and jungle trees. In the center is a symbol of three travelers and a glowing eye.<br><br> Rick:<em> “That’s us… kind of.”</em> <br><br> Aurora:<em> “I think we’re meant to be here.”</em> <br><br> They smile at each other and take their first step down the glowing stairs. At the bottom, the light grows stronger. A wide chamber opens up, and in the middle floats the Eye of Life—a glowing gem full of mystery and power. They’ve almost reached the end of their journey."}
+        ]
+    },
 
 }
