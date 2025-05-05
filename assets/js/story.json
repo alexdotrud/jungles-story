@@ -70,5 +70,22 @@
             {"story" : "Aurora shines her light upward. Beautiful carvings cover the ceiling—stars, rivers, and jungle trees. In the center is a symbol of three travelers and a glowing eye.<br><br> Rick:<em> “That’s us… kind of.”</em> <br><br> Aurora:<em> “I think we’re meant to be here.”</em> <br><br> They smile at each other and take their first step down the glowing stairs. At the bottom, the light grows stronger. A wide chamber opens up, and in the middle floats the Eye of Life—a glowing gem full of mystery and power. They’ve almost reached the end of their journey."}
         ]
     },
+    "chapter7" : {
+        "heading" :"Chapter 7",
+        "story" : "Aurora, Rick, and Dog step into the glowing chamber. The air is warm, filled with soft light and a quiet hum that feels like music. In the center of the room, floating just above a smooth stone pedestal, is the Eye of Life. It’s more beautiful than they imagined — a glowing crystal that shines in colors that shift like water, like light, like dreams. They walk slowly toward it, their footsteps quiet. Dog sniffs the air and wags his tail gently.<br<br> Rick leans close and whispers, Rick:<em> “We really found it.”</em> <br><br> Aurora places her hand near the Eye. It doesn’t feel cold or hot — it feels alive. Like the jungle itself is breathing with them. As she touches it, the room begins to change. The carvings on the walls light up, one by one. The glow rises toward the ceiling, like starlight climbing vines. Then — a soft sound, like wind in trees — and the Eye gently floats down into her hands. Before they can leave, a quiet voice seems to rise from the Eye itself — not words, but feelings.",
+        "choices-question" : "What should Aurora do?",
+        "choices" : [
+        {"choice": "Protect the Eye and leave it hidden in the temple"},
+        {"choice": "Take the Eye home to study and share its magic with the world"},
+        {"choice": "Ask the Eye what it wants"}
+        ]
+    },
+    "chapter8" : {
+        "heading" :"Chapter 8",
+        "story" : [
+            {"story" : "Aurora pauses, then chooses to leave the Eye behind. Whether guided by instinct or by the Eye itself, she places it gently back on the pedestal. The glow softens. The carvings on the walls dim, one by one, until the room returns to calm. Rick takes a deep breath. “It belongs here.” They turn back, stepping into the sunlight. Behind them, the temple quietly seals itself, as if grateful. The Eye remains where it was meant to be — hidden, protected, and in harmony with the jungle."},
+            {"story" : "Aurora holds the Eye tightly. “This could help so many people,” she says. They return home. The Eye becomes a global marvel — studied, displayed, admired. But little by little, its light fades. Far away, the jungle grows quieter. The magic, once alive, now feels distant. Rick looks at Aurora one evening and says, “Maybe some wonders aren’t meant to be shared.” The Eye’s power slips away from the world. The jungle, now silent, guards no more secrets."}
+        ]
+    }
 
 }
