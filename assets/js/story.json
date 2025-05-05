@@ -36,7 +36,7 @@
     },
     "chapter3" : {
         "heading" :"Chapter 3",
-        "story" : "Aurora, Rick, and Dog pass through the glowing arch. The whisper fades, and they find themselves at the top of a quiet staircase. The air is cooler now. Something exciting is waiting below.The team walks carefully down the stone stairs. Each step echoes in the still air. At the bottom, they enter a big room lit by soft glowing lights on the walls. Old drawings and symbols cover the stone. In the middle of the room stands a small platform with three levers. Above it, a swirl symbol glows gently.",
+        "story" : "Aurora, Rick, and Dog step through the glowing arch and find themselves atop a wide stone staircase. The jungle's whispers vanish, replaced by a deep, quiet stillness. As they descend, the cool air brushes against their skin. At the bottom, they enter a vast chamber dimly lit by crystals glowing softly in the walls. The room feels ancient—covered in swirling murals, forgotten symbols, and carved vines that seem to watch them. <br><br>In the center stands a low stone platform with three levers, each marked with a unique symbol. Above them, the familiar swirl glows faintly, as if waiting. Dog sniffs the air, his tail twitching with curiosity. Everything around them hums with silent possibilities.",
         "choices-question" : "What will the team explore first?",
         "choices" : [
         {"choice": "Symbools on the walls"},
