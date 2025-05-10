@@ -9,6 +9,9 @@ const text = document.querySelector("#story-container");
 // Dog Bark
 const dogBark = new Audio("assets/audio/bark-sound.mp3");
 
+// Jungle's Sound 
+const junglesSound = new Audio("assets/audio/jungles-sound.mp3");
+
 // Typing Effect
 function typeWriter(element, text, speed = 50, callback) {
     let i = 0;
@@ -90,7 +93,10 @@ function restartGame() {
 // Game Steps
 function gameSteps() {
     $(document).on("click", ".meet-characters", showCharacters);
-    $(document).on("click", ".start-story", showChapter1);
+    $(document).on("click", ".start-story", function() {
+        showChapter1();
+        junglesSound.play();
+    });
     $(document).on("click", ".btn-choice", function() {
         const chapter = $(".story-heading").text();
         let index = 0;
@@ -103,6 +109,7 @@ function gameSteps() {
     }
     if (chapter === "Chapter 1") {
     showChapter2(index);
+
     } else if (chapter === "Chapter 3") { 
     showChapter4(index); 
     } else if (chapter === "Chapter 5") {
