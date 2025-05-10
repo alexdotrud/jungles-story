@@ -52,9 +52,10 @@ $(".characters-img").click(function() {
 });
 
 // Pop-Up's closing
-$("#popupModal").click(function() {
+$("#popupModal").click(function(e) {
+    if ($(e.target).is("popupModal")) {
     $("#popupModal").fadeOut();
-});
+}});
 
 // Choices Generator 
 function generateChoices(data) {
@@ -79,8 +80,9 @@ function restartGame() {
         const buttonValue = $(this).val();
         if (buttonValue === "yes") {
             mainPage();
+            $(".dialogue").empty();
         } else  {
-        $(".dialogue").close();
+        $(".dialogue").empty();
         };
     })
     };
@@ -235,5 +237,5 @@ function showChapter8(index) {
     $("#pictures-container").hide();
     $(".intro").html(data.story[index].story);
     $(".start-story").hide();
-    $("#choices-container").html(`<button class="btn cnt-btn3">The End</button>`);
+    $("#choices-container").html(`<button class="btn btn-restart">The End</button>`);
 };
