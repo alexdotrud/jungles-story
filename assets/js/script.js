@@ -41,6 +41,14 @@ mainPage();
 gameSteps();
 }); 
 
+// Sound Pauses
+function stopSounds() {
+    junglesSound.pause();
+    junglesSound.currentTime = 0;
+    windSound.pause();
+    windSound.currentTime = 0;
+}
+
 // Pop-Up's on images
 $(".characters-img").click(function() {
     let description;
@@ -112,14 +120,18 @@ function gameSteps() {
     }
     if (chapter === "Chapter 1") {
     showChapter2(index);
-
     } else if (chapter === "Chapter 3") { 
     showChapter4(index); 
     } else if (chapter === "Chapter 5") {
         showChapter6(index);
     }
 });
-    $(document).on("click", ".cnt-btn", showChapter3);
+    $(document).on("click", ".cnt-btn", function() {
+        showChapter3();
+        junglesSound().pause;
+        junglesSound.currentTime = 0;
+        windSound.play();
+    });
     $(document).on("click", ".cnt-btn2", showChapter5);
     $(document).on("click", ".cnt-btn3", showChapter7);
     $(document).on("click", ".btn-choice", function() {
