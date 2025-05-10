@@ -41,13 +41,6 @@ mainPage();
 gameSteps();
 }); 
 
-// Sound Pauses
-function stopSounds() {
-    junglesSound.pause();
-    junglesSound.currentTime = 0;
-    windSound.pause();
-    windSound.currentTime = 0;
-}
 
 // Pop-Up's on images
 $(".characters-img").click(function() {
@@ -128,8 +121,7 @@ function gameSteps() {
 });
     $(document).on("click", ".cnt-btn", function() {
         showChapter3();
-        junglesSound().pause;
-        junglesSound.currentTime = 0;
+        junglesSound.pause();
         windSound.play();
     });
     $(document).on("click", ".cnt-btn2", showChapter5);
