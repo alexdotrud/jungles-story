@@ -12,6 +12,9 @@ const dogBark = new Audio("assets/audio/bark-sound.mp3");
 // Jungle's Sound 
 const junglesSound = new Audio("assets/audio/jungles-sound.mp3");
 
+// Wind Sound
+const windSound = new Audio("assets/audio/wind-sound.mp3");
+
 // Typing Effect
 function typeWriter(element, text, speed = 50, callback) {
     let i = 0;
