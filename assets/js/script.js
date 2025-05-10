@@ -16,20 +16,8 @@ const junglesSound = new Audio("assets/audio/jungles-sound.mp3");
 const windSound = new Audio("assets/audio/wind-sound.mp3");
 
 // Typing Effect
-function typeWriter(element, text, speed = 50, callback) {
-    let i = 0;
-    element.innerHTML = '';
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        } else if (callback) {
-            callback();
-        }
-    }
-    type();
-}
+
+
 
 // Fetch Story Data
 let storyData = null;
@@ -43,7 +31,7 @@ gameSteps();
 
 
 // Pop-Up's on images
-$(".characters-img").click(function() {
+$(document).on("click", ".characters-img", function() {
     let description;
     const alt = $(this).attr("alt");
     if (alt === "Aurora") {
@@ -59,10 +47,9 @@ $(".characters-img").click(function() {
 });
 
 // Pop-Up's closing
-$("#popupModal").click(function(e) {
-    if ($(e.target).is("popupModal")) {
+$(document).on("click", "#popupModal", function(e) {
     $("#popupModal").fadeOut();
-}});
+});
 
 // Choices Generator 
 function generateChoices(data) {
