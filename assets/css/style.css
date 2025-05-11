@@ -103,6 +103,11 @@ h1, h2 {
 
 .story-heading {
     padding: 10px;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 /*Buttons style*/
 

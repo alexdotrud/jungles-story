@@ -1,10 +1,10 @@
 // Statements
 const heading = document.querySelector(".story-heading");
-const storyText = document.querySelector(".intro");
+const storyText = document.querySelector(".story-text");
 const btnIntro = document.querySelector(".btn-intro");
 const picturesContainer = document.querySelector("#pictures-container");
 const choicesContainer = document.querySelector("#choices-container");
-const story = document.querySelector("#story-container");
+const storyContainer = document.querySelector("#story-container");
 let gameStarted = false;
 
 // Dog Bark
@@ -32,15 +32,17 @@ function textTypingEffect(storyText, text, i = 0) {
 };
 
 // Apply Typing Effect
-function applyTypingEffect(text) {
-    if (gameStarted) {
-        const cleanHeadingText = headingText.replace(/<[^>]+>/g, '');
-        const cleanStoryText = storyTextContent.replace(/<[^>]+>/g, '');
+    function applyTypingEffect(text) {
+        if (gameStarted) {
+            const cleanStoryText = text.replace(/<[^>]+>/g, '');
+            const cleanHeadingText = text.replace(/<[^>]+>/g, '');
+            textTypingEffect(heading, cleanHeadingText);
 
-    } 
+            setTimeout(() => textTypingEffect(storyText, cleanStoryText), 200);
+        }
+        
+    };
     
-}
-
 
 // Pictures Effects 
 
@@ -162,7 +164,7 @@ function mainPage() {
     const data = storyData.main;
 
     $(".story-heading").text(data.heading);
-    $(".intro").html(data.intro);
+    $(".story-text").html(data.intro);
     $("#choices-container").html(` <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
     $("#pictures-container").hide();
 };
@@ -172,7 +174,7 @@ function showCharacters() {
     const data = storyData.characters;
 
     $(".story-heading").text(data.heading);
-    $(".intro").text(data.intro);
+    $(".story-text").text(data.intro);
     $("#pictures-container").show();
     $("#pictures-container").html(`
         <div id="popupModal" class="modal">
