@@ -9,13 +9,9 @@ let gameStarted = false;
 let isTyping = false;
 let skipRequested = false;
 
-// Dog Bark
+// Sounds
 const dogBark = new Audio("assets/audio/bark-sound.mp3");
-
-// Jungle's Sound 
 const junglesSound = new Audio("assets/audio/jungles-sound.mp3");
-
-// Wind Sound
 const windSound = new Audio("assets/audio/wind-sound.mp3");
 
 // Typing Effect
@@ -80,7 +76,7 @@ function applyTypingEffect(headingText, storyTextContent) {
 };
 
     // Html to Plain Text Transformer 
-function HtmlToPlainText(html) {
+function htmlToText(html) {
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = html;
     return temp.textContent || "";
