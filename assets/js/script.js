@@ -5,6 +5,7 @@ const btnIntro = document.querySelector(".btn-intro");
 const picturesContainer = document.querySelector("#pictures-container");
 const choicesContainer = document.querySelector("#choices-container");
 const storyText = document.querySelector("#story-container");
+let gameStarted = false;
 
 // Dog Bark
 const dogBark = new Audio("assets/audio/bark-sound.mp3");
@@ -17,11 +18,14 @@ const windSound = new Audio("assets/audio/wind-sound.mp3");
 
 // Typing Effect
 function textTypingEffect(storyText, text, i = 0) {
-    element.textContent += text[i];
-    if (i === text.length - 1) {
-    return;
+    storyText.textContent += text[i];
+    if (i === 0) {
+        storyText.textContent = "";
     }
-    setTomeOut(() => textTypingEffect(storyText, text, i = 0), 50);
+    if (i === text.length - 1) {
+        return;
+    }
+    setTomeout(() => textTypingEffect(storyText, text, i = 0), 50);
 };
 
 // Pictures Effects 
@@ -80,6 +84,7 @@ function restartGame() {
     $(".ok-no").click(function() {
         const buttonValue = $(this).val();
         if (buttonValue === "yes") {
+            gameStarted = false;
             mainPage();
             $(".dialogue").empty();
         } else  {
@@ -92,6 +97,7 @@ function restartGame() {
 function gameSteps() {
     $(document).on("click", ".meet-characters", showCharacters);
     $(document).on("click", ".start-story", function() {
+        gameStarted = true;
         showChapter1();
         junglesSound.play();
     });
