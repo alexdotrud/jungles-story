@@ -5,8 +5,6 @@ const btnIntro = document.querySelector(".btn-intro");
 const picturesContainer = document.querySelector("#pictures-container");
 const choicesContainer = document.querySelector("#choices-container");
 const storyContainer = document.querySelector("#story-container");
-let currentHeadingText = "";
-let currentStoryText = "";
 let gameStarted = false;
 let isTyping = false;
 
@@ -20,31 +18,43 @@ const junglesSound = new Audio("assets/audio/jungles-sound.mp3");
 const windSound = new Audio("assets/audio/wind-sound.mp3");
 
 // Typing Effect
-function textTypingEffect(storyText, text, i = 0) {
+function textTypingEffect(storyText, plainText, fullHtmlText, i = 0) {
     if (i === 0) {
-        $(choicesContainer).hide()
         storyText.textContent = "";
+        if (storyText === document.querySelector(".story-text")) {
+        $(choicesContainer).hide();
+        }
     }
-    storyText.textContent += text[i];
-    if (i === text.length - 1) {
+    storyText.textContent += plainText[i];
+    if (i === plainText.length - 1) {
+      storyText.innerHTML = fullHtmlText; // Render full HTML
+    if (storyText === document.querySelector(".story-text")) {
         $(choicesContainer).fadeIn(550);
-        return;
+        isTyping = false;
     }
-    setTimeout(() => textTypingEffect(storyText, text, i + 1), 20);
-
+    return;
+    }
+    setTimeout(() => textTypingEffect(storyText, plainText, fullHtmlText, i + 1), 20);
 };
 
 // Apply Typing Effect
 function applyTypingEffect(headingText, storyTextContent) {
     if (gameStarted) {
         isTyping = true;
-        
-        const cleanStoryText = storyTextContent.replace(/<[^>]+>/g, '');
-        const cleanHeadingText = headingText.replace(/<[^>]+>/g, '');
-        textTypingEffect(heading, cleanHeadingText);
-        setTimeout(() => textTypingEffect(storyText, cleanStoryText), 200);
+        currentHeadingText = headingText;
+        currentStoryText = storyTextContent;
+        const headingPlainText = parseHtmlToPlainText(headingText);
+        const storyPlainText = parseHtmlToPlainText(storyTextContent);
+        textTypingEffect(heading, headingPlainText, currentHeadingText);
+        setTimeout(() => textTypingEffect(storyText, storyPlainText, currentStoryText), 200);
+    }
+    };
 
-        } 
+    // Html to Plain Text Transformer 
+function parseHtmlToPlainText(html) {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = html;
+    return tempDiv.textContent || tempDiv.innerText || "";
     };
 
 // Skip Typing
