@@ -130,6 +130,10 @@ h1, h2 {
     gap: 1rem;
 }
 
+.skip-btn {
+
+}
+
 /*Modal styling*/
 .modal {
     display: none;

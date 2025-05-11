@@ -33,28 +33,28 @@ function textTypingEffect(storyText, text, i = 0) {
 };
 
 // Apply Typing Effect
-    function applyTypingEffect(headingText, storyTextContent) {
-        if (gameStarted) {
-            const cleanStoryText = storyTextContent.replace(/<[^>]+>/g, '');
-            const cleanHeadingText = headingText.replace(/<[^>]+>/g, '');
-            textTypingEffect(heading, cleanHeadingText);
-
-            setTimeout(() => textTypingEffect(storyText, cleanStoryText), 200);
+function applyTypingEffect(headingText, storyTextContent) {
+    if (gameStarted) {
+        isTyping = true;
+        
+        const cleanStoryText = storyTextContent.replace(/<[^>]+>/g, '');
+        const cleanHeadingText = headingText.replace(/<[^>]+>/g, '');
+        $(".skip-btn").show();
+        textTypingEffect(heading, cleanHeadingText);
+        setTimeout(() => textTypingEffect(storyText, cleanStoryText), 200);
         }
         
     };
 
 // Skip Typing
 function skipTyping() {
-if (isTyping === true ) {
-$(document).on("click", "skip-btn" function {
-    clearTimeout(typingTimeout);
-    clearTimeout(storyTypingTimeout);
-})
-} else if (isTyping === false) {
+    if (isTyping === true ) { 
+        setTimeout(() => 0);
+        heading.textContent = currentHeadingText;
+        storyText.textContent = currentStoryText;
+        } else if (isTyping === false) {
 
-}
-}
+}};
 
 // Pictures Effects 
 
@@ -169,12 +169,13 @@ function gameSteps() {
     };
 });
     $(document).on("click", ".btn-restart", restartGame);
+    $(document).on("click", ".skip-btn", skipTyping);
 };
 
 // Main Page
 function mainPage() {
     const data = storyData.main;
-
+    $(".skip-btn").hide();
     $(".story-heading").text(data.heading);
     $(".story-text").html(data.intro);
     $("#choices-container").html(` <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
@@ -187,7 +188,6 @@ function showCharacters() {
 
     $(".story-heading").text(data.heading);
     $(".story-text").text(data.intro);
-    $("#story-container").html(`<button class="btn skip-btn">Skip</button>`)
     $("#pictures-container").show();
     $("#pictures-container").html(`
         <div id="popupModal" class="modal">
@@ -207,6 +207,7 @@ function showCharacters() {
 function showChapter1() {
     const data = storyData.chapter1;
     $("#pictures-container").hide();
+    $(".skip-btn").hide();
     applyTypingEffect(data.heading, data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
