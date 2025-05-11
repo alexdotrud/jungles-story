@@ -80,10 +80,10 @@ function applyTypingEffect(headingText, storyTextContent) {
 };
 
     // Html to Plain Text Transformer 
-function parseHtmlToPlainText(html) {
+function HtmlToPlainText(html) {
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = html;
-    return tempDiv.textContent || tempDiv.innerText || "";
+    return temp.textContent || "";
     };
 
 // Skip Typing
@@ -122,7 +122,7 @@ $(document).on("click", ".characters-img", function() {
 });
 
 // Pop-Up's closing
-$(document).on("click", "#popupModal", function(e) {
+$(document).on("click", "#popupModal", function() {
     $("#popupModal").fadeOut();
 });
 
