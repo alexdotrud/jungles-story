@@ -25,15 +25,19 @@ function textTypingEffect(storyText, text, i = 0) {
     if (i === text.length - 1) {
         return;
     }
-    setTimeout(() => textTypingEffect(storyText, text, i = 0), 50);
+    setTimeout(() => textTypingEffect(storyText, text, i + 1), 30);
 };
 
-// Applying of Typing Effect
+// Apply Typing Effect
 function applyTypingEffect(text) {
-    if (gameStarted === true) {
-    textTypingEffect(storyText, text);
+    if (gameStarted) {
+        const cleanText = text.replace(/<[^>]+>/g, '');
+        textTypingEffect(storyText, cleanText);
     }
-};
+    
+}
+
+
 // Pictures Effects 
 
 
@@ -133,7 +137,7 @@ function gameSteps() {
     $(document).on("click", ".cnt-btn2", showChapter5);
     $(document).on("click", ".cnt-btn3", showChapter7);
     $(document).on("click", ".btn-choice", function() {
-        const chapter = $(".stor y-heading").text();
+        const chapter = $(".story-heading").text();
         let index = 0;
     if($(this).hasClass("1")) {
         index = 0;
@@ -195,7 +199,6 @@ function showChapter2(index) {
     const data = storyData.chapter2;
     $(".story-heading").text(data.heading);
     $("#pictures-container").hide();
-    applyTypingEffect(text);
     $(".intro").html(data.story[index].story);
     $(".start-story").hide();
     $("#choices-container").html(`<button class="btn cnt-btn">Continue...</button>`);
@@ -206,7 +209,6 @@ function showChapter3() {
     const data = storyData.chapter3;
     $(".story-heading").text(data.heading);
     $("#pictures-container").hide();
-    applyTypingEffect(text);
     $(".intro").html(data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
@@ -217,7 +219,6 @@ function showChapter4(index) {
     const data = storyData.chapter4;
     $(".story-heading").text(data.heading);
     $("#pictures-container").hide();
-    applyTypingEffect(text);
     $(".intro").html(data.story[index].story);
     $(".start-story").hide();
     $("#choices-container").html(`<button class="btn cnt-btn2">Continue...</button>`);
@@ -228,7 +229,6 @@ function showChapter5() {
     const data = storyData.chapter5;
     $(".story-heading").text(data.heading);
     $("#pictures-container").hide();
-    applyTypingEffect(text);
     $(".intro").html(data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
@@ -239,7 +239,6 @@ function showChapter6(index) {
     const data = storyData.chapter6;
     $(".story-heading").text(data.heading);
     $("#pictures-container").hide();
-    applyTypingEffect(text);
     $(".intro").html(data.story[index].story);
     $(".start-story").hide();
     $("#choices-container").html(`<button class="btn cnt-btn3">Continue...</button>`);
@@ -250,7 +249,6 @@ function showChapter7() {
     const data = storyData.chapter7;
     $(".story-heading").text(data.heading);
     $("#pictures-container").hide();
-    applyTypingEffect(text);
     $(".intro").html(data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
@@ -261,7 +259,6 @@ function showChapter8(index) {
     const data = storyData.chapter8;
     $(".story-heading").text(data.heading);
     $("#pictures-container").hide();
-    applyTypingEffect(text);
     $(".intro").html(data.story[index].story);
     $(".start-story").hide();
     $("#choices-container").html(`<button class="btn btn-restart">The End</button>`);
