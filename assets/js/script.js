@@ -20,55 +20,64 @@ const windSound = new Audio("assets/audio/wind-sound.mp3");
 
 // Typing Effect
 function textTypingEffect(storyText, plainText, fullHtmlText, i = 0) {
+    // Clears text
     if (i === 0) {
         storyText.textContent = "";
         if (storyText === document.querySelector(".story-text")) {
-        $(choicesContainer).hide();
+            $(choicesContainer).hide();
         }
     }
+// If skip button clicked
     if (skipRequested) {
-            storyText.innerHTML = fullHtmlText;
-            if (storyText === document.querySelector(".story-text")) {
-                $(choicesContainer).fadeIn(550);
-            }
-            isTyping = false;
-            skipRequested = false;
-            $("#skip-btn").hide();
-            return;
-        }
-
-    storyText.textContent += plainText[i];
-    if (i === plainText.length - 1) {
         storyText.innerHTML = fullHtmlText;
-    if (storyText === document.querySelector(".story-text")) {
-        $(choicesContainer).fadeIn(550);
         isTyping = false;
-        $("#skip-btn").hide();
+        skipRequested = false;
+        $(".skip-btn").hide();
+
+        if (storyText === document.querySelector(".story-text")) {
+            $(choicesContainer).fadeIn(550);
+        }
         return;
     }
-    return;
+// Adds one letter
+    storyText.textContent += plainText[i];
+
+// If the last letter
+    if (i === plainText.length - 1) {
+        storyText.innerHTML = fullHtmlText;
+        isTyping = false;
+        $(".skip-btn").hide(); 
+
+        if (storyText === document.querySelector(".story-text")) {
+            $(choicesContainer).fadeIn(550);
+        }
+        return;
     }
+
     setTimeout(() => textTypingEffect(storyText, plainText, fullHtmlText, i + 1), 20);
 };
 
 // Apply Typing Effect
 function applyTypingEffect(headingText, storyTextContent) {
+
+// When Start the Game button clicked
     if (gameStarted) {
         isTyping = true;
         skipRequested = false;
 
-        $(".skip-btn").show(); 
-
-        currentHeadingText = headingText;
-        currentStoryText = storyTextContent;
-
+// Removing HTML tags
         const headingPlainText = parseHtmlToPlainText(headingText);
         const storyPlainText = parseHtmlToPlainText(storyTextContent);
 
         textTypingEffect(heading, headingPlainText, headingText);
-        setTimeout(() => textTypingEffect(storyText, storyPlainText, storyTextContent), 200);
+
+// Typing story text after delay
+        setTimeout(() => {
+            $(".skip-btn").show(); 
+            textTypingEffect(storyText, storyPlainText, storyTextContent);
+        }, 200);
     }
-}
+};
 
     // Html to Plain Text Transformer 
 function parseHtmlToPlainText(html) {
@@ -244,7 +253,6 @@ function showChapter2(index) {
     const data = storyData.chapter2;
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
-    $(".start-story").hide();
     $("#choices-container").html(`<button class="btn cnt-btn">Continue...</button>`);
 };
 
@@ -253,7 +261,6 @@ function showChapter3() {
     const data = storyData.chapter3;
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story);
-    $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
 };
 
@@ -262,7 +269,6 @@ function showChapter4(index) {
     const data = storyData.chapter4;
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
-    $(".start-story").hide();
     $("#choices-container").html(`<button class="btn cnt-btn2">Continue...</button>`);
 };
 
@@ -280,7 +286,6 @@ function showChapter6(index) {
     const data = storyData.chapter6;
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
-    $(".start-story").hide();
     $("#choices-container").html(`<button class="btn cnt-btn3">Continue...</button>`);
 };
 
@@ -289,7 +294,6 @@ function showChapter7() {
     const data = storyData.chapter7;
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story);
-    $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
 };
 
@@ -298,6 +302,5 @@ function showChapter8(index) {
     const data = storyData.chapter8;
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
-    $(".start-story").hide();
     $("#choices-container").html(`<button class="btn btn-restart">The End</button>`);
 };
