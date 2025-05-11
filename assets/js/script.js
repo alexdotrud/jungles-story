@@ -6,6 +6,7 @@ const picturesContainer = document.querySelector("#pictures-container");
 const choicesContainer = document.querySelector("#choices-container");
 const storyContainer = document.querySelector("#story-container");
 let gameStarted = false;
+let isTyping = false;
 
 // Dog Bark
 const dogBark = new Audio("assets/audio/bark-sound.mp3");
@@ -32,17 +33,28 @@ function textTypingEffect(storyText, text, i = 0) {
 };
 
 // Apply Typing Effect
-    function applyTypingEffect(text) {
+    function applyTypingEffect(headingText, storyTextContent) {
         if (gameStarted) {
-            const cleanStoryText = text.replace(/<[^>]+>/g, '');
-            const cleanHeadingText = text.replace(/<[^>]+>/g, '');
+            const cleanStoryText = storyTextContent.replace(/<[^>]+>/g, '');
+            const cleanHeadingText = headingText.replace(/<[^>]+>/g, '');
             textTypingEffect(heading, cleanHeadingText);
 
             setTimeout(() => textTypingEffect(storyText, cleanStoryText), 200);
         }
         
     };
-    
+
+// Skip Typing
+function skipTyping() {
+if (isTyping === true ) {
+$(document).on("click", "skip-btn" function {
+    clearTimeout(typingTimeout);
+    clearTimeout(storyTypingTimeout);
+})
+} else if (isTyping === false) {
+
+}
+}
 
 // Pictures Effects 
 
@@ -175,6 +187,7 @@ function showCharacters() {
 
     $(".story-heading").text(data.heading);
     $(".story-text").text(data.intro);
+    $("#story-container").html(`<button class="btn skip-btn">Skip</button>`)
     $("#pictures-container").show();
     $("#pictures-container").html(`
         <div id="popupModal" class="modal">
@@ -193,9 +206,8 @@ function showCharacters() {
 // Chapter 1
 function showChapter1() {
     const data = storyData.chapter1;
-    $(".story-heading").text(data.heading);
     $("#pictures-container").hide();
-    applyTypingEffect(data.story);
+    applyTypingEffect(data.heading, data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
 };
