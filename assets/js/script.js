@@ -61,9 +61,10 @@ function applyTypingEffect(headingText, storyTextContent) {
         isTyping = true;
         skipRequested = false;
 
+
 // Removing HTML tags
-        const headingPlainText = parseHtmlToPlainText(headingText);
-        const storyPlainText = parseHtmlToPlainText(storyTextContent);
+        const headingPlainText = htmlToText(headingText);
+        const storyPlainText = htmlToText(storyTextContent);
 
         textTypingEffect(heading, headingPlainText, headingText);
 
@@ -79,7 +80,7 @@ function applyTypingEffect(headingText, storyTextContent) {
 function htmlToText(html) {
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = html;
-    return temp.textContent || "";
+    return tempDiv.textContent || "";
     };
 
 // Skip Typing
