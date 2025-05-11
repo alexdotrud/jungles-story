@@ -4,7 +4,7 @@ const intro = document.querySelector(".intro");
 const btnIntro = document.querySelector(".btn-intro");
 const picturesContainer = document.querySelector("#pictures-container");
 const choicesContainer = document.querySelector("#choices-container");
-const text = document.querySelector("#story-container");
+const storyText = document.querySelector("#story-container");
 
 // Dog Bark
 const dogBark = new Audio("assets/audio/bark-sound.mp3");
@@ -16,7 +16,15 @@ const junglesSound = new Audio("assets/audio/jungles-sound.mp3");
 const windSound = new Audio("assets/audio/wind-sound.mp3");
 
 // Typing Effect
+function textTypingEffect(storyText, text, i = 0) {
+    element.textContent += text[i];
+    if (i === text.length - 1) {
+    return;
+    }
+    setTomeOut(() => textTypingEffect(storyText, text, i = 0), 50);
+};
 
+// Pictures Effects 
 
 
 // Fetch Story Data
@@ -28,7 +36,6 @@ storyData = data;
 mainPage();
 gameSteps();
 }); 
-
 
 // Pop-Up's on images
 $(document).on("click", ".characters-img", function() {
@@ -114,7 +121,7 @@ function gameSteps() {
     $(document).on("click", ".cnt-btn2", showChapter5);
     $(document).on("click", ".cnt-btn3", showChapter7);
     $(document).on("click", ".btn-choice", function() {
-        const chapter = $(".story-heading").text();
+        const chapter = $(".stor y-heading").text();
         let index = 0;
     if($(this).hasClass("1")) {
         index = 0;
