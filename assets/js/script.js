@@ -7,6 +7,7 @@ const choicesContainer = document.querySelector("#choices-container");
 const storyContainer = document.querySelector("#story-container");
 let gameStarted = false;
 let isTyping = false;
+let skipRequested = false;
 
 // Dog Bark
 const dogBark = new Audio("assets/audio/bark-sound.mp3");
@@ -25,12 +26,25 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0) {
         $(choicesContainer).hide();
         }
     }
+    if (skipRequested) {
+            storyText.innerHTML = fullHtmlText;
+            if (storyText === document.querySelector(".story-text")) {
+                $(choicesContainer).fadeIn(550);
+            }
+            isTyping = false;
+            skipRequested = false;
+            $("#skip-btn").hide();
+            return;
+        }
+
     storyText.textContent += plainText[i];
     if (i === plainText.length - 1) {
-      storyText.innerHTML = fullHtmlText; // Render full HTML
+        storyText.innerHTML = fullHtmlText;
     if (storyText === document.querySelector(".story-text")) {
         $(choicesContainer).fadeIn(550);
         isTyping = false;
+        $("#skip-btn").hide();
+        return;
     }
     return;
     }
@@ -41,14 +55,20 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0) {
 function applyTypingEffect(headingText, storyTextContent) {
     if (gameStarted) {
         isTyping = true;
+        skipRequested = false;
+
+        $(".skip-btn").show(); 
+
         currentHeadingText = headingText;
         currentStoryText = storyTextContent;
+
         const headingPlainText = parseHtmlToPlainText(headingText);
         const storyPlainText = parseHtmlToPlainText(storyTextContent);
-        textTypingEffect(heading, headingPlainText, currentHeadingText);
-        setTimeout(() => textTypingEffect(storyText, storyPlainText, currentStoryText), 200);
+
+        textTypingEffect(heading, headingPlainText, headingText);
+        setTimeout(() => textTypingEffect(storyText, storyPlainText, storyTextContent), 200);
     }
-    };
+}
 
     // Html to Plain Text Transformer 
 function parseHtmlToPlainText(html) {
@@ -58,7 +78,10 @@ function parseHtmlToPlainText(html) {
     };
 
 // Skip Typing
-
+function skipTyping() {
+    console.log("Skipppp!!");
+    skipRequested = true;
+}
 
 // Pictures Effects 
 
@@ -173,6 +196,7 @@ function gameSteps() {
     };
 });
     $(document).on("click", ".btn-restart", restartGame);
+    $(document).on("click", ".skip-btn", skipTyping);
 };
 
 // Main Page
@@ -182,6 +206,7 @@ function mainPage() {
     $(".story-text").html(data.intro);
     $("#choices-container").html(` <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
     $("#pictures-container").hide();
+    $(".skip-btn").hide();
 };
 
 //  Meeting Characters Chapter
