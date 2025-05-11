@@ -100,6 +100,10 @@ h1, h2 {
     height: auto;
     
 }
+
+.story-heading {
+    padding: 10px;
+}
 /*Buttons style*/
 
 .btn {
@@ -135,7 +139,7 @@ h1, h2 {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
+    z-index: 2;
     overflow: auto;
 }
 

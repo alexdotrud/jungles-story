@@ -24,7 +24,7 @@ function textTypingEffect(storyText, text, i = 0) {
     }
     storyText.textContent += text[i];
     if (i === text.length - 1) {
-        $(choicesContainer).fadeIn(500);
+        $(choicesContainer).fadeIn(550);
         return;
     }
     setTimeout(() => textTypingEffect(storyText, text, i + 1), 20);
@@ -34,9 +34,10 @@ function textTypingEffect(storyText, text, i = 0) {
 // Apply Typing Effect
 function applyTypingEffect(text) {
     if (gameStarted) {
-        const cleanText = text.replace(/<[^>]+>/g, '');
-        textTypingEffect(storyText, cleanText);
-    }
+        const cleanHeadingText = headingText.replace(/<[^>]+>/g, '');
+        const cleanStoryText = storyTextContent.replace(/<[^>]+>/g, '');
+
+    } 
     
 }
 
