@@ -5,8 +5,12 @@ const btnIntro = document.querySelector(".btn-intro");
 const picturesContainer = document.querySelector("#pictures-container");
 const choicesContainer = document.querySelector("#choices-container");
 const storyContainer = document.querySelector("#story-container");
+let currentHeadingText = "";
+let currentStoryText = "";
 let gameStarted = false;
 let isTyping = false;
+let shouldSkip = false;
+let storyTypingTimeout = null;
 
 // Dog Bark
 const dogBark = new Audio("assets/audio/bark-sound.mp3");
@@ -43,18 +47,10 @@ function applyTypingEffect(headingText, storyTextContent) {
         textTypingEffect(heading, cleanHeadingText);
         setTimeout(() => textTypingEffect(storyText, cleanStoryText), 200);
         }
-        
     };
 
 // Skip Typing
-function skipTyping() {
-    if (isTyping === true ) { 
-        setTimeout(() => 0);
-        heading.textContent = currentHeadingText;
-        storyText.textContent = currentStoryText;
-        } else if (isTyping === false) {
 
-}};
 
 // Pictures Effects 
 
