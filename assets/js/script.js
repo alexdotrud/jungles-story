@@ -28,6 +28,12 @@ function textTypingEffect(storyText, text, i = 0) {
     setTomeout(() => textTypingEffect(storyText, text, i = 0), 50);
 };
 
+// Applying of Typing Effect
+function applyTypingEffect() {
+    if (gameStarted = true) {
+    textTypingEffect();
+    }
+};
 // Pictures Effects 
 
 
