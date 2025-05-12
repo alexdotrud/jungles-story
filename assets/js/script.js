@@ -16,7 +16,7 @@ const junglesSound = new Audio("assets/audio/jungles-sound.mp3");
 const windSound = new Audio("assets/audio/wind-sound.mp3");
 
 // Typing Effect
-function textTypingEffect(storyText, plainText, fullHtmlText, i = 0) {
+function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30) {
     // Clears text
     if (i === 0) {
         storyText.textContent = "";
@@ -28,14 +28,13 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0) {
     if (skipRequested) {
         storyText.innerHTML = fullHtmlText;
         isTyping = false;
-        skipRequested = false;
-        $(".skip-btn").hide();
+        skipRequested = false;;
 
         if (storyText === document.querySelector(".story-text")) {
             $(choicesContainer).fadeIn(550);
         }
         return;
-    }
+    };
 // Adds one letter
     storyText.textContent += plainText[i];
 
@@ -43,15 +42,17 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0) {
     if (i === plainText.length - 1) {
         storyText.innerHTML = fullHtmlText;
         isTyping = false;
-        $(".skip-btn").hide(); 
 
         if (storyText === document.querySelector(".story-text")) {
+            $(".skip-btn").hide(); 
             $(choicesContainer).fadeIn(550);
         }
         return;
-    }
+    };
 
-    setTimeout(() => textTypingEffect(storyText, plainText, fullHtmlText, i + 1), 20);
+    setTimeout(() => textTypingEffect(storyText, plainText, fullHtmlText, i + 1, speed), speed);
+    
+
 };
 
 // Apply Typing Effect
@@ -67,12 +68,12 @@ function applyTypingEffect(headingText, storyTextContent) {
         const headingPlainText = htmlToText(headingText);
         const storyPlainText = htmlToText(storyTextContent);
 
-        textTypingEffect(heading, headingPlainText, headingText);
+        textTypingEffect(heading, headingPlainText, headingText, 0, 80);
+        $(".skip-btn").show(); 
 
 // Typing story text after delay
         setTimeout(() => {
-            $(".skip-btn").show(); 
-            textTypingEffect(storyText, storyPlainText, storyTextContent);
+            textTypingEffect(storyText, storyPlainText, storyTextContent, 0, 30);
         }, 200);
     }
 };
@@ -160,7 +161,7 @@ function gameSteps() {
     $(document).on("click", ".meet-characters", function() {
          // Remember the Username from Main Page
         let nameInput = $("#name").val();
-        if (userName === "") {
+        if (nameInput === "") {
             alert("Please enter your name before continuing");
             return;
         } else {
@@ -311,6 +312,6 @@ function showChapter8(index) {
     const data = storyData.chapter8;
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
-    $("#choices-container").html(` <p> Well done ${userName}! Your journey through the jungle has come to an end... for now.</p>
+    $("#choices-container").html(` <p> Well done <bold> ${userName} </bold>! Your journey through the jungle has come to an end... for now.</p>
         <button class="btn btn-restart">Restart The Game</button>`);
 };
