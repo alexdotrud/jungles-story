@@ -31,6 +31,7 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
         storyText.innerHTML = fullHtmlText;
         isTyping = false;
         skipRequested = false;;
+        $(".skip-btn").hide();
 
         if (storyText === document.querySelector(".story-text")) {
             $(choicesContainer).fadeIn(550);
