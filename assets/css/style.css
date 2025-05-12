@@ -64,6 +64,7 @@ h1, h2 {
     text-align: center;
     margin-left: auto; 
     margin-right: auto;
+    caret-color: transparent; 
 }
 
 #pictures-container {
@@ -73,6 +74,7 @@ h1, h2 {
     gap: 1rem; 
     flex-wrap: wrap; 
     padding: 1rem;
+    caret-color: transparent; 
 }
 
 #choices-container {
@@ -212,7 +214,6 @@ h1, h2 {
 
 #story-container {
     padding: 3rem;
-    caret-color: transparent; 
 }
 }
 
