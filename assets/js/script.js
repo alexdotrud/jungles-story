@@ -17,6 +17,7 @@ const windSound = new Audio("assets/audio/wind-sound.mp3");
 
 // Typing Effect
 function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30) {
+
     // Clears text
     if (i === 0) {
         storyText.textContent = "";
@@ -24,6 +25,7 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
             $(choicesContainer).hide();
         }
     }
+
 // If skip button clicked
     if (skipRequested) {
         storyText.innerHTML = fullHtmlText;
@@ -35,6 +37,7 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
         }
         return;
     };
+
 // Adds one letter
     storyText.textContent += plainText[i];
 
@@ -68,6 +71,7 @@ function applyTypingEffect(headingText, storyTextContent) {
         const headingPlainText = htmlToText(headingText);
         const storyPlainText = htmlToText(storyTextContent);
 
+// Lower speed for headings
         textTypingEffect(heading, headingPlainText, headingText, 0, 80);
         $(".skip-btn").show(); 
 
@@ -107,6 +111,8 @@ gameSteps();
 // Pop-Up's on images
 $(document).on("click", ".characters-img", function() {
     let description;
+
+    // Attaching right discription for the right character
     const alt = $(this).attr("alt");
     if (alt === "Aurora") {
         description = storyData.characters.images[0].description;
@@ -136,6 +142,7 @@ function generateChoices(data) {
 
 // Restart Button
 function restartGame() {
+    // Dialogue for restart confirmation
     $(".dialogue").html(`
     <dialog id="restart" open>
     <p>Are you sure you want to restart the Game?</p>
@@ -174,6 +181,8 @@ function gameSteps() {
         showChapter1();
         junglesSound.play();
     });
+
+    // The right choice different button classes
     $(document).on("click", ".btn-choice", function() {
         const chapter = $(".story-heading").text();
         let index = 0;
@@ -235,6 +244,8 @@ function showCharacters() {
     $(".story-heading").text(data.heading);
     $(".story-text").text(data.intro);
     $("#pictures-container").show();
+
+    // Modal for extra information
     $("#pictures-container").html(`
         <div id="popupModal" class="modal">
             <div class="modal-content">
