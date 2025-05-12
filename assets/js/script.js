@@ -324,6 +324,6 @@ function showChapter8(index) {
     const data = storyData.chapter8;
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
-    $("#choices-container").html(` <p> Well done <bold> ${userName} </bold>! Your journey through the jungle has come to an end... for now.</p>
+    $("#choices-container").html(` <p> Well done <strong> ${userName} </strong>! Your journey through the jungle has come to an end... for now.</p>
         <button class="btn btn-restart">Restart The Game</button>`);
 };
