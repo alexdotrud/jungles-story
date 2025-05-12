@@ -5,6 +5,7 @@ const btnIntro = document.querySelector(".btn-intro");
 const picturesContainer = document.querySelector("#pictures-container");
 const choicesContainer = document.querySelector("#choices-container");
 const storyContainer = document.querySelector("#story-container");
+let userName = " ";
 let gameStarted = false;
 let isTyping = false;
 let skipRequested = false;
@@ -156,7 +157,17 @@ function restartGame() {
 
 // Game Steps
 function gameSteps() {
-    $(document).on("click", ".meet-characters", showCharacters);
+    $(document).on("click", ".meet-characters", function() {
+         // Remember the Username from Main Page
+        let nameInput = $("#name").val();
+        if (userName === "") {
+            alert("Please enter your name before continuing");
+            return;
+        } else {
+            showCharacters();
+            userName = nameInput;
+        }
+    });
     $(document).on("click", ".start-story", function() {
         gameStarted = true;
         showChapter1();
@@ -210,7 +221,9 @@ function mainPage() {
     const data = storyData.main;
     $(".story-heading").text(data.heading);
     $(".story-text").html(data.intro);
-    $("#choices-container").html(` <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
+    $("#choices-container").html(` 
+        <input type="text" id="name" placeholder="Enter your name"></input> <br>
+        <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
     $("#pictures-container").hide();
     $(".skip-btn").hide();
 };
@@ -218,7 +231,6 @@ function mainPage() {
 //  Meeting Characters Chapter
 function showCharacters() {
     const data = storyData.characters;
-
     $(".story-heading").text(data.heading);
     $(".story-text").text(data.intro);
     $("#pictures-container").show();
@@ -299,5 +311,6 @@ function showChapter8(index) {
     const data = storyData.chapter8;
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
-    $("#choices-container").html(`<button class="btn btn-restart">The End</button>`);
+    $("#choices-container").html(` <p> Well done ${userName}! Your journey through the jungle has come to an end... for now.</p>
+        <button class="btn btn-restart">Restart The Game</button>`);
 };
