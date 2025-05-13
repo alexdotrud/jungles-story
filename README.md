@@ -18,4 +18,5 @@ Syntax bugs
 After adding showChapter4 and 6 to game steps, in the game after pressing button on the chapter 1, 4 ,5 is was not going in chapter order(randomly) - added if statement to the gameSteps function.
 main page function was not working (empty page) -added to the fetch function.
 When added restart button - all of the modals dissapeared (just changed frpm $(.class)click(function) to $(document).on(click, class, function))
+After adding typing effect - the text was jumping, fixed main contyainer style to display flex, justify flex-start
 -->

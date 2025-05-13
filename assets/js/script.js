@@ -22,8 +22,8 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
     // Clears text
     if (i === 0) {
         storyText.textContent = "";
+        $("#choices-container").hide();
         if (storyText === document.querySelector(".story-text")) {
-            $(choicesContainer).hide();
         }
     }
 
@@ -35,7 +35,7 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
         $(".skip-btn").hide();
 
         if (storyText === document.querySelector(".story-text")) {
-            $(choicesContainer).fadeIn(550);
+            $("#choices-container").fadeIn(550);
         }
         return;
     };
@@ -50,7 +50,7 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
 
         if (storyText === document.querySelector(".story-text")) {
             $(".skip-btn").hide(); 
-            $(choicesContainer).fadeIn(550);
+            $("#choices-container").fadeIn(550);
         }
         return;
     };
@@ -97,9 +97,6 @@ function skipTyping() {
     skipRequested = true;
 }
 
-// Pictures Effects 
-
-
 // Fetch Story Data
 let storyData = null;
 fetch("assets/js/story.json")
@@ -143,11 +140,10 @@ $(document).on("click", "#popupModal", function() {
 
 // Choices Generator 
 function generateChoices(data) {
-    console.log("Data in generateChoices:", data);
-    let html = `<p>${data["choices-question"]}</p>`;
+    let html = `<p>${data["choices-question"]}</p>`; 
     for (let i = 0; i < data.choices.length; i++) {
-    html += `<button class="btn btn-choice  ${i + 1}" title="Every choice can change the story..."> ${data.choices[i].choice} </button> `;
-    }
+        html += `<button class="btn btn-choice ${i + 1}" title="Every choice can change the story...">${data.choices[i].choice}</button>`;
+    };
     return html;
 };
 
