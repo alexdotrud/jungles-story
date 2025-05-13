@@ -22,6 +22,8 @@ gameSteps();
 }); 
 
 // Sounds
+const auroraVoice = new Audio("assets/audio/aurora-voice.mp3");
+const rickVoice = new Audio("assets/audio/rick-voice.mp3");
 const dogBark = new Audio("assets/audio/bark-sound.mp3");
 const junglesSound = new Audio("assets/audio/jungles-sound.mp3");
 const windSound = new Audio("assets/audio/wind-sound.mp3");
@@ -105,16 +107,18 @@ $(document).on("click", ".characters-img", function() {
     let description;
     const alt = $(this).attr("alt");
     // Attaching right description for the right character
-    if (alt === "Aurora") {
+    if (alt === "Young girl with dark hair and freckles") {
         description = storyData.characters.images[0].description;
-    } else if (alt === "Rick") {
+    } else if (alt === "Young man with map in his hands") {
         description = storyData.characters.images[1].description;
-    } else if (alt === "Dog") {
+    } else if (alt === "A dog with orange coat and smart eyes") {
         description = storyData.characters.images[2].description;
     }
     // Show modal with description
-    $("#modalContent").text(description);
+    $("#modal-content").html(` <p>${description}</p>
+        <i id="music-on" alt="${alt}" title="Click to hear the sound" class="fa-solid fa-play volume-icon"></i>`);
     $("#popupModal").fadeIn();
+
     // If the character has not been clicked before, increase click count
     if (!$(this).hasClass("clicked")) {
         $(this).addClass("clicked");
@@ -123,13 +127,22 @@ $(document).on("click", ".characters-img", function() {
 });
 
 // Pop-Up's closing
-$(document).on("click", "#popupModal", function() {
-    $("#popupModal").fadeOut();
+$(document).on("click", "#popupModal", function (e) {
+    if (e.target.id === "popupModal") {
+        $("#popupModal").fadeOut();
+    }
 });
 
 // Sound Effect 
-$("sound-on").on("click", function() {
-    dogBark.play();
+$(document).on("click", "#music-on", function() {
+    const alt = $(this).attr("alt");
+    if (alt === "Young girl with dark hair and freckles") {
+        auroraVoice.play();
+    } else if (alt === "Young man with map in his hands") {
+        rickVoice.play();
+    } else if (alt === "A dog with orange coat and smart eyes") {
+        dogBark.play();
+    }
 });
 
 
@@ -272,9 +285,7 @@ function showCharacters() {
     // Modal for extra information
     $("#pictures-container").html(`
         <div id="popupModal" class="modal">
-            <div class="modal-content">
-                <p id="modalContent"></p>
-                <i class="fa-solid fa-play"></i>
+            <div id="modal-content">
             </div>
         </div>
         <img src="assets/images/aurora.png" class="characters-img" alt="Young girl with dark hair and freckles">
