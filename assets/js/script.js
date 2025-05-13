@@ -170,13 +170,16 @@ function gameSteps() {
          // Remember the Username from Main Page
         let nameInput = $("#name").val();
         if (nameInput === "") {
-            alert("Please enter your name before continuing");
+        $("#warning").show();
+        $(".warning-text").text(Please enter your username)
+        ;
             return;
         } else {
             showCharacters();
             userName = nameInput;
         }
     });
+
     $(document).on("click", ".start-story", function() {
         gameStarted = true;
         showChapter1();
@@ -233,8 +236,9 @@ function mainPage() {
     $(".story-heading").text(data.heading);
     $(".story-text").html(data.intro);
     $(".btn-restart").hide();
+    $("#warning").hide();
     $("#choices-container").html(` 
-        <input type="text" id="name" placeholder="Enter your name"></input> <br>
+        <input type="text" id="name" placeholder="Enter your username"></input> <br>
         <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
     $("#pictures-container").hide();
     $(".skip-btn").hide();
