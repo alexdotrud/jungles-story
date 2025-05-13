@@ -36,6 +36,7 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
     if (i === 0) {
         storyText.textContent = "";
         $("#choices-container").hide();
+        $("#pictures-container").hide();
         if (storyText === document.querySelector(".story-text")) {
         }
     }
@@ -48,6 +49,7 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
 
         if (storyText === document.querySelector(".story-text")) {
             $("#choices-container").fadeIn(550);
+            $("#pictures-container").fadeIn(550);
         }
         return;
     };
@@ -61,6 +63,7 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
         if (storyText === document.querySelector(".story-text")) {
             $(".skip-btn").hide(); 
             $("#choices-container").fadeIn(550);
+            $("#pictures-container").fadeIn(550);
         }
         return;
     };
@@ -291,16 +294,17 @@ function showCharacters() {
         <img src="assets/images/aurora.png" class="characters-img" alt="Young girl with dark hair and freckles">
         <img src="assets/images/rick.png" class="characters-img" alt="Young man with map in his hands">
         <img src="assets/images/dog.png" class="characters-img" alt="A dog with orange coat and smart eyes">
+        <button class="btn start-story">Start The Story</button>
         `);
 
-    $("#choices-container").html(`<button class="btn start-story">Start The Story</button>`);
+    $("#choices-container").empty();
 };
 
 // Chapter 1
 function showChapter1() {
     const data = storyData.chapter1;
     $("#choices-container").html("");
-    $("#pictures-container").hide();
+    $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
@@ -310,7 +314,6 @@ function showChapter1() {
 function showChapter2(index) {
     const data = storyData.chapter2;
     applyTypingEffect(data.heading, data.story[index].story);
-    $("#pictures-container").show();
     $("#pictures-container").html(`<img src="assets/images/stone-arch.png" class="stone-image" alt="Dog, Aurora and Rick looking at swirling glyph"></img>`);
     $("#choices-container").html(`<button class="btn cnt-btn">Continue...</button>`);
 };

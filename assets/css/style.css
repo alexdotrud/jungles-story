@@ -182,6 +182,7 @@ dialog {
     width: 200px;
     height: auto;
     border-radius: 5px;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -190,8 +191,10 @@ dialog {
 }
 
 .stone-image {
-    width: 500px;
+    max-width: 800px;
     height: auto;
+    border-radius: 5px;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Styles for big screen*/
