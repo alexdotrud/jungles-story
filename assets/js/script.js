@@ -11,14 +11,25 @@ let isTyping = false;
 let skipRequested = false;
 let clickCount = 0;
 
+// Fetch Story Data
+let storyData = null;
+fetch("assets/js/story.json")
+.then(response => response.json())
+.then(data => {
+storyData = data;
+mainPage();
+gameSteps();
+}); 
+
 // Sounds
 const dogBark = new Audio("assets/audio/bark-sound.mp3");
 const junglesSound = new Audio("assets/audio/jungles-sound.mp3");
 const windSound = new Audio("assets/audio/wind-sound.mp3");
 
-// Typing Effect
+/**
+Typing Effect function. Adds letter by letter, creating typing effect.
+ */
 function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30) {
-
     // Clears text
     if (i === 0) {
         storyText.textContent = "";
@@ -26,7 +37,6 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
         if (storyText === document.querySelector(".story-text")) {
         }
     }
-
 // If skip button clicked
     if (skipRequested) {
         storyText.innerHTML = fullHtmlText;
@@ -39,10 +49,8 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
         }
         return;
     };
-
 // Adds one letter
     storyText.textContent += plainText[i];
-
 // If the last letter
     if (i === plainText.length - 1) {
         storyText.innerHTML = fullHtmlText;
@@ -54,30 +62,24 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
         }
         return;
     };
-
     setTimeout(() => textTypingEffect(storyText, plainText, fullHtmlText, i + 1, speed), speed);
-    
-
 };
 
-// Apply Typing Effect
-function applyTypingEffect(headingText, storyTextContent) {
 
+/**
+Apply Typing Effect function. Applies typing to heading and text content.
+ */
+function applyTypingEffect(headingText, storyTextContent) {
 // When Start the Game button clicked
     if (gameStarted) {
         isTyping = true;
-
         skipRequested = false;
-
-
 // Removing HTML tags
         const headingPlainText = htmlToText(headingText);
         const storyPlainText = htmlToText(storyTextContent);
-
 // Lower speed for headings
         textTypingEffect(heading, headingPlainText, headingText, 0, 80);
         $(".skip-btn").show(); 
-
 // Typing story text after delay
         setTimeout(() => {
             textTypingEffect(storyText, storyPlainText, storyTextContent, 0, 30);
@@ -85,7 +87,7 @@ function applyTypingEffect(headingText, storyTextContent) {
     }
 };
 
-    // Html to Plain Text Transformer 
+// Html to Plain Text Transformer 
 function htmlToText(html) {
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = html;
@@ -97,21 +99,11 @@ function skipTyping() {
     skipRequested = true;
 }
 
-// Fetch Story Data
-let storyData = null;
-fetch("assets/js/story.json")
-.then(response => response.json())
-.then(data => {
-storyData = data;
-mainPage();
-gameSteps();
-}); 
 
 // Pop-Up's on images
 $(document).on("click", ".characters-img", function() {
     let description;
     const alt = $(this).attr("alt");
-
     // Attaching right description for the right character
     if (alt === "Aurora") {
         description = storyData.characters.images[0].description;
@@ -119,13 +111,10 @@ $(document).on("click", ".characters-img", function() {
         description = storyData.characters.images[1].description;
     } else if (alt === "Dog") {
         description = storyData.characters.images[2].description;
-        dogBark.play();
     }
-
     // Show modal with description
-    $('#modalContent').text(description);
-    $('#popupModal').fadeIn();
-
+    $("#modalContent").text(description);
+    $("#popupModal").fadeIn();
     // If the character has not been clicked before, increase click count
     if (!$(this).hasClass("clicked")) {
         $(this).addClass("clicked");
@@ -137,6 +126,12 @@ $(document).on("click", ".characters-img", function() {
 $(document).on("click", "#popupModal", function() {
     $("#popupModal").fadeOut();
 });
+
+// Sound Effect 
+$("sound-on").on("click", function() {
+    dogBark.play();
+});
+
 
 // Choices Generator 
 function generateChoices(data) {
@@ -279,11 +274,12 @@ function showCharacters() {
         <div id="popupModal" class="modal">
             <div class="modal-content">
                 <p id="modalContent"></p>
+                <i class="fa-solid fa-play"></i>
             </div>
         </div>
-        <img src="assets/images/aurora.png" class="characters-img" alt="Aurora">
-        <img src="assets/images/rick.png" class="characters-img" alt="Rick">
-        <img src="assets/images/dog.png" class="characters-img" alt="Dog">
+        <img src="assets/images/aurora.png" class="characters-img" alt="Young girl with dark hair and freckles">
+        <img src="assets/images/rick.png" class="characters-img" alt="Young man with map in his hands">
+        <img src="assets/images/dog.png" class="characters-img" alt="A dog with orange coat and smart eyes">
         `);
 
     $("#choices-container").html(`<button class="btn start-story">Start The Story</button>`);
