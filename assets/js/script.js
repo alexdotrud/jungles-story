@@ -294,10 +294,9 @@ function showCharacters() {
         <img src="assets/images/aurora.png" class="characters-img" alt="Young girl with dark hair and freckles">
         <img src="assets/images/rick.png" class="characters-img" alt="Young man with map in his hands">
         <img src="assets/images/dog.png" class="characters-img" alt="A dog with orange coat and smart eyes">
-        <button class="btn start-story">Start The Story</button>
         `);
 
-    $("#choices-container").empty();
+    $("#choices-container").html(`<button class="btn start-story">Start The Story</button>`);
 };
 
 // Chapter 1
@@ -321,7 +320,7 @@ function showChapter2(index) {
 // Chapter 3
 function showChapter3() {
     const data = storyData.chapter3;
-    $("#pictures-container").hide();
+    $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
     $("#choices-container").html(generateChoices(data));
 };
