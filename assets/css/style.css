@@ -179,7 +179,7 @@ h1, h2 {
 }
 
 /* Dialog styling*/
-#restart {
+dialog {
     background: #ffffff; 
     color: #000000; 
     border: 3px solid var(--highlight-color-light); 

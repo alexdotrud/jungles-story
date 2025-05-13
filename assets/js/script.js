@@ -164,21 +164,37 @@ function restartGame() {
     })
     };
 
+// Warning Dialogue
+function warningDialog(message) {
+    $(".warning-text").text(message);
+    $("#warning").show();
+    // Close the warning when the OK button is clicked
+    $(document).on("click", "#close-warning", function () {
+    $("#warning").hide();
+    });
+    }
+
 // Game Steps
 function gameSteps() {
     $(document).on("click", ".meet-characters", function() {
-         // Remember the Username from Main Page
         let nameInput = $("#name").val();
+
+      // Validate the input
         if (nameInput === "") {
-        $("#warning").show();
-        $(".warning-text").text(Please enter your username)
-        ;
-            return;
+        warningDialog(`Please enter your username`);
+        return;
+        } else if (nameInput.length < 5 || nameInput.length > 20) {
+        warningDialog(`Your username must be between 5 and 20 characters!`);
+        return;
+        } else if (!/^[^\s]+$/.test(nameInput)) {
+            warningDialog("Your username must be one word without spaces!")
         } else {
-            showCharacters();
-            userName = nameInput;
+        // If validation passes, hide the warning
+        $("#warning").hide();
+        showCharacters();
         }
     });
+
 
     $(document).on("click", ".start-story", function() {
         gameStarted = true;
