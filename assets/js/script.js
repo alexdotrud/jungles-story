@@ -309,8 +309,9 @@ function showChapter1() {
 // Chapter 2
 function showChapter2(index) {
     const data = storyData.chapter2;
-    $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
+    $("#pictures-container").show();
+    $("#pictures-container").html(`<img src="assets/images/stone-arch.png" class="stone-image" alt="Dog, Aurora and Rick looking at swirling glyph"></img>`);
     $("#choices-container").html(`<button class="btn cnt-btn">Continue...</button>`);
 };
 

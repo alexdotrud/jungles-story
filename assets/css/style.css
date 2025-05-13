@@ -189,6 +189,10 @@ dialog {
     border: 6px solid var(--highlight-color-light);
 }
 
+.stone-image {
+    width: 500px;
+    height: auto;
+}
 
 /* Styles for big screen*/
 
