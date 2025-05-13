@@ -266,6 +266,7 @@ function showCharacters() {
     $(".story-heading").text(data.heading);
     $(".story-text").text(data.intro);
     $("#pictures-container").show();
+    $(".btn-restart").show();
 
     // Modal for extra information
     $("#pictures-container").html(`
