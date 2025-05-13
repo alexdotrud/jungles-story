@@ -232,6 +232,7 @@ function mainPage() {
     const data = storyData.main;
     $(".story-heading").text(data.heading);
     $(".story-text").html(data.intro);
+    $(".btn-restart").hide();
     $("#choices-container").html(` 
         <input type="text" id="name" placeholder="Enter your name"></input> <br>
         <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
