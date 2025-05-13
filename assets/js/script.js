@@ -9,6 +9,7 @@ let userName = " ";
 let gameStarted = false;
 let isTyping = false;
 let skipRequested = false;
+let clickCount = 0;
 
 // Sounds
 const dogBark = new Audio("assets/audio/bark-sound.mp3");
@@ -65,6 +66,7 @@ function applyTypingEffect(headingText, storyTextContent) {
 // When Start the Game button clicked
     if (gameStarted) {
         isTyping = true;
+
         skipRequested = false;
 
 
@@ -92,7 +94,6 @@ function htmlToText(html) {
 
 // Skip Typing
 function skipTyping() {
-    console.log("Skipppp!!");
     skipRequested = true;
 }
 
@@ -112,9 +113,9 @@ gameSteps();
 // Pop-Up's on images
 $(document).on("click", ".characters-img", function() {
     let description;
-
-    // Attaching right discription for the right character
     const alt = $(this).attr("alt");
+
+    // Attaching right description for the right character
     if (alt === "Aurora") {
         description = storyData.characters.images[0].description;
     } else if (alt === "Rick") {
@@ -123,8 +124,16 @@ $(document).on("click", ".characters-img", function() {
         description = storyData.characters.images[2].description;
         dogBark.play();
     }
+
+    // Show modal with description
     $('#modalContent').text(description);
     $('#popupModal').fadeIn();
+
+    // If the character has not been clicked before, increase click count
+    if (!$(this).hasClass("clicked")) {
+        $(this).addClass("clicked");
+        clickCount++;
+    }
 });
 
 // Pop-Up's closing
@@ -134,6 +143,7 @@ $(document).on("click", "#popupModal", function() {
 
 // Choices Generator 
 function generateChoices(data) {
+    console.log("Data in generateChoices:", data);
     let html = `<p>${data["choices-question"]}</p>`;
     for (let i = 0; i < data.choices.length; i++) {
     html += `<button class="btn btn-choice  ${i + 1}" title="Every choice can change the story..."> ${data.choices[i].choice} </button> `;
@@ -178,8 +188,6 @@ function warningDialog(message) {
 function gameSteps() {
     $(document).on("click", ".meet-characters", function() {
         let nameInput = $("#name").val();
-
-      // Validate the input
         if (nameInput === "") {
         warningDialog(`Please enter your username`);
         return;
@@ -189,20 +197,22 @@ function gameSteps() {
         } else if (!/^[^\s]+$/.test(nameInput)) {
             warningDialog("Your username must be one word without spaces!")
         } else {
-        // If validation passes, hide the warning
         $("#warning").hide();
         showCharacters();
         }
-    });
-
-
+    })
     $(document).on("click", ".start-story", function() {
-        gameStarted = true;
-        showChapter1();
-        junglesSound.play();
+        if (clickCount < 3) {
+            warningDialog(`You must click on all characters to start the game!`);
+            return;
+        } else {
+            gameStarted = true;
+            showChapter1();
+            junglesSound.play();
+        }
     });
 
-    // The right choice different button classes
+    // The right choice for different button classes
     $(document).on("click", ".btn-choice", function() {
         const chapter = $(".story-heading").text();
         let index = 0;
@@ -286,11 +296,12 @@ function showCharacters() {
 // Chapter 1
 function showChapter1() {
     const data = storyData.chapter1;
+    $("#choices-container").html("");
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story);
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
-};
+}
 
 // Chapter 2
 function showChapter2(index) {

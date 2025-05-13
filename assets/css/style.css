@@ -98,11 +98,6 @@ h1, h2 {
     align-items: center;
 }
 
-.characters-img {
-    width: 200px;
-    height: auto;
-    
-}
 
 .story-heading {
     padding: 3px;
@@ -191,6 +186,18 @@ dialog {
 #warning {
     position: fixed;
     top: 50%;
+}
+
+/* Images styling*/
+.characters-img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+
+}
+
+.characters-img:hover {
+    border: 6px solid var(--highlight-color-light);
 }
 
 /* Styles for big screen*/
