@@ -73,7 +73,6 @@ h1, h2 {
     justify-content: center; 
     gap: 1rem; 
     flex-wrap: wrap; 
-    padding: 1rem;
     caret-color: transparent; 
 }
 
@@ -81,7 +80,8 @@ h1, h2 {
     text-align: center;
     margin-left: auto; 
     margin-right: auto;
-    margin-bottom: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
 }

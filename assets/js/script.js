@@ -328,8 +328,8 @@ function showChapter3() {
 //Chapter 4 
 function showChapter4(index) {
     const data = storyData.chapter4;
-    $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
+    $("#pictures-container").html(`<img src="assets/images/golden-swirl.png" class="stone-image" alt="Dog, Aurora and Rick looking at swirling glyph"></img>`);
     $("#choices-container").html(`<button class="btn cnt-btn2">Continue...</button>`);
 };
 
