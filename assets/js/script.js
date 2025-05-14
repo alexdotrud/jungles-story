@@ -313,7 +313,7 @@ function showChapter1() {
 function showChapter2(index) {
     const data = storyData.chapter2;
     applyTypingEffect(data.heading, data.story[index].story);
-    $("#pictures-container").html(`<img src="assets/images/stone-arch.png" class="stone-image" alt="Dog, Aurora and Rick looking at swirling glyph"></img>`);
+    $("#pictures-container").html(`<img src="assets/images/stone-arch.png" class="story-image" alt="Dog, Aurora and Rick looking at swirling glyph"></img>`);
     $("#choices-container").html(`<button class="btn cnt-btn">Continue...</button>`);
 };
 
@@ -329,7 +329,7 @@ function showChapter3() {
 function showChapter4(index) {
     const data = storyData.chapter4;
     applyTypingEffect(data.heading, data.story[index].story);
-    $("#pictures-container").html(`<img src="assets/images/golden-swirl.png" class="stone-image" alt="Dog, Aurora and Rick looking at swirling glyph"></img>`);
+    $("#pictures-container").html(`<img src="assets/images/golden-swirl.png" class="story-image" alt="Golden swirl on the platform is shining bright"></img>`);
     $("#choices-container").html(`<button class="btn cnt-btn2">Continue...</button>`);
 };
 

@@ -190,7 +190,7 @@ dialog {
     border: 6px solid var(--highlight-color-light);
 }
 
-.stone-image {
+.story-image {
     max-width: 800px;
     height: auto;
     border-radius: 5px;
