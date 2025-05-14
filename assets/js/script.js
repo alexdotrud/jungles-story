@@ -215,7 +215,6 @@ function gameSteps() {
         } else {
             gameStarted = true;
             showChapter1();
-            junglesSound.play();
         }
     });
 
@@ -241,7 +240,6 @@ function gameSteps() {
     $(document).on("click", ".cnt-btn", function() {
         showChapter3();
         junglesSound.pause();
-        windSound.play();
     });
     $(document).on("click", ".cnt-btn2", showChapter5);
     $(document).on("click", ".cnt-btn3", showChapter7);
@@ -346,8 +344,23 @@ function showChapter6(index) {
     const data = storyData.chapter6;
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
-    $("#choices-container").html(`<button class="btn cnt-btn3">Continue...</button>`);
+    $("#choices-container").hide();
+    $("#choices-container").html(`<button class="btn cnt-btn3">Solve the test</button>`);
 };
+
+// Puzzle-Game
+function showPuzzleGame() {
+    const data = storyData.puzzle;
+    $(".story-heading").text(data.heading);
+    $(storyContainer).html(<div id="popupModal" class="modal">
+        <div id="modal-content">
+            <h1>Unlock The Treasure Box</h1>
+            <p>Drag each key to the symbol it matches. Once all keys are correctly placed, the treasure box will open, revealing its secrets. Pay close attention to the colors and symbols; they hold the clues to the correct pairings.</p>
+        </div>
+        <div id="treasure-box"></div>
+    </div>);
+    $("#pictures-container").html(data.choices);
+}
 
 //Chapter 7
 function showChapter7() {
