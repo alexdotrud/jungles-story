@@ -163,9 +163,9 @@ function restartGame() {
     // Dialogue for restart confirmation
     $(".dialogue").html(`
     <dialog id="restart" open>
-    <p>Are you sure you want to restart the Game?</p>
+    <p>Are you sure you want to go back to the Manual?</p>
     <form method="dialog">
-    <button class="ok-no" value="yes">OK</button>
+    <button class="ok-no" value="yes">YES</button>
     <button class="ok-no" value="no">NO</button>
     </form>
     </dialog>`);
