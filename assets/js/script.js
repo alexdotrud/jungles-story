@@ -336,9 +336,8 @@ function showChapter4(index) {
 // Chapter 5
 function showChapter5() {
     const data = storyData.chapter5;
-    $("#pictures-container").hide();
+    $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
-    $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
 };
 

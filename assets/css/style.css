@@ -65,6 +65,7 @@ h1, h2 {
     margin-right: auto;
     caret-color: transparent; 
     margin-top: 5rem;
+    padding-top: 3rem;
 }
 
 #pictures-container {
@@ -183,7 +184,7 @@ dialog {
     height: auto;
     border-radius: 5px;
     box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
-
+    margin-top: 3rem;
 }
 
 .characters-img:hover {
@@ -191,7 +192,8 @@ dialog {
 }
 
 .story-image {
-    max-width: 800px;
+    margin-top: 2rem;
+    max-width: 90%;
     height: auto;
     border-radius: 5px;
     box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
@@ -220,10 +222,6 @@ dialog {
     padding:3rem 3rem;
     margin: 2rem auto;
 }
-
-#story-container {
-    padding: 3rem;
-}
 }
 
 @media screen and (min-width:992px) {
@@ -246,7 +244,6 @@ dialog {
 
 #story-container {
     max-width: 800px;
-    padding: 2rem;
 }
 
 #pictures-container {
