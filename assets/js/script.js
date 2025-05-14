@@ -217,7 +217,6 @@ function gameSteps() {
             showChapter1();
         }
     });
-
     // The right choice for different button classes
     $(document).on("click", ".btn-choice", function() {
         const chapter = $(".story-heading").text();
@@ -239,7 +238,6 @@ function gameSteps() {
 });
     $(document).on("click", ".cnt-btn", function() {
         showChapter3();
-        junglesSound.pause();
     });
     $(document).on("click", ".cnt-btn2", showChapter5);
     $(document).on("click", ".cnt-btn3", showChapter7);
@@ -345,7 +343,7 @@ function showChapter6(index) {
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
     $("#choices-container").hide();
-    $("#choices-container").html(`<button class="btn cnt-btn3">Solve the test</button>`);
+    $("#choices-container").html(`<button class="btn solve-puzzle">Solve the test...</button>`);
 };
 
 // Puzzle-Game
@@ -358,9 +356,47 @@ function showPuzzleGame() {
             <p>Drag each key to the symbol it matches. Once all keys are correctly placed, the treasure box will open, revealing its secrets. Pay close attention to the colors and symbols; they hold the clues to the correct pairings.</p>
         </div>
         <div id="treasure-box"></div>
+        <p id="key-question"></p>
     </div>);
-    $("#pictures-container").html(data.choices);
-}
+    $("#pictures-container").html(`<img src="assets/images/key-red.png" class="key-image" alt="Red old key"></img>
+        <img src="assets/images/key-blue.png" class="key-image" alt="Blue old key"></img>
+        <img src="assets/images/key-yellow.png" class="key-image" alt="Yellow old key"></img>`);
+};
+
+// Puzzle Game Steps
+let currentQuestion = "";
+
+$(document).on("click", ".solve-puzzle", function () {
+    currentQuestion = "Which key matches the Sun symbol?";
+    $("#key-question").text(currentQuestion);
+});
+
+$(document).on("click", ".key-image", function () {
+    const alt = $(this).attr("alt");
+
+    if (currentQuestion === "Which key matches the Sun symbol?") {
+        if (alt === "Red old key") {
+            currentQuestion = "Which key matches the Moon symbol?";
+            $("#key-question").text(currentQuestion);
+        } else {
+            warningDialog("It is not the right key. Try again!");
+        }
+    } else if (currentQuestion === "Which key matches the Moon symbol?") {
+        if (alt === "Blue old key") {
+            currentQuestion = "Which key matches the Star symbol?";
+            $("#key-question").text(currentQuestion);
+        } else {
+            warningDialog("It is not the right key. Try again!");
+        }
+    } else if (currentQuestion === "Which key matches the Star symbol?") {
+        if (alt === "Yellow old key") {
+            $("#key-question").text("Puzzle solved!");
+            $("#choices-container").html(`<button class="btn cnt-btn3">Solve the test...</button>`)
+        } else {
+            warningDialog("It is not the right key. Try again!");
+        }
+    }
+});
 
 //Chapter 7
 function showChapter7() {
