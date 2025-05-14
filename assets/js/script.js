@@ -349,25 +349,32 @@ function showChapter6(index) {
 // Puzzle-Game
 function showPuzzleGame() {
     const data = storyData.puzzle;
+    $("#choices-container").hide();
     $(".story-heading").text(data.heading);
-    $(storyContainer).html(<div id="popupModal" class="modal">
-        <div id="modal-content">
-            <h1>Unlock The Treasure Box</h1>
-            <p>Drag each key to the symbol it matches. Once all keys are correctly placed, the treasure box will open, revealing its secrets. Pay close attention to the colors and symbols; they hold the clues to the correct pairings.</p>
+    $("#story-container").html(`
+        <div id="puzzleModal" class="modal">
+            <div class="modal-content">
+                    <h3>Unlock The Treasure Box</h3>
+                    <p>Drag each key to the symbol it matches. Once all keys are correctly placed, the treasure box will open, revealing its secrets.</p>
+                </div>
+                <p id="key-question"></p>
+                <div id="puzzle-keys"">
+                    <img src="assets/images/key-red.png" class="key-image" alt="Red old key">
+                    <img src="assets/images/key-blue.png" class="key-image" alt="Blue old key">
+                    <img src="assets/images/key-yellow.png" class="key-image" alt="Yellow old key">
+                </div>
+            </div>
         </div>
-        <div id="treasure-box"></div>
-        <p id="key-question"></p>
-    </div>);
-    $("#pictures-container").html(`<img src="assets/images/key-red.png" class="key-image" alt="Red old key"></img>
-        <img src="assets/images/key-blue.png" class="key-image" alt="Blue old key"></img>
-        <img src="assets/images/key-yellow.png" class="key-image" alt="Yellow old key"></img>`);
+    `)
+    currentQuestion = "Which key matches the Sun symbol?";
+    $("#key-question").text(currentQuestion);
+    $("#puzzleModal").fadeIn();
 };
 
-// Puzzle Game Steps
-let currentQuestion = "";
 
+// Puzzle Game Steps
 $(document).on("click", ".solve-puzzle", function () {
-    currentQuestion = "Which key matches the Sun symbol?";
+    showPuzzleGame();
     $("#key-question").text(currentQuestion);
 });
 
