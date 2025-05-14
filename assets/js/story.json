@@ -86,21 +86,7 @@
 
     "chapter7" : {
         "heading" :"Chapter 7",
-        "story" : "Aurora, Rick, and Dog step into the glowing chamber. The air is warm, filled with soft light and a quiet hum that feels like music. In the center of the room, floating just above a smooth stone pedestal, is the Eye of Life. It’s more beautiful than they imagined — a glowing crystal that shines in colors that shift like water, like light, like dreams. They walk slowly toward it, their footsteps quiet. Dog sniffs the air and wags his tail gently.<br<br> Rick leans close and whispers, Rick:<em> “We really found it.”</em> <br><br> Aurora places her hand near the Eye. It doesn’t feel cold or hot — it feels alive. Like the jungle itself is breathing with them. As she touches it, the room begins to change. The carvings on the walls light up, one by one. The glow rises toward the ceiling, like starlight climbing vines. Then — a soft sound, like wind in trees — and the Eye gently floats down into her hands. Before they can leave, a quiet voice seems to rise from the Eye itself — not words, but feelings.",
-        "choices-question" : "What should Aurora do?",
-        "choices" : [
-        {"choice": "Protect the Eye and leave it hidden"},
-        {"choice": "Take the Eye home to study"},
-        {"choice": "Ask the Eye what it wants"}
-        ]
-    },
-
-    "chapter8" : {
-        "heading" :"Chapter 8",
-        "story" : [
-            {"story" : "Aurora pauses, then chooses to leave the Eye behind. Whether guided by instinct or by the Eye itself, she places it gently back on the pedestal. The glow softens. The carvings on the walls dim, one by one, until the room returns to calm.<br><br> Rick takes a deep breath. <em>“It belongs here.”</em> <br><br>They turn back, stepping into the sunlight. Behind them, the temple quietly seals itself, as if grateful. The Eye remains where it was meant to be — hidden, protected, and in harmony with the jungle."},
-            {"story" : "Aurora holds the Eye tightly.<em> “This could help so many people,”</em> she says. <br><br>They return home. The Eye becomes a global marvel — studied, displayed, admired. But little by little, its light fades. Far away, the jungle grows quieter. The magic, once alive, now feels distant. Rick looks at Aurora one evening and says, “Maybe some wonders aren’t meant to be shared.” The Eye’s power slips away from the world. The jungle, now silent, guards no more secrets."}
-        ]
+        "story" : "The last key clicks into place. The treasure box glows, hums gently, then slowly opens. From inside, a soft golden light spills out. Rising from it is a crystal orb — smooth, weightless glowing from within. The Eye of Life. Colors swirl inside it like drifting mist — gold, deep blue, silver — shifting with every breath of air. It pulses softly, alive with something ancient and aware.<br><br>Rick steps back, staring in awe.<em> “It’s real.”</em> The Eye floats upward, gliding to the center of the chamber. As Aurora steps closer, the carvings on the walls light up, one by one, as if greeting her. She reaches out — but pauses. The Eye’s glow feels calm, complete — not like something to be taken, but something to be trusted. They look at each other and understand without speaking: <strong>this place is its home </strong>. The Eye pulses again, gently, then lowers itself onto the pedestal, casting a final shimmer of light across the room. They don’t need to take it. Its purpose is not to be possessed — only protected. The glow fades. The chamber stills. The journey is complete. Together, they step out into the light, leaving the Eye where it belongs."
     }
 
 }

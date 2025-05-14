@@ -392,7 +392,7 @@ $(document).on("click", ".key-image", function () {
         if (alt === "Yellow old key") {
             $("#key-question").text("Puzzle solved!");
             $("#choices-container").show();
-            $("#choices-container").html(`<button class="btn cnt-btn3">Solve the test...</button>`)
+            $("#choices-container").html(`<button class="btn cnt-btn3">Continue...</button>`)
         } else {
             warningDialog("It is not the right key. Try again!");
         }
@@ -402,7 +402,7 @@ $(document).on("click", ".key-image", function () {
 //Chapter 7
 function showChapter7() {
     const data = storyData.chapter7;
-    $("#pictures-container").hide();
+    $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
     $("#choices-container").html(generateChoices(data));
 };
