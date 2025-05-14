@@ -80,7 +80,7 @@ h1, h2 {
     text-align: center;
     margin-left: auto; 
     margin-right: auto;
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
@@ -110,6 +110,21 @@ h1, h2 {
     margin-bottom: 2rem;
 }
 
+.key-row {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.puzzle-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
 /*Buttons style*/
 
 .btn {
@@ -117,7 +132,6 @@ h1, h2 {
     background-color: var(--secondary-color);
     font-family: var(--secondary-font);
     padding: 0.5rem 1rem;
-    margin-top: 1rem;
     min-height: 3em;
 }
 
@@ -152,6 +166,12 @@ h1, h2 {
     border: 3px solid rgb(74, 150, 81);
     color: var(--primary-color);
 }
+
+.btn-choice {
+    margin: 2px;
+}
+
+
 
 /* Modal styling*/
 #modal-content {
@@ -196,16 +216,22 @@ dialog {
 }
 
 .story-image {
-    margin-top: 2rem;
     max-width: 90%;
     height: auto;
     border-radius: 5px;
     box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
+    margin: 1.5rem;
 }
 
 .key-image {
-    height: 70%;
-    width: auto;
+    width: 70px;
+    height: auto;
+}
+
+.key-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(255, 255, 100, 0.7);
+    border-radius: 5px;
 }
 
 /* Styles for big screen*/

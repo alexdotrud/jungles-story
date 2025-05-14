@@ -352,10 +352,15 @@ function showPuzzleGame() {
     $("#choices-container").hide();
     $(".story-heading").empty();
     $("#story-container").html(`<h3 id="key-question"></h3>`)
-    $("#pictures-container").html(`<img src="assets/images/key-red.png" class="key-image" alt="Red old key">
-                    <img src="assets/images/key-blue.png" class="key-image" alt="Blue old key">
-                    <img src="assets/images/key-yellow.png" class="key-image" alt="Yellow old key">`)
-    currentQuestion = "Which key matches the Sun symbol?";
+    $("#pictures-container").html(`<div class="puzzle-wrapper">
+    <div class="key-row">
+        <img src="assets/images/key-red.png" class="key-image" alt="Red old key">
+        <img src="assets/images/key-blue.png" class="key-image" alt="Blue old key">
+        <img src="assets/images/key-yellow.png" class="key-image" alt="Yellow old key">
+    </div>
+    <img src="assets/images/treasure-box.png" class="story-image treasure-box" alt="Old treasure box with sun, moon and star symbols">
+    </div>`)
+    currentQuestion = "Which key matches the SUN symbol?";
     $("#key-question").text(currentQuestion);
 };
 
@@ -369,21 +374,21 @@ $(document).on("click", ".solve-puzzle", function () {
 $(document).on("click", ".key-image", function () {
     const alt = $(this).attr("alt");
 
-    if (currentQuestion === "Which key matches the Sun symbol?") {
+    if (currentQuestion === "Which key matches the SUN symbol?") {
         if (alt === "Red old key") {
-            currentQuestion = "Which key matches the Moon symbol?";
+            currentQuestion = "Which key matches the MOON symbol?";
             $("#key-question").text(currentQuestion);
         } else {
             warningDialog("It is not the right key. Try again!");
         }
-    } else if (currentQuestion === "Which key matches the Moon symbol?") {
+    } else if (currentQuestion === "Which key matches the MOON symbol?") {
         if (alt === "Blue old key") {
-            currentQuestion = "Which key matches the Star symbol?";
+            currentQuestion = "Which key matches the STAR symbol?";
             $("#key-question").text(currentQuestion);
         } else {
             warningDialog("It is not the right key. Try again!");
         }
-    } else if (currentQuestion === "Which key matches the Star symbol?") {
+    } else if (currentQuestion === "Which key matches the STAR symbol?") {
         if (alt === "Yellow old key") {
             $("#key-question").text("Puzzle solved!");
             $("#choices-container").show();
