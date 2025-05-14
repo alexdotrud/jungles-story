@@ -352,23 +352,16 @@ function showPuzzleGame() {
     $("#choices-container").hide();
     $(".story-heading").text(data.heading);
     $("#story-container").html(`
-        <div id="puzzleModal" class="modal">
-            <div class="modal-content">
                     <h3>Unlock The Treasure Box</h3>
                     <p>Drag each key to the symbol it matches. Once all keys are correctly placed, the treasure box will open, revealing its secrets.</p>
                 </div>
                 <p id="key-question"></p>
-                <div id="puzzle-keys"">
-                    <img src="assets/images/key-red.png" class="key-image" alt="Red old key">
-                    <img src="assets/images/key-blue.png" class="key-image" alt="Blue old key">
-                    <img src="assets/images/key-yellow.png" class="key-image" alt="Yellow old key">
-                </div>
-            </div>
-        </div>
     `)
+    $("#pictures-container").html(`<img src="assets/images/key-red.png" class="key-image" alt="Red old key">
+                    <img src="assets/images/key-blue.png" class="key-image" alt="Blue old key">
+                    <img src="assets/images/key-yellow.png" class="key-image" alt="Yellow old key">`)
     currentQuestion = "Which key matches the Sun symbol?";
     $("#key-question").text(currentQuestion);
-    $("#puzzleModal").fadeIn();
 };
 
 

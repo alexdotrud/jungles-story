@@ -81,8 +81,7 @@
     },
 
     "puzzle" : {
-        "heading" : "Unlock The Treasure Box",
-        "story" : "Drag each key to the symbol it matches. Once all keys are correctly placed, the treasure box will open, revealing its secrets. Pay close attention to the colors and symbols; they hold the clues to the correct pairings."
+        "heading" : "Unlock The Treasure Box"
     },
 
     "chapter7" : {
