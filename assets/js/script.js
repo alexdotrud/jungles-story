@@ -203,10 +203,11 @@ function gameSteps() {
         return;
         } else if (!/^[^\s]+$/.test(nameInput)) {
             warningDialog("Your username must be one word without spaces!")
-        } else {
+        } else 
+        userName = nameInput;
         $("#warning").hide();
         showCharacters();
-        }
+        
     })
     $(document).on("click", ".start-story", function() {
         if (clickCount < 3) {
@@ -386,14 +387,13 @@ $(document).on("click", ".key-image", function () {
 //Chapter 7
 function showChapter7() {
     const data = storyData.chapter7;
-
     gameStarted = true;
-
     $(".story-heading").text("");      
-    $(".story-text").html("");         
-    $("#pictures-container").empty();
-    $("#choices-container").empty(); 
-
+    $(".story-text").html("");  
+    $("#choices-container").html("");        
+    $("#pictures-container").empty(); 
     applyTypingEffect(data.heading, data.story);
-    $("#choices-container").html(`<button class="btn btn-restart">Restart The Game</button>`);
-};
+    $("#choices-container").html(`
+        <p>Thank you for this game ${userName.toUpperCase()}!</p>
+        <button class="btn btn-restart">Go Back to The Manual!</button>
+    `)};
