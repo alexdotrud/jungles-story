@@ -350,13 +350,8 @@ function showChapter6(index) {
 function showPuzzleGame() {
     const data = storyData.puzzle;
     $("#choices-container").hide();
-    $(".story-heading").text(data.heading);
-    $("#story-container").html(`
-                    <h3>Unlock The Treasure Box</h3>
-                    <p>Drag each key to the symbol it matches. Once all keys are correctly placed, the treasure box will open, revealing its secrets.</p>
-                </div>
-                <p id="key-question"></p>
-    `)
+    $(".story-heading").empty();
+    $("#story-container").html(`<h3 id="key-question"></h3>`)
     $("#pictures-container").html(`<img src="assets/images/key-red.png" class="key-image" alt="Red old key">
                     <img src="assets/images/key-blue.png" class="key-image" alt="Blue old key">
                     <img src="assets/images/key-yellow.png" class="key-image" alt="Yellow old key">`)
@@ -391,6 +386,7 @@ $(document).on("click", ".key-image", function () {
     } else if (currentQuestion === "Which key matches the Star symbol?") {
         if (alt === "Yellow old key") {
             $("#key-question").text("Puzzle solved!");
+            $("#choices-container").show();
             $("#choices-container").html(`<button class="btn cnt-btn3">Solve the test...</button>`)
         } else {
             warningDialog("It is not the right key. Try again!");

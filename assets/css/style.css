@@ -107,8 +107,7 @@ h1, h2 {
 }
 
 #key-question {
-    font-weight: bold;
-    text-transform: uppercase;
+    margin-bottom: 2rem;
 }
 
 /*Buttons style*/
@@ -202,6 +201,11 @@ dialog {
     height: auto;
     border-radius: 5px;
     box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
+}
+
+.key-image {
+    height: 70%;
+    width: auto;
 }
 
 /* Styles for big screen*/
