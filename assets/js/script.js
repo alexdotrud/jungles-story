@@ -241,20 +241,6 @@ function gameSteps() {
     });
     $(document).on("click", ".cnt-btn2", showChapter5);
     $(document).on("click", ".cnt-btn3", showChapter7);
-    $(document).on("click", ".btn-choice", function() {
-        const chapter = $(".story-heading").text();
-        let index = 0;
-    if($(this).hasClass("1")) {
-        index = 0;
-    } else if($(this).hasClass("2")) {
-        index = 1;
-    } else if($(this).hasClass("3")) {
-        index = 0;
-    }
-    if (chapter === "Chapter 7") {
-    showChapter8(index);
-    };
-});
     $(document).on("click", ".btn-restart", restartGame);
     $(document).on("click", ".skip-btn", skipTyping);
 };
@@ -348,10 +334,8 @@ function showChapter6(index) {
 
 // Puzzle-Game
 function showPuzzleGame() {
-    const data = storyData.puzzle;
     $("#choices-container").hide();
-    $(".story-heading").empty();
-    $("#story-container").html(`<h3 id="key-question"></h3>`)
+    $(".story-text").html(`<h3 id="key-question">Which key matches the SUN symbol?</h3>`);
     $("#pictures-container").html(`<div class="puzzle-wrapper">
     <div class="key-row">
         <img src="assets/images/key-red.png" class="key-image" alt="Red old key">
@@ -402,16 +386,14 @@ $(document).on("click", ".key-image", function () {
 //Chapter 7
 function showChapter7() {
     const data = storyData.chapter7;
-    $("#pictures-container").empty();
-    applyTypingEffect(data.heading, data.story);
-    $("#choices-container").html(generateChoices(data));
-};
 
-// Chapter 8
-function showChapter8(index) {
-    const data = storyData.chapter8;
-    $("#pictures-container").hide();
-    applyTypingEffect(data.heading, data.story[index].story);
-    $("#choices-container").html(` <p> Well done <strong> ${userName} </strong>! Your journey through the jungle has come to an end... for now.</p>
-        <button class="btn btn-restart">Restart The Game</button>`);
+    gameStarted = true;
+
+    $(".story-heading").text("");      
+    $(".story-text").html("");         
+    $("#pictures-container").empty();
+    $("#choices-container").empty(); 
+
+    applyTypingEffect(data.heading, data.story);
+    $("#choices-container").html(`<button class="btn btn-restart">Restart The Game</button>`);
 };
