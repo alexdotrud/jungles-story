@@ -45,6 +45,20 @@ h1, h2 {
     padding: 2rem;
 }
 
+footer {
+    padding: 1.5rem;
+    background-color: rgb(13, 46, 17);
+    border-top: 1px solid #c9b037;
+    color:#d3b572;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+}
 /* Container styles*/
 
 #main-container {  
@@ -171,8 +185,6 @@ h1, h2 {
     margin: 2px;
 }
 
-
-
 /* Modal styling*/
 #modal-content {
     padding: 20px;
@@ -232,6 +244,20 @@ dialog {
     transform: scale(1.1);
     box-shadow: 0 0 12px rgba(255, 255, 100, 0.7);
     border-radius: 5px;
+}
+
+/* Icon styles*/
+#footer-icons {
+    color: var(--highlight-color-light);
+}
+
+#footer-icons i {
+    color: #ffffff; 
+    font-size: 1.5em; 
+    border: 2px solid #c9b037; 
+    border-radius: 50%; 
+    padding: 7px; 
+    margin-right: 5px;
 }
 
 /* Styles for big screen*/
