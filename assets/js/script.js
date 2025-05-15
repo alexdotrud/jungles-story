@@ -14,12 +14,16 @@ let clickCount = 0;
 // Fetch Story Data
 let storyData = null;
 fetch("assets/js/story.json")
-.then(response => response.json())
-.then(data => {
-storyData = data;
-mainPage();
-gameSteps();
-}); 
+    .then((response) => response.json())
+    .then((data) => {
+        storyData = data;
+        mainPage();
+        gameSteps();
+    })
+    .catch((error) => {
+            console.error("Failed to load story data:", error);
+            alert("Something went wrong while loading the story. Please try again later.");
+    });
 
 // Sounds
 const auroraVoice = new Audio("assets/audio/aurora-voice.mp3");
@@ -31,20 +35,25 @@ const windSound = new Audio("assets/audio/wind-sound.mp3");
 /**
 Typing Effect function. Adds letter by letter, creating typing effect.
  */
-function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30) {
+function textTypingEffect(
+    storyText,
+    plainText,
+    fullHtmlText,
+    i = 0,
+    speed = 30,
+) {
     // Clears text
     if (i === 0) {
         storyText.textContent = "";
         $("#choices-container").hide();
         $("#pictures-container").hide();
-        if (storyText === document.querySelector(".story-text")) {
-        }
+        if (storyText === document.querySelector(".story-text")) {}
     }
-// If skip button clicked
+    // If skip button clicked
     if (skipRequested) {
         storyText.innerHTML = fullHtmlText;
         isTyping = false;
-        skipRequested = false;;
+        skipRequested = false;
         $(".skip-btn").hide();
 
         if (storyText === document.querySelector(".story-text")) {
@@ -52,58 +61,59 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
             $("#pictures-container").fadeIn(550);
         }
         return;
-    };
-// Adds one letter
+    }
+    // Adds one letter
     storyText.textContent += plainText[i];
-// If the last letter
+    // If the last letter
     if (i === plainText.length - 1) {
         storyText.innerHTML = fullHtmlText;
         isTyping = false;
 
         if (storyText === document.querySelector(".story-text")) {
-            $(".skip-btn").hide(); 
+            $(".skip-btn").hide();
             $("#choices-container").fadeIn(550);
             $("#pictures-container").fadeIn(550);
         }
         return;
-    };
-    setTimeout(() => textTypingEffect(storyText, plainText, fullHtmlText, i + 1, speed), speed);
-};
-
+    }
+    setTimeout(
+        () => textTypingEffect(storyText, plainText, fullHtmlText, i + 1, speed),
+        speed,
+    );
+}
 
 /**
 Apply Typing Effect function. Applies typing to heading and text content.
  */
 function applyTypingEffect(headingText, storyTextContent) {
-// When Start the Game button clicked
+    // When Start the Game button clicked
     if (gameStarted) {
         isTyping = true;
         skipRequested = false;
-// Removing HTML tags
+        // Removing HTML tags
         const headingPlainText = htmlToText(headingText);
         const storyPlainText = htmlToText(storyTextContent);
-// Lower speed for headings
+        // Lower speed for headings
         textTypingEffect(heading, headingPlainText, headingText, 0, 80);
-        $(".skip-btn").show(); 
-// Typing story text after delay
+        $(".skip-btn").show();
+        // Typing story text after delay
         setTimeout(() => {
             textTypingEffect(storyText, storyPlainText, storyTextContent, 0, 30);
         }, 200);
     }
-};
+}
 
-// Html to Plain Text Transformer 
+// Html to Plain Text Transformer
 function htmlToText(html) {
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = html;
     return tempDiv.textContent || "";
-    };
+}
 
 // Skip Typing
 function skipTyping() {
     skipRequested = true;
 }
-
 
 // Pop-Up's on images
 $(document).on("click", ".characters-img", function() {
@@ -130,13 +140,13 @@ $(document).on("click", ".characters-img", function() {
 });
 
 // Pop-Up's closing
-$(document).on("click", "#popupModal", function (e) {
+$(document).on("click", "#popupModal", function(e) {
     if (e.target.id === "popupModal") {
         $("#popupModal").fadeOut();
     }
 });
 
-// Sound Effect 
+// Sound Effect
 $(document).on("click", "#music-on", function() {
     const alt = $(this).attr("alt");
     if (alt === "Young girl with dark hair and freckles") {
@@ -148,15 +158,14 @@ $(document).on("click", "#music-on", function() {
     }
 });
 
-
-// Choices Generator 
+// Choices Generator
 function generateChoices(data) {
-    let html = `<p>${data["choices-question"]}</p>`; 
+    let html = `<p>${data["choices-question"]}</p>`;
     for (let i = 0; i < data.choices.length; i++) {
         html += `<button class="btn btn-choice ${i + 1}" title="Every choice can change the story...">${data.choices[i].choice}</button>`;
-    };
+    }
     return html;
-};
+}
 
 // Restart Button
 function restartGame() {
@@ -175,40 +184,38 @@ function restartGame() {
             gameStarted = false;
             mainPage();
             $(".dialogue").empty();
-        } else  {
-        $(".dialogue").empty();
-        };
-    })
-    };
+        } else {
+            $(".dialogue").empty();
+        }
+    });
+}
 
 // Warning Dialogue
 function warningDialog(message) {
     $(".warning-text").text(message);
     $("#warning").show();
     // Close the warning when the OK button is clicked
-    $(document).on("click", "#close-warning", function () {
-    $("#warning").hide();
+    $(document).on("click", "#close-warning", function() {
+        $("#warning").hide();
     });
-    }
+}
 
 // Game Steps
 function gameSteps() {
     $(document).on("click", ".meet-characters", function() {
         let nameInput = $("#name").val();
         if (nameInput === "") {
-        warningDialog(`Please enter your username`);
-        return;
+            warningDialog(`Please enter your username`);
+            return;
         } else if (nameInput.length < 5 || nameInput.length > 20) {
-        warningDialog(`Your username must be between 5 and 20 characters!`);
-        return;
+            warningDialog(`Your username must be between 5 and 20 characters!`);
+            return;
         } else if (!/^[^\s]+$/.test(nameInput)) {
-            warningDialog("Your username must be one word without spaces!")
-        } else 
-        userName = nameInput;
+            warningDialog("Your username must be one word without spaces!");
+        } else userName = nameInput;
         $("#warning").hide();
         showCharacters();
-        
-    })
+    });
     $(document).on("click", ".start-story", function() {
         if (clickCount < 3) {
             warningDialog(`You must click on all characters to start the game!`);
@@ -222,21 +229,21 @@ function gameSteps() {
     $(document).on("click", ".btn-choice", function() {
         const chapter = $(".story-heading").text();
         let index = 0;
-    if($(this).hasClass("1")) {
-        index = 0;
-    } else if($(this).hasClass("2")) {
-        index = 1;
-    } else if($(this).hasClass("3")) {
-        index = 2;
-    }
-    if (chapter === "Chapter 1") {
-    showChapter2(index);
-    } else if (chapter === "Chapter 3") { 
-    showChapter4(index); 
-    } else if (chapter === "Chapter 5") {
-        showChapter6(index);
-    }
-});
+        if ($(this).hasClass("1")) {
+            index = 0;
+        } else if ($(this).hasClass("2")) {
+            index = 1;
+        } else if ($(this).hasClass("3")) {
+            index = 2;
+        }
+        if (chapter === "Chapter 1") {
+            showChapter2(index);
+        } else if (chapter === "Chapter 3") {
+            showChapter4(index);
+        } else if (chapter === "Chapter 5") {
+            showChapter6(index);
+        }
+    });
     $(document).on("click", ".cnt-btn", function() {
         showChapter3();
     });
@@ -244,7 +251,7 @@ function gameSteps() {
     $(document).on("click", ".cnt-btn3", showChapter7);
     $(document).on("click", ".btn-restart", restartGame);
     $(document).on("click", ".skip-btn", skipTyping);
-};
+}
 
 // Main Page
 function mainPage() {
@@ -258,7 +265,7 @@ function mainPage() {
         <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
     $("#pictures-container").hide();
     $(".skip-btn").hide();
-};
+}
 
 //  Meeting Characters Chapter
 function showCharacters() {
@@ -279,8 +286,10 @@ function showCharacters() {
         <img src="assets/images/dog.png" class="characters-img" alt="A dog with orange coat and smart eyes">
         `);
 
-    $("#choices-container").html(`<button class="btn start-story">Start The Story</button>`);
-};
+    $("#choices-container").html(
+        `<button class="btn start-story">Start The Story</button>`,
+    );
+}
 
 // Chapter 1
 function showChapter1() {
@@ -296,9 +305,13 @@ function showChapter1() {
 function showChapter2(index) {
     const data = storyData.chapter2;
     applyTypingEffect(data.heading, data.story[index].story);
-    $("#pictures-container").html(`<img src="assets/images/stone-arch.png" class="story-image" alt="Dog, Aurora and Rick looking at swirling glyph"></img>`);
-    $("#choices-container").html(`<button class="btn cnt-btn">Continue...</button>`);
-};
+    $("#pictures-container").html(
+        `<img src="assets/images/stone-arch.png" class="story-image" alt="Dog, Aurora and Rick looking at swirling glyph"></img>`,
+    );
+    $("#choices-container").html(
+        `<button class="btn cnt-btn">Continue...</button>`,
+    );
+}
 
 // Chapter 3
 function showChapter3() {
@@ -306,15 +319,19 @@ function showChapter3() {
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
     $("#choices-container").html(generateChoices(data));
-};
+}
 
-//Chapter 4 
+//Chapter 4
 function showChapter4(index) {
     const data = storyData.chapter4;
     applyTypingEffect(data.heading, data.story[index].story);
-    $("#pictures-container").html(`<img src="assets/images/golden-swirl.png" class="story-image" alt="Golden swirl on the platform is shining bright"></img>`);
-    $("#choices-container").html(`<button class="btn cnt-btn2">Continue...</button>`);
-};
+    $("#pictures-container").html(
+        `<img src="assets/images/golden-swirl.png" class="story-image" alt="Golden swirl on the platform is shining bright"></img>`,
+    );
+    $("#choices-container").html(
+        `<button class="btn cnt-btn2">Continue...</button>`,
+    );
+}
 
 // Chapter 5
 function showChapter5() {
@@ -322,7 +339,7 @@ function showChapter5() {
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
     $("#choices-container").html(generateChoices(data));
-};
+}
 
 // Chapter 6
 function showChapter6(index) {
@@ -330,13 +347,17 @@ function showChapter6(index) {
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
     $("#choices-container").hide();
-    $("#choices-container").html(`<button class="btn solve-puzzle">Solve the test...</button>`);
-};
+    $("#choices-container").html(
+        `<button class="btn solve-puzzle">Solve the test...</button>`,
+    );
+}
 
 // Puzzle-Game
 function showPuzzleGame() {
     $("#choices-container").hide();
-    $(".story-text").html(`<h3 id="key-question">Which key matches the SUN symbol?</h3>`);
+    $(".story-text").html(
+        `<h3 id="key-question">Which key matches the SUN symbol?</h3>`,
+    );
     $("#pictures-container").html(`<div class="puzzle-wrapper">
     <div class="key-row">
         <img src="assets/images/key-red.png" class="key-image" alt="Red old key">
@@ -344,19 +365,18 @@ function showPuzzleGame() {
         <img src="assets/images/key-yellow.png" class="key-image" alt="Yellow old key">
     </div>
     <img src="assets/images/treasure-box.png" class="story-image treasure-box" alt="Old treasure box with sun, moon and star symbols">
-    </div>`)
+    </div>`);
     currentQuestion = "Which key matches the SUN symbol?";
     $("#key-question").text(currentQuestion);
-};
-
+}
 
 // Puzzle Game Steps
-$(document).on("click", ".solve-puzzle", function () {
+$(document).on("click", ".solve-puzzle", function() {
     showPuzzleGame();
     $("#key-question").text(currentQuestion);
 });
 
-$(document).on("click", ".key-image", function () {
+$(document).on("click", ".key-image", function() {
     const alt = $(this).attr("alt");
 
     if (currentQuestion === "Which key matches the SUN symbol?") {
@@ -377,7 +397,9 @@ $(document).on("click", ".key-image", function () {
         if (alt === "Yellow old key") {
             $("#key-question").text("Puzzle solved!");
             $("#choices-container").show();
-            $("#choices-container").html(`<button class="btn cnt-btn3">Continue...</button>`)
+            $("#choices-container").html(
+                `<button class="btn cnt-btn3">Continue...</button>`,
+            );
         } else {
             warningDialog("It is not the right key. Try again!");
         }
@@ -388,12 +410,13 @@ $(document).on("click", ".key-image", function () {
 function showChapter7() {
     const data = storyData.chapter7;
     gameStarted = true;
-    $(".story-heading").text("");      
-    $(".story-text").html("");  
-    $("#choices-container").html("");        
-    $("#pictures-container").empty(); 
+    $(".story-heading").text("");
+    $(".story-text").html("");
+    $("#choices-container").html("");
+    $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
     $("#choices-container").html(`
         <p>Thank you for this game ${userName.toUpperCase()}!</p>
         <button class="btn btn-restart">Go Back to The Manual!</button>
-    `)};
+    `);
+}
