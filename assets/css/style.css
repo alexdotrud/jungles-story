@@ -71,13 +71,13 @@ footer p {
     margin-top: 1.5rem;
     display: block; 
     padding:8rem 3rem;
+    caret-color: transparent;
 }
 
 #story-container {
     text-align: center;
     margin-left: auto; 
     margin-right: auto;
-    caret-color: transparent; 
     padding-top: 4rem;
 }
 
@@ -86,8 +86,7 @@ footer p {
     display: flex;
     justify-content: center; 
     gap: 1rem; 
-    flex-wrap: wrap; 
-    caret-color: transparent; 
+    flex-wrap: wrap;  
 }
 
 #choices-container {
@@ -247,6 +246,10 @@ dialog {
 }
 
 /* Icon styles*/
+#music-on:hover {
+color: #c9b037;
+}
+
 #footer-icons {
     color: var(--highlight-color-light);
 }
@@ -259,6 +262,7 @@ dialog {
     padding: 7px; 
     margin-right: 5px;
 }
+
 
 /* Styles for big screen*/
 
