@@ -211,10 +211,12 @@ function gameSteps() {
             warningDialog(`Your username must be between 5 and 20 characters!`);
             return;
         } else if (!/^[^\s]+$/.test(nameInput)) {
-            warningDialog("Your username must be one word without spaces!");
-        } else userName = nameInput;
+            warningDialog(`Your username must be one word without spaces!`);
+        } else {
+        userName = nameInput;
         $("#warning").hide();
         showCharacters();
+        }
     });
     $(document).on("click", ".start-story", function() {
         if (clickCount < 3) {
@@ -260,6 +262,7 @@ function mainPage() {
     $(".story-text").html(data.intro);
     $(".btn-restart").hide();
     $("#warning").hide();
+    $("#volume-on").hide();
     $("#choices-container").html(` 
         <input type="text" id="name" placeholder="Enter your username"></input> <br>
         <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
@@ -274,6 +277,7 @@ function showCharacters() {
     $(".story-text").text(data.intro);
     $("#pictures-container").show();
     $(".btn-restart").show();
+    $("#volume-on").hide();
 
     // Modal for extra information
     $("#pictures-container").html(`
