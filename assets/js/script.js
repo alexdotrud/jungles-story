@@ -301,6 +301,7 @@ function showChapter1() {
     $("#choices-container").html("");
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
+    $("#volume-on").show();
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
 }

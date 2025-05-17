@@ -90,6 +90,7 @@ footer p {
 }
 
 #choices-container {
+    width: max-content;
     text-align: center;
     margin-left: auto; 
     margin-right: auto;
@@ -246,6 +247,13 @@ dialog {
 }
 
 /* Icon styles*/
+#volume-on {
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 #music-on:hover {
 color: #c9b037;
 }
