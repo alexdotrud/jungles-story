@@ -130,6 +130,7 @@ $(document).on("click", ".characters-img", function() {
     }
     // Show modal with description
     $("#modal-content").html(` <p>${description}</p>
+        <span id="close-modal" class="close-btn">&times;</span>
         <i id="music-on" alt="${alt}" title="Click to hear the sound" class="fa-solid fa-play volume-icon"></i>`);
     $("#popupModal").fadeIn();
 
@@ -138,6 +139,10 @@ $(document).on("click", ".characters-img", function() {
         $(this).addClass("clicked");
         clickCount++;
     }
+});
+
+$(document).on("click", "#close-modal", function() {
+    $("#popupModal").fadeOut();
 });
 
 // Pop-Up's closing
@@ -322,7 +327,6 @@ function showCharacters() {
     $("#pictures-container").html(`
         <div id="popupModal" class="modal">
             <div id="modal-content">
-            <span id="close-modal" class="close-btn">&times;</span>
             </div>
         </div>
         <img src="assets/images/aurora.png" class="characters-img" alt="Young girl with dark hair and freckles">
