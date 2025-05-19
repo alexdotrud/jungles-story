@@ -17,7 +17,6 @@
 }
 
 /*Global Styles*/
-
 html,body {
     font-family: var(--primary-font);
     margin: 0;
@@ -59,8 +58,8 @@ footer {
 footer p {
     margin: 0;
 }
-/* Container styles*/
 
+/* Container styles*/
 #main-container {  
     width: 100%;
     min-height: 100vh;
@@ -100,7 +99,6 @@ footer p {
     flex-direction: column;
 }
 
-
 .logo {
     width: 150px;
     height: auto;
@@ -114,7 +112,6 @@ footer p {
     justify-content: space-between;
     align-items: center;
 }
-
 
 .story-heading {
     padding: 3px;
@@ -140,13 +137,13 @@ footer p {
 }
 
 /*Buttons style*/
-
 .btn {
     border: 4px solid var(--highlight-color-light);
     background-color: var(--secondary-color);
     font-family: var(--secondary-font);
     padding: 0.5rem 1rem;
     min-height: 3em;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -162,6 +159,18 @@ footer p {
 .nav-buttons {
     display: flex;
     gap: 1rem;
+}
+
+.close-btn {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: var(--secondary-color);
 }
 
 .skip-btn {
@@ -229,6 +238,7 @@ dialog {
     border-radius: 5px;
     box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
     margin-top: 3rem;
+    cursor: pointer;
 }
 
 .characters-img:hover {
@@ -259,8 +269,11 @@ dialog {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    cursor: pointer;
 }
-
+#music-on {
+    cursor: pointer;
+}
 
 #music-on:hover {
     color: var(--secondary-color);
@@ -277,32 +290,35 @@ dialog {
     border-radius: 50%; 
     padding: 7px; 
     margin-right: 5px;
+    cursor: pointer;
 }
 
+#footer-icons i:hover {
+    border: 2px solid var(--secondary-color); 
+}
 
 /* Styles for big screen*/
-
 @media screen and (min-width:778px) {
-.nav-container {
-    margin: 0 5rem;
-}
+    .nav-container {
+        margin: 0 5rem;
+    }
 
-#main-container {
-    width: 80%;
-    height: auto;
-    min-height: 80vh;
-    background-image: url("../images/papirus.png");
-    background-size: 100% 130%;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    padding:3rem 3rem;
-    margin: 2rem auto;
-}
+    #main-container {
+        width: 80%;
+        height: auto;
+        min-height: 80vh;
+        background-image: url("../images/papirus.png");
+        background-size: 100% 130%;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        padding:3rem 3rem;
+        margin: 2rem auto;
+    }
 }
 
 @media screen and (min-width:992px) {
@@ -323,18 +339,18 @@ dialog {
         margin: 2rem auto;
     }
 
-#story-container {
-    max-width: 800px;
-}
+    #story-container {
+        max-width: 800px;
+    }
 
-#pictures-container {
-    gap: 5rem;
-}
+    #pictures-container {
+        gap: 5rem;
+    }
 }
 
 @media screen and (min-width:1200px) {
 
-#story-container {
-    max-width: 1000px;
-}
+    #story-container {
+        max-width: 1000px;
+    }
 }
