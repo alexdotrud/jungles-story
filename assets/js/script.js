@@ -85,16 +85,20 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
 Apply Typing Effect function. Applies typing to heading and text content.
  */
 function applyTypingEffect(headingText, storyTextContent) {
+
     // When Start the Game button clicked
     if (gameStarted) {
         isTyping = true;
         skipRequested = false;
+
         // Removing HTML tags
         const headingPlainText = htmlToText(headingText);
         const storyPlainText = htmlToText(storyTextContent);
+
         // Lower speed for headings
         textTypingEffect(heading, headingPlainText, headingText, 0, 80);
         $(".skip-btn").show();
+
         // Typing story text and music after delay
         setTimeout(() => {
             textTypingEffect(storyText, storyPlainText, storyTextContent, 0, 30);
@@ -125,6 +129,7 @@ function skipTyping() {
 $(document).on("click", ".characters-img", function () {
     let description;
     const alt = $(this).attr("alt");
+
     // Attaching right description for the right character
     if (alt === "Young girl with dark hair and freckles") {
         description = storyData.characters.images[0].description;
@@ -133,11 +138,13 @@ $(document).on("click", ".characters-img", function () {
     } else if (alt === "A dog with orange coat and smart eyes") {
         description = storyData.characters.images[2].description;
     }
+
     // Show modal with description
     $("#modal-content").html(` <p>${description}</p>
         <span id="close-modal" class="close-btn">&times;</span>
         <i id="music-on" alt="${alt}" title="Click to hear the sound" class="fa-solid fa-play volume-icon"></i>`);
     $("#popupModal").fadeIn();
+
     // If the character has not been clicked before, increase click count
     if (!$(this).hasClass("clicked")) {
         $(this).addClass("clicked");
@@ -196,6 +203,7 @@ $(document).on("click", "#volume-on", function () {
  * Updates music for the right chapter
  */
 function updateBackgroundMusic() {
+
     // Pauses all previous music
     junglesSound.pause();
     windSound.pause();
@@ -205,6 +213,7 @@ function updateBackgroundMusic() {
     swirlSound.pause();
     keySound.pause();
     const chapter = $(".story-heading").text();
+
     // Play the correct music for the chapter
     if (chapter === "Chapter 1") {
         junglesSound.play();
@@ -238,6 +247,7 @@ function generateChoices(data) {
  * Lead to the Manual Page
  */
 function restartGame() {
+
     // Dialogue for restart confirmation
     $(".dialogue").html(`
     <dialog id="restart" open>
@@ -247,6 +257,7 @@ function restartGame() {
     <button class="ok-no" value="no">NO</button>
     </form>
     </dialog>`);
+
     $(".ok-no").click(function () {
         const buttonValue = $(this).val();
         if (buttonValue === "yes") {
@@ -265,6 +276,7 @@ function restartGame() {
 function warningDialog(message) {
     $(".warning-text").text(message);
     $("#warning").show();
+
     // Close the warning when the OK button is clicked
     $(document).on("click", "#close-warning", function () {
         $("#warning").hide();
@@ -300,6 +312,7 @@ function gameSteps() {
             showChapter1();
         }
     });
+
     // The right choice for different button classes
     $(document).on("click", ".btn-choice", function () {
         const chapter = $(".story-heading").text();
@@ -465,7 +478,10 @@ function showChapter6(index) {
 function showPuzzleGame() {
     $("#choices-container").hide();
     $(".story-text").html(
-        `<h3 id="key-question">Which key matches the SUN symbol?</h3>`,
+        `<h3 id="key-question">Which key matches the SUN symbol?</h3>
+        <p> Choose the right key to match the symbol on the chest.
+        Every key is linked to an element— observe, think, and trust your instinct. <br>
+        </p> `,
     );
     $("#pictures-container").html(`<div class="puzzle-wrapper">
     <div class="key-row">
@@ -525,6 +541,7 @@ function showChapter7() {
     $(".story-text").html("");
     $("#choices-container").html("");
     $("#pictures-container").empty();
+    $("#pictures-container").html(`<img src="assets/images/treasure.png" class="treasure" alt="Eye of the Tiger flying ou of the box">`);
     applyTypingEffect(data.heading, data.story);
     $("#volume-on").hide();
     $("#volume-off").show();
