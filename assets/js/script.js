@@ -322,6 +322,7 @@ function showCharacters() {
     $("#pictures-container").html(`
         <div id="popupModal" class="modal">
             <div id="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
             </div>
         </div>
         <img src="assets/images/aurora.png" class="characters-img" alt="Young girl with dark hair and freckles">
