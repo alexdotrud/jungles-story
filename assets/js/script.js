@@ -179,9 +179,9 @@ $(document).on("click", "#music-on", function () {
  * Turn-on the background music
  */
 $(document).on("click", "#volume-off", function () {
+    updateBackgroundMusic();
     $("#volume-off").hide();
     $("#volume-on").show();
-    updateBackgroundMusic();
 });
 
 /**
@@ -190,9 +190,6 @@ $(document).on("click", "#volume-off", function () {
 $(document).on("click", "#volume-on", function () {
     $("#volume-on").hide();
     $("#volume-off").show();
-    junglesSound.pause();
-    windSound.pause();
-    softBackground.pause();
 });
 
 /**
@@ -203,6 +200,10 @@ function updateBackgroundMusic() {
     junglesSound.pause();
     windSound.pause();
     softBackground.pause();
+    stepSound.pause();
+    templeSound.pause();
+    swirlSound.pause();
+    keySound.pause();
     const chapter = $(".story-heading").text();
     // Play the correct music for the chapter
     if (chapter === "Chapter 1") {
@@ -393,6 +394,8 @@ function showChapter1() {
 function showChapter2(index) {
     const data = storyData.chapter2;
     applyTypingEffect(data.heading, data.story[index].story);
+    $("#volume-on").hide();
+    $("#volume-off").show();
     $("#pictures-container").html(
         `<img src="assets/images/stone-arch.png" class="story-image" alt="Dog, Aurora and Rick looking at swirling glyph"></img>`,
     );
@@ -408,6 +411,8 @@ function showChapter3() {
     const data = storyData.chapter3;
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
+    $("#volume-on").hide();
+    $("#volume-off").show();
     $("#choices-container").html(generateChoices(data));
 }
 
@@ -417,6 +422,8 @@ function showChapter3() {
 function showChapter4(index) {
     const data = storyData.chapter4;
     applyTypingEffect(data.heading, data.story[index].story);
+    $("#volume-on").hide();
+    $("#volume-off").show();
     $("#pictures-container").html(
         `<img src="assets/images/golden-swirl.png" class="story-image" alt="Golden swirl on the platform is shining bright"></img>`,
     );
@@ -432,6 +439,8 @@ function showChapter5() {
     const data = storyData.chapter5;
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
+    $("#volume-on").hide();
+    $("#volume-off").show();
     $("#choices-container").html(generateChoices(data));
 };
 
@@ -442,6 +451,8 @@ function showChapter6(index) {
     const data = storyData.chapter6;
     $("#pictures-container").hide();
     applyTypingEffect(data.heading, data.story[index].story);
+    $("#volume-on").hide();
+    $("#volume-off").show();
     $("#choices-container").hide();
     $("#choices-container").html(
         `<button class="btn solve-puzzle">Solve the test...</button>`,
@@ -515,6 +526,8 @@ function showChapter7() {
     $("#choices-container").html("");
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
+    $("#volume-on").hide();
+    $("#volume-off").show();
     $("#choices-container").html(`
         <p>Thank you for this game ${userName.toUpperCase()}!</p>
         <button class="btn btn-restart">Go Back to The Manual!</button>
