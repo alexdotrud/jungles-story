@@ -31,6 +31,7 @@ const rickVoice = new Audio("assets/audio/rick-voice.mp3");
 const dogBark = new Audio("assets/audio/bark-sound.mp3");
 const junglesSound = new Audio("assets/audio/jungles-sound.mp3");
 const windSound = new Audio("assets/audio/wind-sound.mp3");
+const softBackground = new Audio("assets/audio/soft-background.mp3");
 
 /**
 Typing Effect function. Adds letter by letter, creating typing effect.
@@ -158,6 +159,21 @@ $(document).on("click", "#music-on", function() {
     }
 });
 
+// Background Music Effect 
+$(document).on("click", "#volume-on", function() {
+    $(this).toggleClass("fa-volume-up");
+    const chapter = $(".story-heading").text();
+    if (chapter === "Chapter 1") {
+        junglesSound.play();
+    }
+    if (chapter === "Chapter 3") {
+        windSound.play();
+    }
+    if (chapter === "Chapter 5") {
+        softBackground.play();
+    }
+});
+
 // Choices Generator
 function generateChoices(data) {
     let html = `<p>${data["choices-question"]}</p>`;
@@ -165,7 +181,7 @@ function generateChoices(data) {
         html += `<button class="btn btn-choice ${i + 1}" title="Every choice can change the story...">${data.choices[i].choice}</button>`;
     }
     return html;
-}
+};
 
 // Restart Button
 function restartGame() {
@@ -188,7 +204,7 @@ function restartGame() {
             $(".dialogue").empty();
         }
     });
-}
+};
 
 // Warning Dialogue
 function warningDialog(message) {
@@ -198,7 +214,7 @@ function warningDialog(message) {
     $(document).on("click", "#close-warning", function() {
         $("#warning").hide();
     });
-}
+};
 
 // Game Steps
 function gameSteps() {
@@ -253,7 +269,7 @@ function gameSteps() {
     $(document).on("click", ".cnt-btn3", showChapter7);
     $(document).on("click", ".btn-restart", restartGame);
     $(document).on("click", ".skip-btn", skipTyping);
-}
+};
 
 // Main Page
 function mainPage() {
@@ -268,7 +284,7 @@ function mainPage() {
         <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
     $("#pictures-container").hide();
     $(".skip-btn").hide();
-}
+};
 
 //  Meeting Characters Chapter
 function showCharacters() {
@@ -293,7 +309,7 @@ function showCharacters() {
     $("#choices-container").html(
         `<button class="btn start-story">Start The Story</button>`,
     );
-}
+};
 
 // Chapter 1
 function showChapter1() {
@@ -304,7 +320,7 @@ function showChapter1() {
     $("#volume-on").show();
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
-}
+};
 
 // Chapter 2
 function showChapter2(index) {
@@ -316,7 +332,7 @@ function showChapter2(index) {
     $("#choices-container").html(
         `<button class="btn cnt-btn">Continue...</button>`,
     );
-}
+};
 
 // Chapter 3
 function showChapter3() {
@@ -324,7 +340,7 @@ function showChapter3() {
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
     $("#choices-container").html(generateChoices(data));
-}
+};
 
 //Chapter 4
 function showChapter4(index) {
@@ -336,7 +352,7 @@ function showChapter4(index) {
     $("#choices-container").html(
         `<button class="btn cnt-btn2">Continue...</button>`,
     );
-}
+};
 
 // Chapter 5
 function showChapter5() {
@@ -344,7 +360,7 @@ function showChapter5() {
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
     $("#choices-container").html(generateChoices(data));
-}
+};
 
 // Chapter 6
 function showChapter6(index) {
@@ -355,7 +371,7 @@ function showChapter6(index) {
     $("#choices-container").html(
         `<button class="btn solve-puzzle">Solve the test...</button>`,
     );
-}
+};
 
 // Puzzle-Game
 function showPuzzleGame() {
@@ -373,7 +389,7 @@ function showPuzzleGame() {
     </div>`);
     currentQuestion = "Which key matches the SUN symbol?";
     $("#key-question").text(currentQuestion);
-}
+};
 
 // Puzzle Game Steps
 $(document).on("click", ".solve-puzzle", function() {
