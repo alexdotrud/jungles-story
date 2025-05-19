@@ -185,6 +185,14 @@ footer p {
     margin: 2px;
 }
 
+.ok-no:hover {
+background-color: var(--highlight-color-light);
+}
+
+#close-warning:hover {
+    background-color: var(--highlight-color-light);
+}
+
 /* Modal styling*/
 #modal-content {
     padding: 20px;
