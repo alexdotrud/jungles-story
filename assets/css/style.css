@@ -114,6 +114,7 @@ footer p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 
 .story-heading {
@@ -161,7 +162,6 @@ footer p {
 
 .nav-buttons {
     display: flex;
-    gap: 1rem;
 }
 
 .close-btn {
