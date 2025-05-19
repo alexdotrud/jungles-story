@@ -17,11 +17,12 @@
 }
 
 /*Global Styles*/
-html,body {
+html,
+body {
     font-family: var(--primary-font);
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom , rgba(74, 122, 59, 0.904), rgb(13, 46, 17));
+    background: linear-gradient(to bottom, rgba(74, 122, 59, 0.904), rgb(13, 46, 17));
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -40,7 +41,8 @@ p {
     padding-right: 1rem;
 }
 
-h1, h2 {
+h1,
+h2 {
     padding: 2rem;
 }
 
@@ -48,7 +50,7 @@ footer {
     padding: 1.5rem;
     background-color: rgb(13, 46, 17);
     border-top: 1px solid #c9b037;
-    color:#d3b572;
+    color: #d3b572;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -60,7 +62,7 @@ footer p {
 }
 
 /* Container styles*/
-#main-container {  
+#main-container {
     width: 100%;
     min-height: 100vh;
     background-image: url("../images/papirus-2.png");
@@ -68,14 +70,14 @@ footer p {
     background-repeat: no-repeat;
     background-position: top center;
     margin-top: 1.5rem;
-    display: block; 
-    padding:8rem 3rem;
+    display: block;
+    padding: 8rem 3rem;
     caret-color: transparent;
 }
 
 #story-container {
     text-align: center;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
     padding-top: 4rem;
 }
@@ -83,15 +85,15 @@ footer p {
 #pictures-container {
     width: 100%;
     display: flex;
-    justify-content: center; 
-    gap: 1rem; 
-    flex-wrap: wrap;  
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 #choices-container {
     width: max-content;
     text-align: center;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
     margin-bottom: 4rem;
@@ -195,7 +197,7 @@ footer p {
 }
 
 .ok-no:hover {
-background-color: var(--highlight-color-light);
+    background-color: var(--highlight-color-light);
 }
 
 #close-warning:hover {
@@ -207,9 +209,9 @@ background-color: var(--highlight-color-light);
     padding: 20px;
     max-width: 500px;
     position: relative;
-    background: #ffffff; 
-    color: #000000; 
-    border: 3px solid var(--highlight-color-light); 
+    background: #ffffff;
+    color: #000000;
+    border: 3px solid var(--highlight-color-light);
     padding: 20px;
     border-radius: 10px;
     max-width: 400px;
@@ -219,9 +221,9 @@ background-color: var(--highlight-color-light);
 
 /* Dialog styling*/
 dialog {
-    background: #ffffff; 
-    color: #000000; 
-    border: 3px solid var(--highlight-color-light); 
+    background: #ffffff;
+    color: #000000;
+    border: 3px solid var(--highlight-color-light);
     border-radius: 5px;
     font-family: var(--secondary-font);
 }
@@ -265,12 +267,14 @@ dialog {
 }
 
 /* Icon styles*/
-#volume-on, #volume-off {
+#volume-on,
+#volume-off {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     cursor: pointer;
 }
+
 #music-on {
     cursor: pointer;
 }
@@ -284,17 +288,17 @@ dialog {
 }
 
 #footer-icons i {
-    color: #ffffff; 
-    font-size: 1.5em; 
-    border: 2px solid #c9b037; 
-    border-radius: 50%; 
-    padding: 7px; 
+    color: #ffffff;
+    font-size: 1.5em;
+    border: 2px solid #c9b037;
+    border-radius: 50%;
+    padding: 7px;
     margin-right: 5px;
     cursor: pointer;
 }
 
 #footer-icons i:hover {
-    border: 2px solid var(--secondary-color); 
+    border: 2px solid var(--secondary-color);
 }
 
 /* Styles for big screen*/
@@ -316,13 +320,13 @@ dialog {
         justify-content: flex-start;
         align-items: center;
         position: relative;
-        padding:3rem 3rem;
+        padding: 3rem 3rem;
         margin: 2rem auto;
     }
 }
 
 @media screen and (min-width:992px) {
-    #main-container {  
+    #main-container {
         width: 80%;
         height: auto;
         min-height: 80vh;
@@ -335,7 +339,7 @@ dialog {
         justify-content: flex-start;
         align-items: center;
         position: relative;
-        padding:3rem 3rem;
+        padding: 3rem 3rem;
         margin: 2rem auto;
     }
 
