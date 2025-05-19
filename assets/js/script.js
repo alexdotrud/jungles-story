@@ -162,14 +162,8 @@ $(document).on("click", "#music-on", function() {
 // Start Background Music Effect 
 $(document).on("click", "#volume-on.fa-volume-xmark", function() {
     $(this).toggleClass("fa-volume-high fa-volume-xmark"); 
-    if (isVolumeOn) {
         updateBackgroundMusic();
-    } else {
-        junglesSound.pause();
-        windSound.pause();
-        softBackground.pause();
-    }
-});
+    });
 
 // Pause Background Music Effect 
 $(document).on("click", "#volume-on.fa-volume-high", function() {
@@ -179,18 +173,16 @@ $(document).on("click", "#volume-on.fa-volume-high", function() {
     softBackground.pause();
 });
 
+// Updates music for the right chapter
 function updateBackgroundMusic() {
-    // Stop all music first
+
     junglesSound.pause();
     windSound.pause();
     softBackground.pause();
 
-    // Only play if volume is on 
-    const volumeOn = $("#volume-on").hasClass("fa-volume-high");
-    if (!volumeOn) return;
-
     const chapter = $(".story-heading").text();
 
+    // Play the correct music for the chapter
     if (chapter === "Chapter 1") {
         junglesSound.play();
     } else if (chapter === "Chapter 3") {
@@ -365,8 +357,10 @@ function showChapter3() {
     const data = storyData.chapter3;
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
+    setTimeout(() => {
+        updateBackgroundMusic();
+    }, 800);
     $("#choices-container").html(generateChoices(data));
-    updateBackgroundMusic();
 }
 
 //Chapter 4
@@ -386,8 +380,10 @@ function showChapter5() {
     const data = storyData.chapter5;
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
+    setTimeout(() => {
+        updateBackgroundMusic();
+    }, 800);
     $("#choices-container").html(generateChoices(data));
-    updateBackgroundMusic();
 };
 
 // Chapter 6
