@@ -255,12 +255,12 @@ dialog {
 }
 
 /* Icon styles*/
-#volume-on {
-    margin-right: 2rem;
+#volume-on, #volume-off {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
+
 
 #music-on:hover {
     color: var(--secondary-color);

@@ -160,14 +160,16 @@ $(document).on("click", "#music-on", function() {
 });
 
 // Start Background Music Effect 
-$(document).on("click", "#volume-on.fa-volume-xmark", function() {
-    $(this).toggleClass("fa-volume-high fa-volume-xmark"); 
+$(document).on("click", "#volume-off", function() {
+    $("#volume-off").hide();
+    $("#volume-on").show();
         updateBackgroundMusic();
     });
 
 // Pause Background Music Effect 
-$(document).on("click", "#volume-on.fa-volume-high", function() {
-    $("#volume-on").toggleClass("fa-volume-xmark fa-volume-high");
+$(document).on("click", "#volume-on", function() {
+    $("#volume-on").hide();
+    $("#volume-off").show();
     junglesSound.pause();
     windSound.pause();
     softBackground.pause();
@@ -296,12 +298,14 @@ function mainPage() {
     $(".story-text").html(data.intro);
     $(".btn-restart").hide();
     $("#warning").hide();
+    $("#volume-off").hide();
     $("#volume-on").hide();
     $("#choices-container").html(` 
         <input type="text" id="name" placeholder="Enter your username"></input> <br>
         <button class="btn btn-intro meet-characters">Meet the Characters!</button>`);
     $("#pictures-container").hide();
     $(".skip-btn").hide();
+    
 };
 
 //  Meeting Characters Chapter
@@ -311,6 +315,7 @@ function showCharacters() {
     $(".story-text").text(data.intro);
     $("#pictures-container").show();
     $(".btn-restart").show();
+    $("#volume-off").hide();
     $("#volume-on").hide();
 
     // Modal for extra information
@@ -335,7 +340,7 @@ function showChapter1() {
     $("#choices-container").html("");
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
-    $("#volume-on").show();
+    $("#volume-off").show();
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
 };
