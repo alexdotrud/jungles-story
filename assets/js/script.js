@@ -1,4 +1,4 @@
-// Statements
+/* jshint esversion: 11 */
 const heading = document.querySelector(".story-heading");
 const storyText = document.querySelector(".story-text");
 const btnIntro = document.querySelector(".btn-intro");
@@ -34,6 +34,10 @@ const dogBark = new Audio("assets/audio/bark-sound.mp3");
 const junglesSound = new Audio("assets/audio/jungles-sound.mp3");
 const windSound = new Audio("assets/audio/wind-sound.mp3");
 const softBackground = new Audio("assets/audio/soft-background.mp3");
+const stepSound = new Audio("assets/audio/steps.mp3");
+const templeSound = new Audio("assets/audio/temple-sound.mp3");
+const swirlSound = new Audio("assets/audio/swirl-sound.mp3");
+const keySound = new Audio("assets/audio/key-sound.mp3");
 
 /**
  * Typing Effect function. Adds letter by letter, creating typing effect.
@@ -44,9 +48,7 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
         storyText.textContent = "";
         $("#choices-container").hide();
         $("#pictures-container").hide();
-        if (storyText === document.querySelector(".story-text")) {}
     }
-    // If skip button clicked
     if (skipRequested) {
         storyText.innerHTML = fullHtmlText;
         isTyping = false;
@@ -75,7 +77,7 @@ function textTypingEffect(storyText, plainText, fullHtmlText, i = 0, speed = 30)
     }
     setTimeout(
         () => textTypingEffect(storyText, plainText, fullHtmlText, i + 1, speed),
-        speed,
+        speed
     );
 }
 
@@ -93,9 +95,10 @@ function applyTypingEffect(headingText, storyTextContent) {
         // Lower speed for headings
         textTypingEffect(heading, headingPlainText, headingText, 0, 80);
         $(".skip-btn").show();
-        // Typing story text after delay
+        // Typing story text and music after delay
         setTimeout(() => {
             textTypingEffect(storyText, storyPlainText, storyTextContent, 0, 30);
+            updateBackgroundMusic();
         }, 200);
     }
 }
@@ -204,10 +207,18 @@ function updateBackgroundMusic() {
     // Play the correct music for the chapter
     if (chapter === "Chapter 1") {
         junglesSound.play();
+    } else if (chapter === "Chapter 2") {
+        stepSound.play();
     } else if (chapter === "Chapter 3") {
         windSound.play();
+    } else if (chapter === "Chapter 4") {
+        templeSound.play();
     } else if (chapter === "Chapter 5") {
+        swirlSound.play();
+    } else if (chapter === "Chapter 6") {
         softBackground.play();
+    } else if (chapter === "Chapter 7") {
+        keySound.play();
     }
 }
 
@@ -314,7 +325,7 @@ function gameSteps() {
     $(document).on("click", ".cnt-btn3", showChapter7);
     $(document).on("click", ".btn-restart", restartGame);
     $(document).on("click", ".skip-btn", skipTyping);
-};
+}
 
 /**
  * Main Page content
@@ -333,7 +344,7 @@ function mainPage() {
     $("#pictures-container").hide();
     $(".skip-btn").hide();
 
-};
+}
 
 /**
  * Meet Characters Chapter content
@@ -361,7 +372,7 @@ function showCharacters() {
     $("#choices-container").html(
         `<button class="btn start-story">Start The Story</button>`,
     );
-};
+}
 
 /**
  * Chapter 1 content
@@ -374,7 +385,7 @@ function showChapter1() {
     $("#volume-off").show();
     $(".start-story").hide();
     $("#choices-container").html(generateChoices(data));
-};
+}
 
 /**
  * Chapter 2 content
@@ -388,7 +399,7 @@ function showChapter2(index) {
     $("#choices-container").html(
         `<button class="btn cnt-btn">Continue...</button>`,
     );
-};
+}
 
 /**
  * Chapter 3 content
@@ -397,9 +408,6 @@ function showChapter3() {
     const data = storyData.chapter3;
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
-    setTimeout(() => {
-        updateBackgroundMusic();
-    }, 800);
     $("#choices-container").html(generateChoices(data));
 }
 
@@ -424,9 +432,6 @@ function showChapter5() {
     const data = storyData.chapter5;
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
-    setTimeout(() => {
-        updateBackgroundMusic();
-    }, 800);
     $("#choices-container").html(generateChoices(data));
 };
 
