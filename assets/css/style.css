@@ -255,7 +255,7 @@ dialog {
 }
 
 #music-on:hover {
-color: #c9b037;
+    color: var(--secondary-color);
 }
 
 #footer-icons {

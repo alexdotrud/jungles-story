@@ -159,20 +159,46 @@ $(document).on("click", "#music-on", function() {
     }
 });
 
-// Background Music Effect 
-$(document).on("click", "#volume-on", function() {
-    $(this).toggleClass("fa-volume-up");
-    const chapter = $(".story-heading").text();
-    if (chapter === "Chapter 1") {
-        junglesSound.play();
-    }
-    if (chapter === "Chapter 3") {
-        windSound.play();
-    }
-    if (chapter === "Chapter 5") {
-        softBackground.play();
+// Start Background Music Effect 
+$(document).on("click", "#volume-on.fa-volume-xmark", function() {
+    $(this).toggleClass("fa-volume-high fa-volume-xmark"); 
+    if (isVolumeOn) {
+        updateBackgroundMusic();
+    } else {
+        junglesSound.pause();
+        windSound.pause();
+        softBackground.pause();
     }
 });
+
+// Pause Background Music Effect 
+$(document).on("click", "#volume-on.fa-volume-high", function() {
+    $("#volume-on").toggleClass("fa-volume-xmark fa-volume-high");
+    junglesSound.pause();
+    windSound.pause();
+    softBackground.pause();
+});
+
+function updateBackgroundMusic() {
+    // Stop all music first
+    junglesSound.pause();
+    windSound.pause();
+    softBackground.pause();
+
+    // Only play if volume is on 
+    const volumeOn = $("#volume-on").hasClass("fa-volume-high");
+    if (!volumeOn) return;
+
+    const chapter = $(".story-heading").text();
+
+    if (chapter === "Chapter 1") {
+        junglesSound.play();
+    } else if (chapter === "Chapter 3") {
+        windSound.play();
+    } else if (chapter === "Chapter 5") {
+        softBackground.play();
+    }
+};
 
 // Choices Generator
 function generateChoices(data) {
@@ -340,7 +366,8 @@ function showChapter3() {
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
     $("#choices-container").html(generateChoices(data));
-};
+    updateBackgroundMusic();
+}
 
 //Chapter 4
 function showChapter4(index) {
@@ -360,6 +387,7 @@ function showChapter5() {
     $("#pictures-container").empty();
     applyTypingEffect(data.heading, data.story);
     $("#choices-container").html(generateChoices(data));
+    updateBackgroundMusic();
 };
 
 // Chapter 6
