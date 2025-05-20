@@ -479,8 +479,11 @@ function showPuzzleGame() {
     $("#choices-container").hide();
     $(".story-text").html(
         `<h3 id="key-question">Which key matches the SUN symbol?</h3>
-        <p> Choose the right key to match the symbol on the chest.
-        Every key is linked to an element— observe, think, and trust your instinct. <br>
+        <p> Choose the right key to match the symbol on the chest.<br><br>
+        <em>“The Sun burns bright and bold,<br>
+        The Moon is calm and cold,<br>
+        The Star twinkles with secrets untold.”<br>
+        —Whispers of the Ancients </em>
         </p> `,
     );
     $("#pictures-container").html(`<div class="puzzle-wrapper">

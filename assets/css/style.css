@@ -266,6 +266,10 @@ dialog {
     border-radius: 5px;
 }
 
+.treasure-box {
+    margin-bottom: 3rem;
+}
+
 .treasure {
     margin: 1rem;
     width: 200px;
