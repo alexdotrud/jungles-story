@@ -29,7 +29,7 @@ After adding typing effect - the text was jumping, fixed main contyainer style t
 [View live project here!]()
 
 
-Welcome to Jungle's Story, an interactive adventure game that takes you deep into the heart of the jungle alongside a young explorer named Aurora, her loyal dog named Dog, and her best friend Rick. This project is designed to showcase interactive storytelling, user-driven choices, and captivating jungle-themed experiences.
+Jungle's Story is an interactive story game created using HTML, CSS, and JavaScript. The story follows Aurora, a brave explorer, her dog Dog, and her best friend Rick, as they venture through the mysterious Jungle of Whispers. Players make choices that influence the story, solve puzzle to unlock the jungle's secrets.
 
 ## Content:
 - [User Goals](#user-goals)  
@@ -70,48 +70,101 @@ Although primarily an educational and portfolio project, it aims to:
 - Use modular code for easy updates and feature additions.
 
 ## User Stories
-- As a player, I want to read an engaging story with choices that affect the outcome.
-- As a player, I want to hear music to enhance immersion.
-- As a player, I want the ability to restart the game at any point.
-- As a player, I want character images to be interactive.
+- As a player, I want to enter my name to personalize the story.
+- As a player, I want to read the story with a typewriter text effect for better immersion.
+- As a player, I want to interact with character images to learn more about them or navigate chapters.
+- As a player, I want to make choices that affect the story outcome.
+- As a player, I want ambient jungle sounds and effects that match story events.
+- As a player, I want to see visual feedback like glowing highlights on interactive elements.
 
  ## Design Choices
  
  Wireframes:
-(documentation/)
+
+(documentation/jungle_wireframes.png)
 
 ## Features
-### Navbar
 
-## Main Page
+### Navigation
+- Navbar present on all pages featuring the game logo.
+- Navbar includes a "Back to Manual" button for easy navigation to instructions.
 
+### Manual Page
+- Explains the goal of the game, how to make choices, and what to expect.
+- Brief instructions on sound effects, puzzle, and replay options.
+- Contains Username input, that is used in the last chapter.
+
+### Interactive Introduction
+- Character images that lead to the beginning of the story.
+- Hover effects and sound cues for each character.
+
+### Game Chapters
+- CBackground music accompanies chapters to create an immersive mood, with controls to toggle sound.
+- Overall story adapts responsively to player decisions, creating a personalized experience.
+#### Story Container
+- Displays the narrative text using a typewriter effect for immersive reading.
+- Dynamically updates to reflect player choices and story progression.
+#### Choices Container
+- Contains buttons for branching story decisions or continue button.
+- Each choice influences the narrative path and unlocks new content.
+#### Pictures Container
+- Shows images that visually depict story scenes and characters.
+- Supports animations and visual effects to enhance atmosphere.
+
+### Mini-Game
+- Puzzle Game: Match the correct key to SUN, MOON, and STAR symbols.
+- Immediate feedback on correct and incorrect choices.
 
 ### Footer
-
-![Footer](documentation/)
+- Displays copyright and author credits.
 
 ## UX Design
-
-
+The design of the game was inspired by old-school adventure games, aiming to recreate their nostalgic style while adapting it to the chosen jungle exploration theme. I focused on blending classic elements with modern touches and added extra effects—like typewriter text, sound cues, and hover animations—to enhance immersion and make the experience feel more vivid and realistic.
+### Colors and Theme
+- The color palette uses subtle greens and yellows to reflect the jungle environment, creating a warm, natural atmosphere.
+- Contrast between text and background is carefully balanced for easy reading, especially during long narrative sections.
 ### Color Scheme:
+- rimary-color: #1C350B; green 
+- secondary-color: #a1c08c; brown 
+- highlight-color: #F9F9E5; purple
+- highlight-color-light: #f3f596; light yellow
+    
+(documentatio/color-scheme.png)
 
+### Fonts
+- Leckerli One (primary font): A friendly, rounded serif font that evokes a handwritten, storybook feel, perfect for narrative text and immersive storytelling.
+- Berkshire Swash (secondary font): A decorative, cursive font used for headings and special elements, adding a whimsical and adventurous flair reminiscent of vintage adventure titles.
 
+### Effects and Interactions
+- Typewriter Text Effect:
+   - This effect reveals text character-by-character, mimicking the experience of reading a live-written letter or journal. It increases immersion and pacing, encouraging players to absorb each part of the story thoughtfully.
+- Hover Effects on Characters:
+   - Character images respond visually on mouse hover by slightly enlarging or glowing, which guides players intuitively to interactive elements and adds a layer of polish.
+- Background Music Controls:
+   - Players can toggle background music on or off, ensuring a customizable experience that respects different user preferences or environments.
 
-### Fonts:
+### Accessibility
+- Font sizes and button sizes are optimized for readability and easy interaction on both desktop and mobile devices.
+- Color choices maintain sufficient contrast to accommodate users with visual impairments.
 
-
+### Responsivness
+Importantly, the design is fully responsive and adapts smoothly to all screen sizes, ensuring a consistent and enjoyable experience across desktops, tablets, and mobile devices.
 
 ## Technologies used
 
-- **HTML** is used to structure the content on the website, including headings, paragraphs, and forms.
+- **HTML** is used to structure the content on the website.
 
 - **CSS** is used to style the website, including layouts, colors, fonts, and overall design.
 
 - **CSS Flexbox** is used for creating responsive layouts by aligning and distributing elements within a container.
 
-- **Bootstrap** is used for quick and responsive design with pre-built components like navigation bars and buttons.
+- **Bootstrap** is used for quick and responsive design with pre-built components like buttons.
 
-- **JavaScript** is used for navbar.
+- **JavaScript** — Used to build the game logic, handle user interactions, manage story branching, and implement effects such as typing animation and mini-games.
+
+- **JSON** — Utilized for organizing and storing story content and game data, making it easier to manage and scale the interactive narrative.
+
+- **jQuery** — Employed for DOM manipulation, event handling, and simplifying JavaScript code, especially for animations and UI updates.
 
 - **Git** is used for version control, allowing tracking of code changes and collaboration with team members.
 
@@ -122,6 +175,18 @@ Although primarily an educational and portfolio project, it aims to:
 - **Google Fonts** is used to enhance typography by integrating stylish fonts into the website.
 
 - **Visual Studio Code** is used as the code editor for writing and managing the website's source code.
+
+- **ImageResizer** (https://imageresizer.com/) — Used to optimize and resize images for better performance and faster loading times without losing quality.
+
+- **Midjourney** (https://www.midjourney.com/imagine) — An AI tool leveraged to create unique and thematic game artwork and background visuals.
+
+- **Adobe Express** (https://new.express.adobe.com/) — Used for designing the game logo, combining creativity with easy-to-use graphic tools.
+
+- **Coolors** (https://coolors.co/29339b-74a4bc-b6d6cc-f1fec6-ff3a20) — Helped create the game’s harmonious color palette, balancing cool and warm tones to suit the jungle adventure theme.
+
+
+
+
 
 ## Testing 
 ### Manual testing results:

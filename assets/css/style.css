@@ -13,7 +13,7 @@
     --highlight-color: #F9F9E5;
     /* purple */
     --highlight-color-light: #f3f596;
-    /* light grey */
+    /* light yellow */
 }
 
 /*Global Styles*/
@@ -41,10 +41,6 @@ p {
     padding-right: 1rem;
 }
 
-h1,
-h2 {
-    padding: 2rem;
-}
 
 footer {
     padding: 1.5rem;
@@ -119,6 +115,7 @@ footer p {
 
 .story-heading {
     padding: 3px;
+    margin-bottom: 2rem;
 }
 
 #key-question {
