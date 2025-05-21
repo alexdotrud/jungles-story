@@ -62,7 +62,7 @@ footer p {
 #main-container {
     width: 100%;
     min-height: 100vh;
-    background-image: url("../images/papirus-2.png");
+    background-image: url("../images/papirus-2.webp");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: top center;
@@ -326,7 +326,7 @@ dialog {
         width: 80%;
         height: auto;
         min-height: 80vh;
-        background-image: url("../images/papirus.png");
+        background-image: url("../images/papirus.webp");
         background-size: 100% 130%;
         background-position: center;
         background-repeat: no-repeat;
@@ -345,7 +345,7 @@ dialog {
         width: 80%;
         height: auto;
         min-height: 80vh;
-        background-image: url("../images/papirus.png");
+        background-image: url("../images/papirus.webp");
         background-size: 100% 130%;
         background-position: center;
         background-repeat: no-repeat;
