@@ -219,6 +219,9 @@ footer p {
 
 /* Dialog styling*/
 dialog {
+    position: fixed;
+    top: 45%;
+    z-index: 3;
     background: #ffffff;
     color: #000000;
     border: 3px solid var(--highlight-color-light);
@@ -226,10 +229,6 @@ dialog {
     font-family: var(--secondary-font);
 }
 
-#warning {
-    position: fixed;
-    top: 50%;
-}
 
 /* Images styling*/
 .characters-img {
@@ -279,10 +278,6 @@ dialog {
 .treasure:hover {
     box-shadow: 0 0 40px 15px gold;
 }
-
-
-
-
 
 /* Icon styles*/
 #volume-on,
