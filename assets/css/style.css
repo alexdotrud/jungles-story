@@ -151,6 +151,10 @@ footer p {
     background-color: #f7f8b8;
 }
 
+.btn-intro {
+    margin-top: 1rem;
+}
+
 .btn-restart {
     margin-top: 1rem;
     border-radius: 8px;

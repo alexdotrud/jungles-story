@@ -1,5 +1,5 @@
 # **Jungle's Story**
-
+![Project on different screens](documentation/responsive-image.png)
 [View live project here!]()
 
 
@@ -72,7 +72,7 @@ Although primarily an educational and portfolio project, it aims to:
 - Character images that lead to the beginning of the story.
 - Hover effects and sound cues for each character.
 
-### Game Chapters
+### Story Chapters
 - CBackground music accompanies chapters to create an immersive mood, with controls to toggle sound.
 - Overall story adapts responsively to player decisions, creating a personalized experience.
 #### Story Container
@@ -189,7 +189,7 @@ Importantly, the design is fully responsive and adapts smoothly to all screen si
 
 #### Lighthouse Report:
 
-
+![Lighthouse](documentation/lighthouse.png)
 
 ### Compatibility
 In order to confirm the correct functionality, responsiveness, and appearance:
@@ -197,21 +197,23 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 The website was tested on the following browsers: Chrome, Mozilla Firefox, Microsoft Edge.
 - **Chrome:**  
 
-![Chrome](documentation/chrome-screen.gif)
+![Chrome](documentation/google-chrome.gif)
 
 - **Mozilla Firefox:**
 
-![Mazilla Firefox>](documentation/chrome-screen.gif)
+![Mazilla Firefox>](documentation/mazilla-firefox.gif)
 
 - **Microsoft Edge:**
 
-![Microsoft Edge](documentation/chrome-screen.gif)
+![Microsoft Edge](documentation/microsoft-edge.gif)
 
 ### Responsiveness
 
 - **Main Page:**
 
-![Home Page responsiveness](documentation/)
+- **Meet Characters Chapter:**
+
+- **Story Chapters:**
 
 
 
@@ -349,7 +351,8 @@ All the content provided on this website is fictional and created for demonstrat
 10. **YouTube Typing Effect Tutorial**: Followed to implement the typewriter effect (https://www.youtube.com/watch?v=MiTJnYHX3iA)
 11. **YouTube Modal Popup Tutorial**: Used to create modals (https://www.youtube.com/watch?v=r_PL0K2fGkY)
 12. **Alchemy Dev Blog**: Used to learn how to restrict input fields to only letters and/or numbers (https://alessiopuppialchemy.com/2025/04/01/how-to-allow-only-numbers-or-letters-in-input-fields/)
-13. **YouTube Game Buttons Tutorial:** Helped implement game choice buttons (https://www.youtube.com/watch?v=rjLHje_SkE4)
-14. **YouTube Quiz Modal Tutorial:** Used to build a quiz-like modal interface (https://www.youtube.com/watch?v=HFaxylC7bUc)
-15. **YouTube Simple JavaScript Game Tutorial:** Provided guidance on creating a JS-based interactive game (https://www.youtube.com/watch?v=EerdGm-ehJQ)
-16. **Code Institute**: Used for learning web development techniques and improving skills through the full stack developer program (https://www.codeinstitute.net/)
+13. **YouTube Game Buttons Tutorial**: Helped implement game choice buttons (https://www.youtube.com/watch?v=rjLHje_SkE4)
+14. **YouTube Quiz Modal Tutorial**: Used to build a quiz-like modal interface (https://www.youtube.com/watch?v=HFaxylC7bUc)
+15. **YouTube Simple JavaScript Game Tutorial**: Provided guidance on creating a JS-based interactive game (https://www.youtube.com/watch?v=EerdGm-ehJQ)
+16. **Am I Responsive?**: Used to create Image for different screens (https://ui.dev/amiresponsive?url=https://alexdotrud.github.io/jungles-story/)
+17. **Code Institute**: Used for learning web development techniques and improving skills through the full stack developer program (https://www.codeinstitute.net/)
