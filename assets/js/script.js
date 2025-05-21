@@ -10,6 +10,7 @@ let gameStarted = false;
 let isTyping = false;
 let skipRequested = false;
 let clickCount = 0;
+let musicMuted = false;
 
 /**
  * Fetch Story Data from Json file
@@ -186,6 +187,7 @@ $(document).on("click", "#music-on", function () {
  * Turn-on the background music
  */
 $(document).on("click", "#volume-off", function () {
+    musicMuted = false;
     updateBackgroundMusic();
     $("#volume-off").hide();
     $("#volume-on").show();
@@ -195,8 +197,16 @@ $(document).on("click", "#volume-off", function () {
  * Pause the background music
  */
 $(document).on("click", "#volume-on", function () {
+    musicMuted = true;
     $("#volume-on").hide();
     $("#volume-off").show();
+    junglesSound.pause();
+    windSound.pause();
+    softBackground.pause();
+    stepSound.pause();
+    templeSound.pause();
+    swirlSound.pause();
+    keySound.pause();
 });
 
 /**
@@ -204,6 +214,7 @@ $(document).on("click", "#volume-on", function () {
  */
 function updateBackgroundMusic() {
 
+    if (musicMuted) return;
     // Pauses all previous music
     junglesSound.pause();
     windSound.pause();

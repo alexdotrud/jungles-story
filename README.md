@@ -24,7 +24,6 @@ After adding typing effect - the text was jumping, fixed main contyainer style t
 -->
 
 # **Jungle's Story**
-![Home page responsivness]()
 
 [View live project here!]()
 
@@ -128,8 +127,8 @@ The design of the game was inspired by old-school adventure games, aiming to rec
 - secondary-color: #a1c08c; brown 
 - highlight-color: #F9F9E5; purple
 - highlight-color-light: #f3f596; light yellow
-    
-(documentatio/color-scheme.png)
+
+![Color Scheme](documentation/color-scheme.png)
 
 ### Fonts
 - Leckerli One (primary font): A friendly, rounded serif font that evokes a handwritten, storybook feel, perfect for narrative text and immersive storytelling.
