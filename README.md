@@ -178,7 +178,7 @@ Importantly, the design is fully responsive and adapts smoothly to all screen si
 
 - **ImageResizer** (https://imageresizer.com/) — Used to optimize and resize images for better performance and faster loading times without losing quality.
 
-- **Midjourney** (https://www.midjourney.com/imagine) — An AI tool leveraged to create unique and thematic game artwork and background visuals.
+- **Midjourney** (https://www.midjourney.com/imagine) — An AI tool used to create unique and thematic game artwork and background visuals.
 
 - **Adobe Express** (https://new.express.adobe.com/) — Used for designing the game logo, combining creativity with easy-to-use graphic tools.
 
