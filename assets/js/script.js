@@ -1,16 +1,13 @@
-/* jshint esversion: 11 */
+/* jshint esversion: 11, jquery: true */
 const heading = document.querySelector(".story-heading");
 const storyText = document.querySelector(".story-text");
-const btnIntro = document.querySelector(".btn-intro");
-const picturesContainer = document.querySelector("#pictures-container");
-const choicesContainer = document.querySelector("#choices-container");
-const storyContainer = document.querySelector("#story-container");
 let userName = " ";
 let gameStarted = false;
 let isTyping = false;
 let skipRequested = false;
 let clickCount = 0;
 let musicMuted = false;
+let currentQuestion = "";
 
 /**
  * Fetch Story Data from Json file
@@ -454,7 +451,7 @@ function showChapter4(index) {
     $("#choices-container").html(
         `<button class="btn cnt-btn2">Continue...</button>`,
     );
-};
+}
 
 /**
  * Chapter 5 content
@@ -466,7 +463,7 @@ function showChapter5() {
     $("#volume-on").hide();
     $("#volume-off").show();
     $("#choices-container").html(generateChoices(data));
-};
+}
 
 /**
  * Chapter 6 content
@@ -481,7 +478,7 @@ function showChapter6(index) {
     $("#choices-container").html(
         `<button class="btn solve-puzzle">Solve the test...</button>`,
     );
-};
+}
 
 /**
  * Puzzle Game content
@@ -507,7 +504,7 @@ function showPuzzleGame() {
     </div>`);
     currentQuestion = "Which key matches the SUN symbol?";
     $("#key-question").text(currentQuestion);
-};
+}
 
 /**
  * Puzzle Game logic

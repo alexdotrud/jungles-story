@@ -1,28 +1,3 @@
-<!--
-For creating logo -https://new.express.adobe.com/
-https://coolors.co/29339b-74a4bc-b6d6cc-f1fec6-ff3a20 -for creating color pallete.
-(https://www.w3schools.com/css/css3_gradients.asp) - for CSS/ HTML
-https://pixabay.com/ - picture of papirus.
-https://imageresizer.com/
-https://www.youtube.com/watch?v=MiTJnYHX3iA -tutorial for typewritter effect
-https://www.youtube.com/watch?v=r_PL0K2fGkY - pop up tutorial
-https://expertbeacon.com/how-to-read-a-json-file-in-javascript-reading-json-in-js/ - how to manage json files
-https://pixabay.com/sound-effects/ -for the sounds
-https://alessiopuppialchemy.com/2025/04/01/how-to-allow-only-numbers-or-letters-in-input-fields/ - for inputs
-character image -using chat gpt
-other illustration for the story https://www.midjourney.com/imagine
-
-
-Bugs: 
-After adding restart button amd mainPage function - pictures from meetCharacters dissapeared.
-Now dissapeared the modal for the pictures?
-Syntax bugs
-After adding showChapter4 and 6 to game steps, in the game after pressing button on the chapter 1, 4 ,5 is was not going in chapter order(randomly) - added if statement to the gameSteps function.
-main page function was not working (empty page) -added to the fetch function.
-When added restart button - all of the modals dissapeared (just changed frpm $(.class)click(function) to $(document).on(click, class, function))
-After adding typing effect - the text was jumping, fixed main contyainer style to display flex, justify flex-start
--->
-
 # **Jungle's Story**
 
 [View live project here!]()
@@ -217,16 +192,20 @@ Importantly, the design is fully responsive and adapts smoothly to all screen si
 
 
 ### Compatibility
+In order to confirm the correct functionality, responsiveness, and appearance:
 
-
+The website was tested on the following browsers: Chrome, Mozilla Firefox, Microsoft Edge.
 - **Chrome:**  
 
+![Chrome](documentation/chrome-screen.gif)
 
 - **Mozilla Firefox:**
 
+![Mazilla Firefox>](documentation/chrome-screen.gif)
 
 - **Microsoft Edge:**
 
+![Microsoft Edge](documentation/chrome-screen.gif)
 
 ### Responsiveness
 
@@ -245,18 +224,40 @@ No other errors or warnings were found.
 
   - **Index.html:** 
 
-  ![Index.html](documentation/)
+  ![Index.html](documentation/html-validator.png)
 
 #### CSS
 
   - **Style.css:**
 
-  ![Style.css](documentation/)
+  ![Style.css](documentation/css-validator.png)
+
+##### JS
+
+  - **Script.js:**
+
+   ![Script.js](documentation/js-validator.png)
 
 ## Bugs
 
 ### Solved bugs
 
+#### Modal & Image Display Issues:
+- After adding the restart button and mainPage() function, the character images from the "Meet the Characters" section disappeared.
+- Later, modals for the images also stopped working.
+✅ Fix: Replaced $('.class').click(function) with delegated event binding using $(document).on('click', '.class', function) to ensure elements added dynamically remain interactive.
+
+#### Game Progression Bug:
+- After introducing showChapter4() and showChapter6() in the gameSteps function, the game began jumping between chapters randomly (e.g., clicking a button on Chapter 1 led to Chapter 4 or 5).
+✅ Fix: Added an if statement in the gameSteps() function to control the flow and ensure chapters progress in correct order.
+
+#### Main Page Loading Issue:
+- The mainPage() function resulted in a blank page after integration.
+✅ Fix: Ensured the function was properly integrated into the existing fetch() call to load the correct content.
+
+#### Typing Effect Caused Text Jumping:
+- After implementing the typing effect, the text was jumping or shifting unexpectedly.
+✅ Fix: Adjusted the main container CSS to display: flex and justify-content: flex-start for smooth text rendering.
 
 ### Unfixed Bugs
 
@@ -264,7 +265,7 @@ No other errors or warnings were found.
 
 
 ## Deployment
-[Live project can be found here!](https://alexdotrud.github.io/floristry_school_project/)
+[Live project can be found here!]()
 
 The project was deployed using GitHub Pages, which allows for easy hosting of static websites directly from a GitHub repository.
  Below are the steps taken to deploy the website.
@@ -285,7 +286,7 @@ The live project can be accessed here: Live Project URL.
 Any future changes or updates made to the website can be easily deployed by committing changes to the repository, which automatically updates the live site.
 
 ## Publishing
-We welcome contributions to floristry_school_project! Follow these steps:
+Follow these steps:
 
 ### Cloning
 1. On GitHub.com, navigate to the main page of the repository.
@@ -317,7 +318,6 @@ We welcome contributions to floristry_school_project! Follow these steps:
 
 
 
-
 ## Credits 
 
 ### Content 
@@ -325,20 +325,31 @@ We welcome contributions to floristry_school_project! Follow these steps:
 All the content provided on this website is fictional and created for demonstration purposes only.
 - #### Images:
 
-1. Picture from Home Page are from- (https://pixabay.com/).
-2. Pictures from Gallery Page and picture from Sign Up Page are from - (https://www.pexels.com/).
-3. Logo was created on - (https://www.designevo.com/logo-maker/).
+1. Picture for the background- Pixabay (https://pixabay.com/).
+2. Logo was created on - Adobe Express Logo Maker  (https://new.express.adobe.com/).
+3. Character Images - Generated with ChatGPT image generation (https://chat.openai.com/).
+4. Other Illustrations for the Story - Created using MidJourney (https://www.midjourney.com/imagine).
 
 
 ### Media
 1. **Fonts**: The website uses the Delius Swash Caps font, available from Google Fonts.
 2. **Icons**: Icons used in the site were sourced from FontAwesome (https://fontawesome.com/).
+3. **Sounds**: Sounds are downloaded from (https://pixabay.com/sound-effects/).
 
 ### Other tools:
-1. **Stack Overflow**: Used for troubleshooting and seeking solutions to development challenges (https://stackoverflow.com/).
-2. **CodeWithAnbu**: Resource for learning and improving web development techniques (https://codewithanbu.com/).
-3. **W3Schools**: Used for reference and tutorials on HTML, CSS, JavaScript, and more (https://www.w3schools.com/).
+1. **W3Schools**: Used for reference and tutorials on HTML, CSS, JavaScript, and more (https://www.w3schools.com/).
+2. **Stack Overflow**: Used for troubleshooting and seeking solutions to development challenges (https://stackoverflow.com/).
+3. **CodeWithAnbu**: Resource for learning and improving web development techniques (https://codewithanbu.com/).
 4. **Chrome DevTools Lighthouse**: Used to test and improve web performance (https://developer.chrome.com/docs/lighthouse/performance/).
-5. **ExpertBeacon**: Helped in learning how to optimize Google Fonts loading for better performance (https://expertbeacon.com/the-ultimate-guide-to-preloading-google-fonts-for-optimal-web-performance/).
-6. **Schemecolor**: Used to create color scheme (https://www.schemecolor.com/).
-7. **Code Institute**: Used for learning web development techniques and improving skills through the full stack developer program (https://www.codeinstitute.net/).
+5. **ExpertBeacon**: Helped in learning how to optimize Google Fonts loading for better performance (https://expertbeacon.com/the-ultimate-guide-to-preloading-google-fonts-for-optimal-web-performance/)
+6. **ExpertBeacon**: Helped with understanding how to manage JSON files in JavaScript (https://expertbeacon.com/how-to-read-a-json-file-in-javascript-reading-json-in-js/)
+7. **Schemecolor**: Used to create a color scheme (https://www.schemecolor.com/)
+8. **Coolors**: Used to generate a project color palette (https://coolors.co/29339b-74a4bc-b6d6cc-f1fec6-ff3a20)
+9. **W3Schools CSS Gradient Guide**: Used for styling gradients (https://www.w3schools.com/css/css3_gradients.asp)
+10. **YouTube Typing Effect Tutorial**: Followed to implement the typewriter effect (https://www.youtube.com/watch?v=MiTJnYHX3iA)
+11. **YouTube Modal Popup Tutorial**: Used to create modals (https://www.youtube.com/watch?v=r_PL0K2fGkY)
+12. **Alchemy Dev Blog**: Used to learn how to restrict input fields to only letters and/or numbers (https://alessiopuppialchemy.com/2025/04/01/how-to-allow-only-numbers-or-letters-in-input-fields/)
+13. **YouTube Game Buttons Tutorial:** Helped implement game choice buttons (https://www.youtube.com/watch?v=rjLHje_SkE4)
+14. **YouTube Quiz Modal Tutorial:** Used to build a quiz-like modal interface (https://www.youtube.com/watch?v=HFaxylC7bUc)
+15. **YouTube Simple JavaScript Game Tutorial:** Provided guidance on creating a JS-based interactive game (https://www.youtube.com/watch?v=EerdGm-ehJQ)
+16. **Code Institute**: Used for learning web development techniques and improving skills through the full stack developer program (https://www.codeinstitute.net/)
