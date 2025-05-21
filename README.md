@@ -184,11 +184,31 @@ Importantly, the design is fully responsive and adapts smoothly to all screen si
 - **Coolors** (https://coolors.co/29339b-74a4bc-b6d6cc-f1fec6-ff3a20) — Helped create the game’s harmonious color palette, balancing cool and warm tones to suit the jungle adventure theme.
 
 
-
-
-
 ## Testing 
 ### Manual testing results:
+| **Test Category**             | **Test Description**                                                            | **Result** | **Status**  |
+| ----------------------------- | ------------------------------------------------------------------------------- | ---------- | ----------  |
+| **Functionality Testing**     | All chapter buttons (Continue, Choices) navigate to the correct next scene.     | Pass       | ✅          |
+|                               | Character images open an extra modal on click.                                  | Pass       | ✅          |
+|                               | Characters sound activates on play-icon click.                                  | Pass       | ✅          |
+|                               | Puzzle logic works—correct key-symbol matches give feedback and allow progress. | Pass       | ✅          |
+|                               | Sound buttons toggle background music on and off.                               | Pass       | ✅          |
+|                               | Typing effect displays full story text in proper sequence.                      | Pass       | ✅          |
+| **Responsive Design Testing** | Game layout adapts smoothly to mobile, tablet, and desktop screens.             | Pass       | ✅          |
+|                               | Images, buttons, and text scale correctly across screen sizes.                  | Pass       | ✅          |
+| **Navigation Testing**        | Navbar logo and "Go back to Manual" button work correctly.                      | Pass       | ✅          |
+|                               | "Go Back To Manual" button brings to the Main only after user confirmation.     | Pass       | ✅          |
+|                               | All chapter links, hover events, and buttons are clickable and responsive.      | Pass       | ✅          |
+| **Accessibility Testing**     | Sufficient color contrast between text and background.                          | Pass       | ✅          |
+|                               | Game is readable with screen readers (tested on Chrome’s Screen Reader).        | Pass       | ✅          |
+| **Form Testing**              | Username input accepts user name and injects it into the final chapter.         | Pass       | ✅          |
+|                               | Username must be between 5 and 20 characters long.                              | Pass       | ✅          |
+|                               | Username input does not allow spaces.                                           | Pass       | ✅          |
+|                               | Displays custom validation message if requirements are not met.                 | Pass       | ✅          |
+| **Audio/Visual Testing**      | Background music plays only after the user clicks the volume icon.              | Pass       | ✅          |
+|                               | Clicking the volume icon again successfully pauses/stops the background music.  | Pass       | ✅          |
+|                               | Typing animation and transitions render smoothly across devices.                | Pass       | ✅          |
+
 
 
 
