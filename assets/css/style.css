@@ -100,7 +100,7 @@ footer p {
 .logo {
     width: 150px;
     height: auto;
-    left: 0;
+    margin-left: 1rem;
 }
 
 .nav-container {

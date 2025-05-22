@@ -55,7 +55,7 @@ Although primarily an educational and portfolio project, it aims to:
  
  Wireframes:
 
-(documentation/jungle_wireframes.png)
+![Jungle's Story Wireframes](documentation/wireframes.png)
 
 ## Features
 
@@ -63,34 +63,60 @@ Although primarily an educational and portfolio project, it aims to:
 - Navbar present on all pages featuring the game logo.
 - Navbar includes a "Back to Manual" button for easy navigation to instructions.
 
+![Navbar on Big Screens](documentation/navbar-big.png)
+![Navbar on Small Screens](documentation/navbar-small.png)
+
 ### Manual Page
 - Explains the goal of the game, how to make choices, and what to expect.
 - Brief instructions on sound effects, puzzle, and replay options.
 - Contains Username input, that is used in the last chapter.
 
+![Manual Page](documentation/main-page.png)
+
 ### Interactive Introduction
 - Character images that lead to the beginning of the story.
-- Hover effects and sound cues for each character.
+- User have to click  on each character to learn extra information about them and only then can continue to the next chapter.
+- All modals contains a custom sound that you can activate by clicking on play-icon.
+
+![Meet Characters](documentation/introduction.png)
+
+![Information Modal](documentation/info-modal.png)
 
 ### Story Chapters
-- CBackground music accompanies chapters to create an immersive mood, with controls to toggle sound.
+- Background music accompanies chapters to create an immersive mood, with controls to toggle sound.
 - Overall story adapts responsively to player decisions, creating a personalized experience.
+
+![Chapter1](documentation/chapter1.png)
+
 #### Story Container
 - Displays the narrative text using a typewriter effect for immersive reading.
 - Dynamically updates to reflect player choices and story progression.
+
+![Story Container](documentation/story-container.png)
+
 #### Choices Container
 - Contains buttons for branching story decisions or continue button.
 - Each choice influences the narrative path and unlocks new content.
+
+![Choices Container](documentation/choices-container.png)
+
 #### Pictures Container
 - Shows images that visually depict story scenes and characters.
 - Supports animations and visual effects to enhance atmosphere.
+
+![Pictures Container](documentation/pictures-container.png)
 
 ### Mini-Game
 - Puzzle Game: Match the correct key to SUN, MOON, and STAR symbols.
 - Immediate feedback on correct and incorrect choices.
 
+![Puzzle Game](documentation/puzzle-game.png)
+
 ### Footer
 - Displays copyright and author credits.
+
+![Footer](documentation/footer.png)
+
 
 ## UX Design
 The design of the game was inspired by old-school adventure games, aiming to recreate their nostalgic style while adapting it to the chosen jungle exploration theme. I focused on blending classic elements with modern touches and added extra effects—like typewriter text, sound cues, and hover animations—to enhance immersion and make the experience feel more vivid and realistic.
