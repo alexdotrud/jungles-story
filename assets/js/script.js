@@ -222,21 +222,25 @@ function updateBackgroundMusic() {
     keySound.pause();
     const chapter = $(".story-heading").text();
 
-    // Play the correct music for the chapter
-    if (chapter === "Chapter 1") {
-        junglesSound.play();
-    } else if (chapter === "Chapter 2") {
-        stepSound.play();
-    } else if (chapter === "Chapter 3") {
-        windSound.play();
-    } else if (chapter === "Chapter 4") {
-        templeSound.play();
-    } else if (chapter === "Chapter 5") {
-        swirlSound.play();
-    } else if (chapter === "Chapter 6") {
-        softBackground.play();
-    } else if (chapter === "Chapter 7") {
-        keySound.play();
+    // Play the correct music for the chapter and display message if there is an error
+    try {
+        if (chapter === "Chapter 1") {
+            junglesSound.play();
+        } else if (chapter === "Chapter 2") {
+            stepSound.play();
+        } else if (chapter === "Chapter 3") {
+            windSound.play();
+        } else if (chapter === "Chapter 4") {
+            templeSound.play();
+        } else if (chapter === "Chapter 5") {
+            swirlSound.play();
+        } else if (chapter === "Chapter 6") {
+            softBackground.play();
+        } else if (chapter === "Chapter 7") {
+            keySound.play();
+        }
+    } catch (error) {
+        warningDialog("Audio couldn't play. Please check your browser or device settings.");
     }
 }
 
