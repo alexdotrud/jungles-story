@@ -130,7 +130,7 @@ Initially, the plan was to create a longer, more branching interactive story wit
 - Automatic redirect to index.html after 3 seconds.
 - Includes a clickable fallback link in case automatic redirection doesn’t work.
 
-![Footer](documentation/footer.png)
+![Error Page](documentation/error-page.png)
 
 ## UX Design
 The design of the game was inspired by old-school adventure games, aiming to recreate their nostalgic style while adapting it to the chosen jungle exploration theme. I focused on blending classic elements with modern touches and added extra effects—like typewriter text, sound cues, and hover animations—to enhance immersion and make the experience feel more vivid and realistic.
