@@ -1,7 +1,7 @@
 # **Jungle's Story**
 ![Project on different screens](documentation/responsive-image.png)
-[View live project here!]()
 
+[View live project here!](https://alexdotrud.github.io/jungles-story/)
 
 Jungle's Story is an interactive story game created using HTML, CSS, and JavaScript. The story follows Aurora, a brave explorer, her dog Dog, and her best friend Rick, as they venture through the mysterious Jungle of Whispers. Players make choices that influence the story, solve puzzle to unlock the jungle's secrets.
 
@@ -111,6 +111,7 @@ Although primarily an educational and portfolio project, it aims to:
 - Immediate feedback on correct and incorrect choices.
 
 ![Puzzle Game](documentation/puzzle-game.png)
+![Feedback](documentation/feedback.png)
 
 ### Footer
 - Displays copyright and author credits.
@@ -124,7 +125,7 @@ The design of the game was inspired by old-school adventure games, aiming to rec
 - The color palette uses subtle greens and yellows to reflect the jungle environment, creating a warm, natural atmosphere.
 - Contrast between text and background is carefully balanced for easy reading, especially during long narrative sections.
 ### Color Scheme:
-- rimary-color: #1C350B; green 
+- primary-color: #1C350B; green 
 - secondary-color: #a1c08c; brown 
 - highlight-color: #F9F9E5; purple
 - highlight-color-light: #f3f596; light yellow
@@ -235,13 +236,23 @@ The website was tested on the following browsers: Chrome, Mozilla Firefox, Micro
 
 ### Responsiveness
 
+The website was checked with Responsive Website Design Tester.
+
 - **Main Page:**
+
+![Main Page Responsiveness](documentation/main-responsivness.gif)
 
 - **Meet Characters Chapter:**
 
+![Meet Characters Chapter Responsiveness](documentation/intro-responsivness.gif)
+
 - **Story Chapters:**
 
+![Chapter Responsiveness](documentation/chapter-responsivness.gif)
 
+- **Puzzle Game:**
+
+![Puzzle Game Responsiveness](documentation/puzzle-responsivness.gif)
 
 ### Validator Testing 
 
@@ -293,7 +304,7 @@ No other errors or warnings were found.
 
 
 ## Deployment
-[Live project can be found here!]()
+[Live project can be found here!](https://alexdotrud.github.io/jungles-story/)
 
 The project was deployed using GitHub Pages, which allows for easy hosting of static websites directly from a GitHub repository.
  Below are the steps taken to deploy the website.
@@ -369,16 +380,17 @@ All the content provided on this website is fictional and created for demonstrat
 2. **Stack Overflow**: Used for troubleshooting and seeking solutions to development challenges (https://stackoverflow.com/).
 3. **CodeWithAnbu**: Resource for learning and improving web development techniques (https://codewithanbu.com/).
 4. **Chrome DevTools Lighthouse**: Used to test and improve web performance (https://developer.chrome.com/docs/lighthouse/performance/).
-5. **ExpertBeacon**: Helped in learning how to optimize Google Fonts loading for better performance (https://expertbeacon.com/the-ultimate-guide-to-preloading-google-fonts-for-optimal-web-performance/)
-6. **ExpertBeacon**: Helped with understanding how to manage JSON files in JavaScript (https://expertbeacon.com/how-to-read-a-json-file-in-javascript-reading-json-in-js/)
-7. **Schemecolor**: Used to create a color scheme (https://www.schemecolor.com/)
-8. **Coolors**: Used to generate a project color palette (https://coolors.co/29339b-74a4bc-b6d6cc-f1fec6-ff3a20)
-9. **W3Schools CSS Gradient Guide**: Used for styling gradients (https://www.w3schools.com/css/css3_gradients.asp)
-10. **YouTube Typing Effect Tutorial**: Followed to implement the typewriter effect (https://www.youtube.com/watch?v=MiTJnYHX3iA)
-11. **YouTube Modal Popup Tutorial**: Used to create modals (https://www.youtube.com/watch?v=r_PL0K2fGkY)
-12. **Alchemy Dev Blog**: Used to learn how to restrict input fields to only letters and/or numbers (https://alessiopuppialchemy.com/2025/04/01/how-to-allow-only-numbers-or-letters-in-input-fields/)
-13. **YouTube Game Buttons Tutorial**: Helped implement game choice buttons (https://www.youtube.com/watch?v=rjLHje_SkE4)
-14. **YouTube Quiz Modal Tutorial**: Used to build a quiz-like modal interface (https://www.youtube.com/watch?v=HFaxylC7bUc)
-15. **YouTube Simple JavaScript Game Tutorial**: Provided guidance on creating a JS-based interactive game (https://www.youtube.com/watch?v=EerdGm-ehJQ)
-16. **Am I Responsive?**: Used to create Image for different screens (https://ui.dev/amiresponsive?url=https://alexdotrud.github.io/jungles-story/)
-17. **Code Institute**: Used for learning web development techniques and improving skills through the full stack developer program (https://www.codeinstitute.net/)
+5. **ExpertBeacon**: Helped in learning how to optimize Google Fonts loading for better performance (https://expertbeacon.com/the-ultimate-guide-to-preloading-google-fonts-for-optimal-web-performance/).
+6. **ExpertBeacon**: Helped with understanding how to manage JSON files in JavaScript (https://expertbeacon.com/how-to-read-a-json-file-in-javascript-reading-json-in-js/).
+7. **Schemecolor**: Used to create a color scheme (https://www.schemecolor.com/).
+8. **Coolors**: Used to generate a project color palette (https://coolors.co/29339b-74a4bc-b6d6cc-f1fec6-ff3a20).
+9. **W3Schools CSS Gradient Guide**: Used for styling gradients (https://www.w3schools.com/css/css3_gradients.asp).
+10. **YouTube Typing Effect Tutorial**: Followed to implement the typewriter effect (https://www.youtube.com/watch?v=MiTJnYHX3iA).
+11. **YouTube Modal Popup Tutorial**: Used to create modals (https://www.youtube.com/watch?v=r_PL0K2fGkY).
+12. **Alchemy Dev Blog**: Used to learn how to restrict input fields to only letters and/or numbers (https://alessiopuppialchemy.com/2025/04/01/how-to-allow-only-numbers-or-letters-in-input-fields/).
+13. **YouTube Game Buttons Tutorial**: Helped implement game choice buttons (https://www.youtube.com/watch?v=rjLHje_SkE4).
+14. **YouTube Quiz Modal Tutorial**: Used to build a quiz-like modal interface (https://www.youtube.com/watch?v=HFaxylC7bUc).
+15. **YouTube Simple JavaScript Game Tutorial**: Provided guidance on creating a JS-based interactive game (https://www.youtube.com/watch?v=EerdGm-ehJQ).
+16. **Am I Responsive?**: Used to create Image for different screens (https://ui.dev/amiresponsive?url=https://alexdotrud.github.io/jungles-story/).
+17. **Responsive Website Design Tester** : Used to test responsivness of the website (https://designmodo.com/responsive-test/).
+18. **Code Institute**: Used for learning web development techniques and improving skills through the full stack developer program (https://www.codeinstitute.net/).
