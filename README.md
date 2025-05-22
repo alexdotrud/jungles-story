@@ -16,7 +16,7 @@ Jungle's Story is an interactive story game created using HTML, CSS, and JavaScr
 - [Technologies Used](#technologies-used)  
 - [Testing](#testing)  
 - [Bugs](#bugs) 
-- [Technical Issues](#technical-issue-with-commit-attribution)
+- [Future Changes](#future-changes)
 - [Deployment](#deployment)  
 - [Publishing](#publishing)  
 - [Credits](#credits)  
@@ -44,18 +44,24 @@ Although primarily an educational and portfolio project, it aims to:
 - Use modular code for easy updates and feature additions.
 
 ## User Stories
-- As a player, I want to enter my name to personalize the story.
-- As a player, I want to read the story with a typewriter text effect for better immersion.
-- As a player, I want to interact with character images to learn more about them or navigate chapters.
-- As a player, I want to make choices that affect the story outcome.
-- As a player, I want ambient jungle sounds and effects that match story events.
-- As a player, I want to see visual feedback like glowing highlights on interactive elements.
+- As a player, I can enter my name, so that the story feels more personalized and immersive.
+- As a player, I can read the story using a typewriter text effect, so that I experience the narrative in a more engaging way.
+- As a player, I can interact with character images, so that I can learn more about them or progress through the story.
+- As a player, I can make decisions during the game, so that my choices influence the storyline.
+- As a player, I can hear ambient jungle sounds and effects, so that the environment feels more alive and atmospheric.
+- As a player, I can see glowing highlights on interactive elements, so that I can easily identify where to click or interact.
+- As a player, I can restart the game, so that I can explore different paths or play the story again from the beginning.
 
  ## Design Choices
  
- Wireframes:
+**Wireframes:**
 
 ![Jungle's Story Wireframes](documentation/wireframes.png)
+
+**Game Plan:**
+Initially, the plan was to create a longer, more branching interactive story with multiple endings. However, in the end, I decided to focus on a shorter game experience with a single ending, while enhancing engagement by including a puzzle game element.
+
+![Jungle's Story Plan](documentation/jungles_plan.png)
 
 ## Features
 
@@ -75,8 +81,8 @@ Although primarily an educational and portfolio project, it aims to:
 
 ### Interactive Introduction
 - Character images that lead to the beginning of the story.
-- User have to click  on each character to learn extra information about them and only then can continue to the next chapter.
-- All modals contains a custom sound that you can activate by clicking on play-icon.
+- Users have to click  on each character to learn extra information about them and only then can continue to the next chapter.
+- All modals contain a custom sound that you can activate by clicking on play-icon.
 
 ![Meet Characters](documentation/introduction.png)
 
@@ -111,6 +117,7 @@ Although primarily an educational and portfolio project, it aims to:
 - Immediate feedback on correct and incorrect choices.
 
 ![Puzzle Game](documentation/puzzle-game.png)
+
 ![Feedback](documentation/feedback.png)
 
 ### Footer
@@ -148,7 +155,7 @@ The design of the game was inspired by old-school adventure games, aiming to rec
 - Font sizes and button sizes are optimized for readability and easy interaction on both desktop and mobile devices.
 - Color choices maintain sufficient contrast to accommodate users with visual impairments.
 
-### Responsivness
+### Responsiveness
 Importantly, the design is fully responsive and adapts smoothly to all screen sizes, ensuring a consistent and enjoyable experience across desktops, tablets, and mobile devices.
 
 ## Technologies used
@@ -187,7 +194,20 @@ Importantly, the design is fully responsive and adapts smoothly to all screen si
 
 
 ## Testing 
+### User stories tasting:
+
+| **Test Description**                                                       | **Result** | **Status** |
+|----------------------------------------------------------------------------|------------|------------|
+| User can enter their name and see it reflected in the final chapter.       | Pass       | ✅         |
+| Story text displays using a typewriter effect.                             | Pass       | ✅         |
+| Character images open modals and unlock the next chapter after all viewed. | Pass       | ✅         |
+| Player choices influence the story path dynamically.                       | Pass       | ✅         |
+| Ambient jungle sounds and character effects play correctly.                | Pass       | ✅         |
+| Interactive elements highlight on hover.                                   | Pass       | ✅         |
+| Game can be restarted from the beginning.                                  | Pass       | ✅         |
+
 ### Manual testing results:
+
 | **Test Category**             | **Test Description**                                                            | **Result** | **Status**  |
 | ----------------------------- | ------------------------------------------------------------------------------- | ---------- | ----------  |
 | **Functionality Testing**     | All chapter buttons (Continue, Choices) navigate to the correct next scene.     | Pass       | ✅          |
@@ -302,6 +322,15 @@ No other errors or warnings were found.
 
 - No unfixed bugs found.
 
+## Future Changes
+The following are features and improvements I would like to add or change in this project:
+
+- Add more story chapters to expand the adventure and increase replay value.
+- Create additional puzzle mini-games integrated into different chapters to enhance interactivity.
+- Refactor and optimize JavaScript code by introducing more reusable variables.
+- Reduce reliance on jQuery by replacing repeated selectors with stored references for cleaner, more efficient code.
+- Introduce player progression tracking and save/load functionality.
+- Add multilingual support for broader accessibility.
 
 ## Deployment
 [Live project can be found here!](https://alexdotrud.github.io/jungles-story/)
@@ -392,5 +421,5 @@ All the content provided on this website is fictional and created for demonstrat
 14. **YouTube Quiz Modal Tutorial**: Used to build a quiz-like modal interface (https://www.youtube.com/watch?v=HFaxylC7bUc).
 15. **YouTube Simple JavaScript Game Tutorial**: Provided guidance on creating a JS-based interactive game (https://www.youtube.com/watch?v=EerdGm-ehJQ).
 16. **Am I Responsive?**: Used to create Image for different screens (https://ui.dev/amiresponsive?url=https://alexdotrud.github.io/jungles-story/).
-17. **Responsive Website Design Tester** : Used to test responsivness of the website (https://designmodo.com/responsive-test/).
+17. **Responsive Website Design Tester** : Used to test responsivness of the website (https://responsivetesttool.com/).
 18. **Code Institute**: Used for learning web development techniques and improving skills through the full stack developer program (https://www.codeinstitute.net/).
