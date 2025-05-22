@@ -422,4 +422,5 @@ All the content provided on this website is fictional and created for demonstrat
 15. **YouTube Simple JavaScript Game Tutorial**: Provided guidance on creating a JS-based interactive game (https://www.youtube.com/watch?v=EerdGm-ehJQ).
 16. **Am I Responsive?**: Used to create Image for different screens (https://ui.dev/amiresponsive?url=https://alexdotrud.github.io/jungles-story/).
 17. **Responsive Website Design Tester** : Used to test responsivness of the website (https://responsivetesttool.com/).
+18. **Figma** : Used for creating plan for the project. (https://www.figma.com/)
 18. **Code Institute**: Used for learning web development techniques and improving skills through the full stack developer program (https://www.codeinstitute.net/).
