@@ -308,21 +308,24 @@ No other errors or warnings were found.
 ### Solved bugs
 
 #### Modal & Image Display Issues:
-- After adding the restart button and mainPage() function, the character images from the "Meet the Characters" section disappeared.
-- Later, modals for the images also stopped working.
-✅ Fix: Replaced $('.class').click(function) with delegated event binding using $(document).on('click', '.class', function) to ensure elements added dynamically remain interactive.
+- After adding the restart button and mainPage() function, the character images from the "Meet the Characters" section disappeared. Later, modals for the images also stopped working.
+
+- Fix: Replaced $('.class').click(function) with delegated event binding using $(document).on('click', '.class', function) to ensure elements added dynamically remain interactive.
 
 #### Game Progression Bug:
 - After introducing showChapter4() and showChapter6() in the gameSteps function, the game began jumping between chapters randomly (e.g., clicking a button on Chapter 1 led to Chapter 4 or 5).
-✅ Fix: Added an if statement in the gameSteps() function to control the flow and ensure chapters progress in correct order.
+
+- Fix: Added an if statement in the gameSteps() function to control the flow and ensure chapters progress in correct order.
 
 #### Main Page Loading Issue:
 - The mainPage() function resulted in a blank page after integration.
-✅ Fix: Ensured the function was properly integrated into the existing fetch() call to load the correct content.
+
+- Fix: Ensured the function was properly integrated into the existing fetch() call to load the correct content.
 
 #### Typing Effect Caused Text Jumping:
 - After implementing the typing effect, the text was jumping or shifting unexpectedly.
-✅ Fix: Adjusted the main container CSS to display: flex and justify-content: flex-start for smooth text rendering.
+
+- Fix: Adjusted the main container CSS to display: flex and justify-content: flex-start for smooth text rendering.
 
 ### Unfixed Bugs
 
