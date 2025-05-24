@@ -277,6 +277,7 @@ function restartGame() {
     $(".ok-no").click(function () {
         const buttonValue = $(this).val();
         if (buttonValue === "yes") {
+            clickCount = 0;
             gameStarted = false;
             mainPage();
             $(".dialogue").empty();
