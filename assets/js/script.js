@@ -37,11 +37,9 @@ const templeSound = new Audio("assets/audio/temple-sound.mp3");
 const swirlSound = new Audio("assets/audio/swirl-sound.mp3");
 const keySound = new Audio("assets/audio/key-sound.mp3");
 
-/**
- * Setting Max Volume for Audios
- */
+// Add Volume Settings
 const allSounds = [auroraVoice, rickVoice, dogBark, junglesSound, windSound, softBackground, stepSound, templeSound, swirlSound, keySound];
-allSounds.forEach(audio => audio.volume = 0.4);
+allSounds.forEach(audio => audio.volume = 0.1);
 
 /**
  * Typing Effect function. Adds letter by letter, creating typing effect.
